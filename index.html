@@ -23,7 +23,7 @@
     function insertR2RAgenda() {
         Office.context.mailbox.item.body.getAsync(Office.CoercionType.Html,
             function (result) {
-                var newHtml = result.value.replace("<div id=""Signature"">", "This is some text<br /><div id=""Signature"">")
+                var newHtml = result.value.replace("<div style id=""Signature"">", "This is some text<br /><div style id=""Signature"">")
                 
                 Office.context.mailbox.item.body.setAsync(newHtml, { coercionType: Office.CoercionType.Html });
             });
