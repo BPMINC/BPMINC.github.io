@@ -24,7 +24,7 @@
         }
     });
 
-    function insertR2RAgenda() {
+   /** function insertR2RAgenda() {
         Office.context.mailbox.item.body.getAsync(Office.CoercionType.Html,
             function (result) {
                 var newHtml = result.value.replace("<div id=""Signature"">", "This is some text<br /><div id=""Signature"">")
@@ -34,7 +34,7 @@
     }
 
     
-    /**
+    
      * Writes the R2R agenda to a new message body.
      */
     function insertP2PAgenda() {
