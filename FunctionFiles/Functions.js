@@ -16,7 +16,7 @@ function statusUpdate(icon, text) {
 
 // Adds text into the body of the item, then reports the results
 // to the info bar.
-function addTextToBody(text, icon, event) {
+/* function addTextToBody(text, icon, event) {
   Office.context.mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.Text }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
@@ -30,11 +30,31 @@ function addTextToBody(text, icon, event) {
       }
       event.completed();
     });
+} */
+
+function addHTMLToBody(text, icon, event) {
+  Office.context.mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.HTML}, 
+    function (asyncResult){
+      if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+        statusUpdate(icon, "Agenda inserted successfully");
+      }
+      else {
+        Office.context.mailbox.item.notificationMessages.addAsync("addTextError", {
+          type: "errorMessage",
+          message: "Failed to insert agenda - " + asyncResult.error.message
+        });
+      }
+      event.completed();
+    });
 }
 
 function addDefaultMsgToBody(event) {
-  addTextToBody("This is the R2R agenda text", "blue-icon-16", event);
+  addHTMLToBody("<b>This is the R2R agenda text</b>", "blue-icon-16", event);
 }
+
+/* function addDefaultMsgToBody(event) {
+  addTextToBody("This is the R2R agenda text", "blue-icon-16", event);
+} */
 
 function addMsg1ToBody(event) {
   addTextToBody("This is the P2P agenda text", "red-icon-16", event);
