@@ -12,8 +12,6 @@
 
       $('#insertDefault').click(insertDefault);
       $('#insertMsg1').click(insertMsg1);
-      $('#insertMsg2').click(insertMsg2);
-      $('#insertMsg3').click(insertMsg3);
       $('#insertCustom').click(insertCustom);
     });
   };
@@ -40,14 +38,6 @@
   
   function insertMsg1() {
     insertText("Hello World!");
-  }
-  
-  function insertMsg2() {
-    insertText("Add-in commands are cool!");
-  }
-  
-  function insertMsg3() {
-    insertText("Visit https://developer.microsoft.com/en-us/outlook/ today for all of your add-in development needs.");
   }
   
   function insertCustom() {

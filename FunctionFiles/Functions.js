@@ -40,14 +40,6 @@ function addMsg1ToBody(event) {
   addTextToBody("Hello World!", "red-icon-16", event);
 }
 
-function addMsg2ToBody(event) {
-  addTextToBody("Add-in commands are cool!", "red-icon-16", event);
-}
-
-function addMsg3ToBody(event) {
-  addTextToBody("Visit https://developer.microsoft.com/en-us/outlook/ today for all of your add-in development needs.", "red-icon-16", event);
-}
-
 // Gets the subject of the item and displays it in the info bar.
 function getSubject(event) {
   var subject = Office.context.mailbox.item.subject;
