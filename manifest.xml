@@ -73,9 +73,9 @@
                     <Description resid="funcComposeSuperTipDescription" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="blue-icon-16" />
-                    <bt:Image size="32" resid="blue-icon-32" />
-                    <bt:Image size="80" resid="blue-icon-80" />
+                    <bt:Image size="16" resid="icon-16" />
+                    <bt:Image size="32" resid="icon-32" />
+                    <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>addDefaultMsgToBody</FunctionName>
@@ -89,9 +89,9 @@
                     <Description resid="menuComposeSuperTipDescription" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="red-icon-16" />
-                    <bt:Image size="32" resid="red-icon-32" />
-                    <bt:Image size="80" resid="red-icon-80" />
+                    <bt:Image size="16" resid="icon-16" />
+                    <bt:Image size="32" resid="icon-32" />
+                    <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Items>
                     <Item id="msgComposeMenuItem1">
@@ -101,29 +101,14 @@
                         <Description resid="menuItem1ComposeTip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
+                        <bt:Image size="16" resid="icon-16" />
+                        <bt:Image size="32" resid="icon-32" />
+                        <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
                         <FunctionName>addMsg1ToBody</FunctionName>
                       </Action>
-                    </Item>
-                    <Item id="msgComposeMenuItem2">
-                      <Label resid="menuItem2ComposeLabel" />
-                      <Supertip>
-                        <Title resid="menuItem2ComposeLabel" />
-                        <Description resid="menuItem2ComposeTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addMsg2ToBody</FunctionName>
-                      </Action>
-                    </Item>                    
+                    </Item>                  
                   </Items>
                 </Control>
                 <!-- Task pane button -->
@@ -134,9 +119,9 @@
                     <Description resid="paneComposeSuperTipDescription" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="green-icon-16" />
-                    <bt:Image size="32" resid="green-icon-32" />
-                    <bt:Image size="80" resid="green-icon-80" />
+                    <bt:Image size="16" resid="icon-16" />
+                    <bt:Image size="32" resid="icon-32" />
+                    <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <SourceLocation resid="composeTaskPaneUrl" />
@@ -159,9 +144,9 @@
                     <Description resid="funcComposeSuperTipDescription" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="blue-icon-16" />
-                    <bt:Image size="32" resid="blue-icon-32" />
-                    <bt:Image size="80" resid="blue-icon-80" />
+                    <bt:Image size="16" resid="icon-16" />
+                    <bt:Image size="32" resid="icon-32" />
+                    <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>addDefaultMsgToBody</FunctionName>
@@ -175,9 +160,9 @@
                     <Description resid="menuComposeSuperTipDescription" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="red-icon-16" />
-                    <bt:Image size="32" resid="red-icon-32" />
-                    <bt:Image size="80" resid="red-icon-80" />
+                    <bt:Image size="16" resid="icon-16" />
+                    <bt:Image size="32" resid="icon-32" />
+                    <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Items>
                     <Item id="apptComposeMenuItem1">
@@ -187,29 +172,15 @@
                         <Description resid="menuItem1ComposeTip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
+                        <bt:Image size="16" resid="icon-16" />
+                        <bt:Image size="32" resid="icon-32" />
+                        <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
                         <FunctionName>addMsg1ToBody</FunctionName>
                       </Action>
                     </Item>
-                    <Item id="apptComposeMenuItem2">
-                      <Label resid="menuItem2ComposeLabel" />
-                      <Supertip>
-                        <Title resid="menuItem2ComposeLabel" />
-                        <Description resid="menuItem2ComposeTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addMsg2ToBody</FunctionName>
-                      </Action>
-                    </Item>                    
+                    
                   </Items>
                 </Control>
                 <!-- Task pane button -->
@@ -220,9 +191,9 @@
                     <Description resid="paneComposeSuperTipDescription" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="green-icon-16" />
-                    <bt:Image size="32" resid="green-icon-32" />
-                    <bt:Image size="80" resid="green-icon-80" />
+                    <bt:Image size="16" resid="icon-16" />
+                    <bt:Image size="32" resid="icon-32" />
+                    <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <SourceLocation resid="composeTaskPaneUrl" />
@@ -239,17 +210,10 @@
     <Resources>
       <bt:Images>
           <!-- Blue icon -->
-          <bt:Image id="blue-icon-16" DefaultValue="https://localhost:8443/Assets/Images/blue-16.png"/>
-          <bt:Image id="blue-icon-32" DefaultValue="https://localhost:8443/Assets/Images/blue-32.png"/>
-          <bt:Image id="blue-icon-80" DefaultValue="https://localhost:8443/Assets/Images/blue-80.png"/>
-          <!-- Red icon -->
-          <bt:Image id="red-icon-16" DefaultValue="https://localhost:8443/Assets/Images/red-16.png"/>
-          <bt:Image id="red-icon-32" DefaultValue="https://localhost:8443/Assets/Images/red-32.png"/>
-          <bt:Image id="red-icon-80" DefaultValue="https://localhost:8443/Assets/Images/red-80.png"/>
-          <!-- Green icon -->
-          <bt:Image id="green-icon-16" DefaultValue="https://localhost:8443/Assets/Images/green-16.png"/>
-          <bt:Image id="green-icon-32" DefaultValue="https://localhost:8443/Assets/Images/green-32.png"/>
-          <bt:Image id="green-icon-80" DefaultValue="https://localhost:8443/Assets/Images/green-80.png"/>
+          <bt:Image id="icon-16" DefaultValue="https://bpminc.github.io/Assets/icon.jpg"/>
+          <bt:Image id="icon-32" DefaultValue="https://bpminc.github.io/Assets/icon.jpg"/>
+          <bt:Image id="icon-80" DefaultValue="https://bpminc.github.io/Assets/icon.jpg"/>
+
       </bt:Images>
 
       <bt:Urls>
@@ -270,7 +234,6 @@
         <bt:String id="paneComposeSuperTipTitle" DefaultValue="Enter your own text to insert"/>
 
         <bt:String id="menuItem1ComposeLabel" DefaultValue="Hello World!"/>
-        <bt:String id="menuItem2ComposeLabel" DefaultValue="Add-in commands are cool!"/>
       </bt:ShortStrings>
 
       <bt:LongStrings>
@@ -280,8 +243,6 @@
         <bt:String id="paneComposeSuperTipDescription" DefaultValue="Opens a pane where you can enter text to insert in the body of the message or appointment. This is an example of a button that opens a task pane."/>
 
         <bt:String id="menuItem1ComposeTip" DefaultValue="Inserts Hello World! into the body of the message or appointment." />
-        <bt:String id="menuItem2ComposeTip" DefaultValue="Inserts Add-in commands are cool! into the body of the message or appointment." />
-        <bt:String id="menuItem3ComposeTip" DefaultValue="Inserts Visit Outlook Dev Center into the body of the message or appointment." />
       </bt:LongStrings>
 
     </Resources>
