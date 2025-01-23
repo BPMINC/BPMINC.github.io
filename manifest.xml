@@ -11,8 +11,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Agenda Generator" />
   <Description DefaultValue="A simple Office Addin to quickly generate meeting agendas"/>
-  <IconUrl DefaultValue="https://bpminc.github.io/assets/icon.jpg" />
-  <HighResolutionIconUrl DefaultValue="https://bpminc.github.io/assets/icon.jpg" />
+  <IconUrl DefaultValue="https://bpminc.github.io/Assets/icon.jpg" />
+  <HighResolutionIconUrl DefaultValue="https://bpminc.github.io/Assets/icon.jpg" />
   <Hosts>
     <Host Name="Mailbox" />
   </Hosts>
@@ -283,9 +283,9 @@
       </bt:Images>
 
       <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="https://localhost:8443/FunctionFiles/Functions.html"/>
-        <bt:Url id="readTaskPaneUrl" DefaultValue="https://localhost:8443/AllPropsView/AllProps.html"/>
-        <bt:Url id="composeTaskPaneUrl" DefaultValue="https://localhost:8443/InsertTextPane/InsertText.html"/>
+        <bt:Url id="functionFile" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
+        <bt:Url id="readTaskPaneUrl" DefaultValue="https://bpminc.github.io/AllPropsView/AllProps.html"/>
+        <bt:Url id="composeTaskPaneUrl" DefaultValue="https://bpminc.github.io/InsertTextPane/InsertText.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
