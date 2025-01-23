@@ -283,7 +283,7 @@
       </bt:Images>
 
       <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="https://localhost:8443/FunctionFile/Functions.html"/>
+        <bt:Url id="functionFile" DefaultValue="https://localhost:8443/FunctionFiles/Functions.html"/>
         <bt:Url id="readTaskPaneUrl" DefaultValue="https://localhost:8443/AllPropsView/AllProps.html"/>
         <bt:Url id="composeTaskPaneUrl" DefaultValue="https://localhost:8443/InsertTextPane/InsertText.html"/>
       </bt:Urls>
