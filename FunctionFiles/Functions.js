@@ -33,11 +33,11 @@ function addTextToBody(text, icon, event) {
 }
 
 function addDefaultMsgToBody(event) {
-  addTextToBody("Inserted by the Add-in Command Demo add-in.", "blue-icon-16", event);
+  addTextToBody("This is the R2R agenda text", "blue-icon-16", event);
 }
 
 function addMsg1ToBody(event) {
-  addTextToBody("Hello World!", "red-icon-16", event);
+  addTextToBody("This is the P2P agenda text", "red-icon-16", event);
 }
 
 // Gets the subject of the item and displays it in the info bar.
