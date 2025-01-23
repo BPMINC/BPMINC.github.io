@@ -49,7 +49,7 @@ function addHTMLToBody(text, icon, event) {
 }
 
 function addDefaultMsgToBody(event) {
-  addHTMLToBody("<b>This is the R2R agenda text</b>", "blue-icon-16", event);
+  addHTMLToBody("<b>This is the test agenda text</b>", "blue-icon-16", event);
 }
 
 /* function addDefaultMsgToBody(event) {
