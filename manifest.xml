@@ -24,6 +24,8 @@
   <!-- These elements support older clients that don't support add-in commands -->
   <FormSettings>
     <Form xsi:type="ItemEdit">
+      <DesktopSettings>
+      </DesktopSettings>
     </Form>
   </FormSettings>
   <Permissions>ReadWriteMailbox</Permissions>
