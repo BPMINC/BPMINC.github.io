@@ -1,77 +1,167 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
-  <Id>1e7e38da-7ad6-429a-9c6f-81aa1b9c9344</Id>
-  <Version>1.0.0.0</Version>
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides"
+  xsi:type="MailApp">
+  <Id>fc188889-7206-4d15-9968-7a4966f7f4ca</Id>
+  <Version>1.0.0.2</Version>
   <ProviderName>BPM</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Agenda Generator"/>
+  <DisplayName DefaultValue="Agenda Generator" />
   <Description DefaultValue="A simple Office Addin to quickly generate meeting agendas"/>
-  <IconUrl DefaultValue="https://bpminc.github.io/assets/icon.jpg"/>
-  <HighResolutionIconUrl DefaultValue="https://bpminc.github.io/assets/icon.jpg"/>
-  <SupportUrl DefaultValue="https://learn.microsoft.com/office/dev/add-ins/overview/office-add-in-code-samples"/>
-  <AppDomains>
-    <AppDomain>https://bpminc.github.io</AppDomain>
-  </AppDomains>
+  <IconUrl DefaultValue="https://bpminc.github.io/assets/icon.jpg" />
+  <HighResolutionIconUrl DefaultValue="https://bpminc.github.io/assets/icon.jpg" />
   <Hosts>
-    <Host Name="Mailbox"/>
+    <Host Name="Mailbox" />
   </Hosts>
   <Requirements>
     <Sets>
-      <Set Name="Mailbox" MinVersion="1.1"/>
+      <Set Name="MailBox" MinVersion="1.1" />
     </Sets>
   </Requirements>
+  <!-- These elements support older clients that don't support add-in commands -->
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
+        <!-- NOTE: Just reusing the read taskpane page that is invoked by the button
+             on the ribbon in clients that support add-in commands. You can
+             use a completely different page if desired -->
         <SourceLocation DefaultValue="https://bpminc.github.io/index.html"/>
-        <RequestedHeight>250</RequestedHeight>
+        <RequestedHeight>450</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+    <Form xsi:type="ItemEdit">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://bpminc.github.io/index.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
-  <Permissions>ReadWriteItem</Permissions>
+  <Permissions>ReadWriteMailbox</Permissions>
   <Rule xsi:type="RuleCollection" Mode="Or">
-    <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
-    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
+    <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+    <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" />
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+
     <Requirements>
       <bt:Sets DefaultMinVersion="1.3">
-        <bt:Set Name="Mailbox"/>
+        <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
     <Hosts>
       <Host xsi:type="MailHost">
-        <DesktopFormFactor>
 
-          <!-- Message Compose -->
+        <DesktopFormFactor>
+          <FunctionFile resid="functionFile" />
+
+          <!-- Message compose form -->
           <ExtensionPoint xsi:type="MessageComposeCommandSurface">
             <OfficeTab id="TabDefault">
-              <Group id="msgComposeCmdGroup">
-                <Label resid="CommandsGroup.Label"/>
-                <Control xsi:type="Button" id="msgComposeInsertGist">
-                  <Label resid="TaskpaneButton.Label"/>
+              <Group id="msgComposeDemoGroup">
+                <Label resid="groupLabel" />
+                <!-- Function (UI-less) button -->
+                <Control xsi:type="Button" id="msgComposeFunctionButton">
+                  <Label resid="funcComposeButtonLabel" />
                   <Supertip>
-                    <Title resid="TaskpaneButton.SupertipTitle"/>
-                    <Description resid="TaskpaneButton.SupertipText"/>
+                    <Title resid="funcComposeSuperTipTitle" />
+                    <Description resid="funcComposeSuperTipDescription" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
+                    <bt:Image size="16" resid="blue-icon-16" />
+                    <bt:Image size="32" resid="blue-icon-32" />
+                    <bt:Image size="80" resid="blue-icon-80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>addDefaultMsgToBody</FunctionName>
+                  </Action>
+                </Control>
+                <!-- Menu (dropdown) button -->
+                <Control xsi:type="Menu" id="msgComposeMenuButton">
+                  <Label resid="menuComposeButtonLabel" />
+                  <Supertip>
+                    <Title resid="menuComposeSuperTipTitle" />
+                    <Description resid="menuComposeSuperTipDescription" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="red-icon-16" />
+                    <bt:Image size="32" resid="red-icon-32" />
+                    <bt:Image size="80" resid="red-icon-80" />
+                  </Icon>
+                  <Items>
+                    <Item id="msgComposeMenuItem1">
+                      <Label resid="menuItem1ComposeLabel" />
+                      <Supertip>
+                        <Title resid="menuItem1ComposeLabel" />
+                        <Description resid="menuItem1ComposeTip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="red-icon-16" />
+                        <bt:Image size="32" resid="red-icon-32" />
+                        <bt:Image size="80" resid="red-icon-80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>addMsg1ToBody</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="msgComposeMenuItem2">
+                      <Label resid="menuItem2ComposeLabel" />
+                      <Supertip>
+                        <Title resid="menuItem2ComposeLabel" />
+                        <Description resid="menuItem2ComposeTip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="red-icon-16" />
+                        <bt:Image size="32" resid="red-icon-32" />
+                        <bt:Image size="80" resid="red-icon-80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>addMsg2ToBody</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="msgComposeMenuItem3">
+                      <Label resid="menuItem3ComposeLabel" />
+                      <Supertip>
+                        <Title resid="menuItem3ComposeLabel" />
+                        <Description resid="menuItem3ComposeTip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="red-icon-16" />
+                        <bt:Image size="32" resid="red-icon-32" />
+                        <bt:Image size="80" resid="red-icon-80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>addMsg3ToBody</FunctionName>
+                      </Action>
+                    </Item>
+                  </Items>
+                </Control>
+                <!-- Task pane button -->
+                <Control xsi:type="Button" id="msgComposeOpenPaneButton">
+                  <Label resid="paneComposeButtonLabel" />
+                  <Supertip>
+                    <Title resid="paneComposeSuperTipTitle" />
+                    <Description resid="paneComposeSuperTipDescription" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="green-icon-16" />
+                    <bt:Image size="32" resid="green-icon-32" />
+                    <bt:Image size="80" resid="green-icon-80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="Taskpane.Url"/>
+                    <SourceLocation resid="composeTaskPaneUrl" />
                   </Action>
                 </Control>
               </Group>
             </OfficeTab>
           </ExtensionPoint>
 
- 	  <!-- Appointment compose form -->
+          <!-- Appointment compose form -->
           <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
             <OfficeTab id="TabDefault">
               <Group id="apptComposeDemoGroup">
@@ -175,23 +265,58 @@
         </DesktopFormFactor>
       </Host>
     </Hosts>
+
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://bpminc.github.io/assets/icon.jpg"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://bpminc.github.io/assets/icon.jpg"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://bpminc.github.io/assets/icon.jpg"/>
+          <!-- Blue icon -->
+          <bt:Image id="blue-icon-16" DefaultValue="https://localhost:8443/Assets/Images/blue-16.png"/>
+          <bt:Image id="blue-icon-32" DefaultValue="https://localhost:8443/Assets/Images/blue-32.png"/>
+          <bt:Image id="blue-icon-80" DefaultValue="https://localhost:8443/Assets/Images/blue-80.png"/>
+          <!-- Red icon -->
+          <bt:Image id="red-icon-16" DefaultValue="https://localhost:8443/Assets/Images/red-16.png"/>
+          <bt:Image id="red-icon-32" DefaultValue="https://localhost:8443/Assets/Images/red-32.png"/>
+          <bt:Image id="red-icon-80" DefaultValue="https://localhost:8443/Assets/Images/red-80.png"/>
+          <!-- Green icon -->
+          <bt:Image id="green-icon-16" DefaultValue="https://localhost:8443/Assets/Images/green-16.png"/>
+          <bt:Image id="green-icon-32" DefaultValue="https://localhost:8443/Assets/Images/green-32.png"/>
+          <bt:Image id="green-icon-80" DefaultValue="https://localhost:8443/Assets/Images/green-80.png"/>
       </bt:Images>
+
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://bpminc.github.io/index.html"/>
+        <bt:Url id="functionFile" DefaultValue="https://localhost:8443/FunctionFile/Functions.html"/>
+        <bt:Url id="readTaskPaneUrl" DefaultValue="https://localhost:8443/AllPropsView/AllProps.html"/>
+        <bt:Url id="composeTaskPaneUrl" DefaultValue="https://localhost:8443/InsertTextPane/InsertText.html"/>
       </bt:Urls>
+
       <bt:ShortStrings>
-        <bt:String id="CommandsGroup.Label" DefaultValue="BPM Add-in"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Button Label"/>
-        <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="Button Title"/>
+        <bt:String id="groupLabel" DefaultValue="Add-in Demo"/>
+        <!-- Compose mode -->
+        <bt:String id="funcComposeButtonLabel" DefaultValue="Insert default message"/>
+        <bt:String id="menuComposeButtonLabel" DefaultValue="Insert message"/>
+        <bt:String id="paneComposeButtonLabel" DefaultValue="Insert custom message"/>
+
+        <bt:String id="funcComposeSuperTipTitle" DefaultValue="Inserts the default message"/>
+        <bt:String id="menuComposeSuperTipTitle" DefaultValue="Choose a message to insert"/>
+        <bt:String id="paneComposeSuperTipTitle" DefaultValue="Enter your own text to insert"/>
+
+        <bt:String id="menuItem1ComposeLabel" DefaultValue="Hello World!"/>
+        <bt:String id="menuItem2ComposeLabel" DefaultValue="Add-in commands are cool!"/>
+        <bt:String id="menuItem3ComposeLabel" DefaultValue="Visit Outlook Dev Center"/>
       </bt:ShortStrings>
+
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the BPM Agenda Generator add-in"/>
+        <!-- Compose mode -->
+        <bt:String id="funcComposeSuperTipDescription" DefaultValue="Inserts text into body of the message or appointment. This is an example of a function button."/>
+        <bt:String id="menuComposeSuperTipDescription" DefaultValue="Inserts your choice of text into body of the message or appointment. This is an example of a drop-down menu button."/>
+        <bt:String id="paneComposeSuperTipDescription" DefaultValue="Opens a pane where you can enter text to insert in the body of the message or appointment. This is an example of a button that opens a task pane."/>
+
+        <bt:String id="menuItem1ComposeTip" DefaultValue="Inserts Hello World! into the body of the message or appointment." />
+        <bt:String id="menuItem2ComposeTip" DefaultValue="Inserts Add-in commands are cool! into the body of the message or appointment." />
+        <bt:String id="menuItem3ComposeTip" DefaultValue="Inserts Visit Outlook Dev Center into the body of the message or appointment." />
       </bt:LongStrings>
+
     </Resources>
+
+
   </VersionOverrides>
 </OfficeApp>
