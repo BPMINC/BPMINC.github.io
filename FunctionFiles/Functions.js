@@ -13,8 +13,11 @@ Office.initialize = function () {
 }
 
 function addDefaultMsg(event) {
+  _settings.set("customerName", "OneWebTech");
+  _settings.saveAsync();
+  
   setHTMLToSubject("Default Agenda Subject", "icon-16", event);
-  setHTMLToBody("<b>This is the default agenda text</b><br/>", "icon-16", event);
+  setHTMLToBody("This is the default agenda text<br/>", "icon-16", event);
 }
 
 function addP2PMsg(event) {
