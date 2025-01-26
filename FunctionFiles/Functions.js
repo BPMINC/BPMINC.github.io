@@ -51,7 +51,11 @@ async function setHTMLToSubject(text, icon, event) {
         });
       }
       
-    });
+      return new Promise(resolve, reject);
+
+    }
+  );    
+  event.completed();
 } 
 
 async function setHTMLToBody(text, icon, event) {
@@ -72,6 +76,7 @@ async function setHTMLToBody(text, icon, event) {
           persistent: false
         });
       }
-      event.completed();
-    });
+    }
+  );
+  event.completed();
 } 
