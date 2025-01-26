@@ -21,7 +21,7 @@ Office.initialize = function () {
     });
 } */
 
-/* function addHTMLToBody(text, icon, event) {
+function addHTMLToBody(text, icon, event) {
   Office.context.mailbox.item.body.setSelectedTextAsync(text, { coercionType: Office.CoercionType.Html }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
@@ -41,26 +41,11 @@ Office.initialize = function () {
       }
       event.completed();
     });
-}  */
-
-function addHTMLToBody(text, icon, event){
-
-  const mailItem = Office.context.item.body;
-
-  mailItem.getAsync({ coercionType: Office.CoercionType.Html },
-    function (asyncResult){
-      
-      mailItem.setAsync('<a id="LPNoLP" href="http://www.contoso.com">Click here!</a>',{ coercionType: Office.CoercionType.Html })
-
-
-    }
-  )
-  event.completed();
-}
+} 
 
 
 function addDefaultMsgToBody(event) {
-  addHTMLToBody("<b>This is the test agenda text</b>", "blue-icon-16", event);
+  addHTMLToBody("<b>This is the test agenda text</b><br/>", "blue-icon-16", event);
 }
 
 /* function addDefaultMsgToBody(event) {
