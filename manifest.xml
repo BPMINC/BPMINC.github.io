@@ -209,7 +209,6 @@
               </Group>
             </OfficeTab>
           </ExtensionPoint>
-
         </DesktopFormFactor>
       </Host>
     </Hosts>
@@ -249,7 +248,7 @@
         <bt:String id="funcTipDesc" DefaultValue="Example function button."/>
         <bt:String id="menuTipDesc" DefaultValue="Example drop-down menu button."/>
         <bt:String id="paneTipDesc" DefaultValue="Example task pane button."/>
-        <bt:String id="settingsTipDesc" DefaultValue=""/>
+        <bt:String id="settingsTipDesc" DefaultValue="sometext"/>
 
         <bt:String id="menuItem1Tip" DefaultValue="P2P Agenda tooltip." />
       </bt:LongStrings>
