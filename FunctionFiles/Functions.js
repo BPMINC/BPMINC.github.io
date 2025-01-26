@@ -30,7 +30,18 @@ function addHTMLToBody(text, icon, event) {
       body = result.replace("someText", "someMoreText");
     })
 
-  mailItem.body.setAsync(body,{ coercionType: Office.CoercionType.Html });
+  mailItem.body.setAsync(body,{ coercionType: Office.CoercionType.Html },
+    function (asyncResult){
+      if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+        statusUpdate(icon, "\"" + text + "\" inserted successfully.");
+      }
+      else {
+        Office.context.mailbox.item.notificationMessages.addAsync("addTextError", {
+          type: "errorMessage",
+          message: "Failed to insert \"" + text + "\": " + asyncResult.error.message
+        });
+      }
+    });
 }
 
 
