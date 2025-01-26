@@ -4,11 +4,12 @@ Office.initialize = function () {
 }
 
 function addDefaultMsg(event) {
-  setHTMLToSubject("Default Subject Line", "blue-icon-16", event);
-  setHTMLToBody("<b>This is the default agenda text</b><br/>", "blue-icon-16", event);
+  setHTMLToSubject("Default Agenda Subject", "icon-16", event);
+  setHTMLToBody("<b>This is the default agenda text</b><br/>", "icon-16", event);
 }
 
 function addP2PMsg(event) {
+  setHTMLToSubject("P2P Requirements Gathering", "icon-16", event);
   setHTMLToBody("<b><i>Meeting Objective</i></b><br/><br/>\
     The objective of this session is for our team to gather \
     a solid understanding of your AP processes from vendor \
@@ -18,7 +19,7 @@ function addP2PMsg(event) {
     <ul><li>Vendor Master</li><li>Employee Master</li>\
     <li>Vendor Bills</li><li>Vendor Payments</li>\
     <li>Expense Reports</li><li>Fixed Assets</li></ul>\
-    ", "blue-icon-16", event);
+    ", "icon-16", event);
 }
 
 
