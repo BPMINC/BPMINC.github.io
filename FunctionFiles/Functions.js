@@ -15,7 +15,7 @@ function addP2PMsg(event) {
     payments and advanced electronic payments and expense reporting\
     <br/><br/><br/><b><i>Meeting Agenda</i></b><br/>\
     <ul><li>Vendor Master</li><li>Employee Master</li>\
-    <li>Vendor Bills</li><li>Vendor Payments</li><li>Vendor Bills</li><li>Vendor Bills</li></ul>", "blue-icon-16", event);
+    <li>Vendor Bills</li><li>Vendor Payments</li><li>Expense Reports</li><li>Fixed Assets</li></ul>", "blue-icon-16", event);
 }
 
 
