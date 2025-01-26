@@ -27,13 +27,15 @@ function addHTMLToBody(text, icon, event) {
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
         Office.context.mailbox.item.notificationMessages.addAsync("success", {
           type: "successMessage",
-          message: "Succesful insert"
+          message: "Succesful insert",
+          persistent: false
         });
       }
       else {
         Office.context.mailbox.item.notificationMessages.addAsync("error", {
           type: "errorMessage",
-          message: "Failed to insert \"" + text + "\": " + asyncResult.error.message
+          message: "Failed to insert \"" + text + "\": " + asyncResult.error.message,
+          persistent: false
         });
       }
       event.completed();
