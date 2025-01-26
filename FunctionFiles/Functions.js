@@ -1,11 +1,20 @@
 ﻿// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 
+let _mailbox;
+let _settings;
+let _customerName;
+let _customerBalance;
+
 Office.initialize = function () {
+  _mailbox = Office.context.mailbox;
+  _settings = Office.context.roamingSettings;
+  _customerName = _settings.get("customerName");
+  _customerBalance = _settings.get("customerBalance");
 }
 
-function addDefaultMsg(event) {
-  setHTMLToSubject("Default Agenda Subject", "icon-16", event);
-  setHTMLToBody("<b>This is the default agenda text</b><br/>", "icon-16", event);
+async function addDefaultMsg(event) {
+  await setHTMLToSubject("Default Agenda Subject", "icon-16", event);
+  await setHTMLToBody("<b>This is the default agenda text</b><br/>", "icon-16", event);
 }
 
 function addP2PMsg(event) {
@@ -23,11 +32,11 @@ function addP2PMsg(event) {
 }
 
 
-function setHTMLToSubject(text, icon, event) {
-  Office.context.mailbox.item.subject.setAsync(text, 
+async function setHTMLToSubject(text, icon, event) {
+  _mailbox.item.subject.setAsync(text, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-        Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
+        _mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: icon,
           message: "Success",
@@ -35,7 +44,7 @@ function setHTMLToSubject(text, icon, event) {
         });
       }
       else {
-        Office.context.mailbox.item.notificationMessages.addAsync("error", {
+        _mailbox.item.notificationMessages.addAsync("error", {
           type: "errorMessage",
           message: "Failed - " + asyncResult.error.message,
           persistent: false
@@ -45,7 +54,7 @@ function setHTMLToSubject(text, icon, event) {
     });
 } 
 
-function setHTMLToBody(text, icon, event) {
+async function setHTMLToBody(text, icon, event) {
   Office.context.mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.Html }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
