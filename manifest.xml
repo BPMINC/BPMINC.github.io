@@ -122,33 +122,21 @@
             </OfficeTab>
           </ExtensionPoint>
 
+
+
+
           <!-- Appointment compose form -->
           <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
             <OfficeTab id="TabDefault">
-              <Group id="apptDemoGroup">
+              <Group id="apptAgendaGeneratorGroup">
                 <Label resid="groupLabel" />
-                <!-- Function (UI-less) button -->
-                <Control xsi:type="Button" id="apptFunctionButton">
-                  <Label resid="funcButtonLabel" />
+
+                <!-- Default Agenda Menu -->
+                <Control xsi:type="Menu" id="apptDefaultButton">
+                  <Label resid="defaultButtonLabel" />
                   <Supertip>
-                    <Title resid="funcTipTitle" />
-                    <Description resid="funcTipDesc" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon-16" />
-                    <bt:Image size="32" resid="icon-32" />
-                    <bt:Image size="80" resid="icon-80" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>addDefaultMsg</FunctionName>
-                  </Action>
-                </Control>
-                <!-- Menu (dropdown) button -->
-                <Control xsi:type="Menu" id="apptMenuButton">
-                  <Label resid="menuButtonLabel" />
-                  <Supertip>
-                    <Title resid="menuTipTitle" />
-                    <Description resid="menuTipDesc" />
+                    <Title resid="defaultTipTitle" />
+                    <Description resid="defaultTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -156,11 +144,11 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Items>
-                    <Item id="apptMenuItem1">
-                      <Label resid="menuItem1Label" />
+                    <Item id="apptDefaultInsert">
+                      <Label resid="defaultInsertLabel" />
                       <Supertip>
-                        <Title resid="menuItem1Label" />
-                        <Description resid="menuItem1Tip" />
+                        <Title resid="defaultInsertLabel" />
+                        <Description resid="defaultInsertTip" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -168,30 +156,90 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addP2PMsg</FunctionName>
+                        <FunctionName>insertDefaultAgenda</FunctionName>
                       </Action>
-                    </Item>
-                    
+                    </Item>                    
+                    <Item id="apptDefaultCreate">
+                      <Label resid="defaultCreateLabel" />
+                      <Supertip>
+                        <Title resid="defaultCreateLabel" />
+                        <Description resid="defaultCreateTip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="icon-16" />
+                        <bt:Image size="32" resid="icon-32" />
+                        <bt:Image size="80" resid="icon-80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>createDefaultAgenda</FunctionName>
+                      </Action>
+                    </Item>                    
                   </Items>
                 </Control>
-                <!-- Task pane button -->
-                <Control xsi:type="Button" id="apptOpenPaneButton">
-                  <Label resid="paneButtonLabel" />
+
+                <!-- Specific Agenda Menu -->
+                <Control xsi:type="Menu" id="apptSpecificButton">
+                  <Label resid="specificButtonLabel" />
                   <Supertip>
-                    <Title resid="paneTipTitle" />
-                    <Description resid="paneTipDesc" />
+                    <Title resid="specificTipTitle" />
+                    <Description resid="specificTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
                     <bt:Image size="32" resid="icon-32" />
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="TaskPaneUrl" />
-                  </Action>
+                  <Items>
+                    <Item id="apptSpecificR2R">
+                      <Label resid="specificR2RLabel" />
+                      <Supertip>
+                        <Title resid="specificR2RLabel" />
+                        <Description resid="specificR2RCTipDesc" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="icon-16" />
+                        <bt:Image size="32" resid="icon-32" />
+                        <bt:Image size="80" resid="icon-80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>R2RSpecificAgenda</FunctionName>
+                      </Action>
+                    </Item>                    
+                    <Item id="apptSpecificP2P">
+                      <Label resid="specificP2PLabel" />
+                      <Supertip>
+                        <Title resid="specificP2PLabel" />
+                        <Description resid="specificP2PCTipDesc" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="icon-16" />
+                        <bt:Image size="32" resid="icon-32" />
+                        <bt:Image size="80" resid="icon-80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>P2PSpecificAgenda</FunctionName>
+                      </Action>
+                    </Item>                    
+                    <Item id="apptSpecificO2C">
+                      <Label resid="specificO2CLabel" />
+                      <Supertip>
+                        <Title resid="specificO2CLabel" />
+                        <Description resid="specificO2CTipDesc" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="icon-16" />
+                        <bt:Image size="32" resid="icon-32" />
+                        <bt:Image size="80" resid="icon-80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>O2CSpecificAgenda</FunctionName>
+                      </Action>
+                    </Item>                    
+                  </Items>
                 </Control>
-                <!-- Task pane button -->
-                <Control xsi:type="Button" id="apptSettingsPaneButton">
+
+                <!-- Settings Menu -->
+                <Control xsi:type="Button" id="apptSettingsButton">
                   <Label resid="settingsButtonLabel" />
                   <Supertip>
                     <Title resid="settingsTipTitle" />
@@ -215,43 +263,48 @@
 
     <Resources>
       <bt:Images>
-          <!-- Blue icon -->
           <bt:Image id="icon-16" DefaultValue="https://bpminc.github.io/Assets/icon.jpg"/>
           <bt:Image id="icon-32" DefaultValue="https://bpminc.github.io/Assets/icon.jpg"/>
           <bt:Image id="icon-80" DefaultValue="https://bpminc.github.io/Assets/icon.jpg"/>
-
       </bt:Images>
 
       <bt:Urls>
         <bt:Url id="functionFile" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
-        <bt:Url id="TaskPaneUrl" DefaultValue="https://bpminc.github.io/InsertTextPane/InsertText.html"/>
         <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/SettingsPane/SettingsPane.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="Agenda Generator Demo"/>
- 
-        <bt:String id="funcButtonLabel" DefaultValue="Insert default agenda"/>
-        <bt:String id="menuButtonLabel" DefaultValue="Insert specific agenda"/>
-        <bt:String id="paneButtonLabel" DefaultValue="Insert custom agenda"/>
+        <bt:String id="groupLabel" DefaultValue="Agenda Generator"/>
+        
+        <bt:String id="defaultButtonLabel" DefaultValue="Default agenda"/>
+        <bt:String id="defaultTipTitle" DefaultValue="Default Agenda Tip Title"/>
+        <bt:String id="defaultInsertLabel" DefaultValue="Insert"/>
+        <bt:String id="defaultCreateLabel" DefaultValue="Create"/>
+
+        <bt:String id="specificButtonLabel" DefaultValue="Specific agenda"/>
+        <bt:String id="specificTipTitle" DefaultValue="Specific Agenda Tip Title"/>
+        <bt:String id="specificR2RLabel" DefaultValue="R2R Agenda"/>
+        <bt:String id="specificP2PLabel" DefaultValue="P2P Agenda"/>
+        <bt:String id="specificO2CLabel" DefaultValue="O2C Agenda"/>
+
         <bt:String id="settingsButtonLabel" DefaultValue="Settings"/>
+        <bt:String id="settingsTipTitle" DefaultValue="Settings Tip Title"/>
 
-        <bt:String id="funcTipTitle" DefaultValue="Inserts the default agenda"/>
-        <bt:String id="menuTipTitle" DefaultValue="Choose a agenda to insert"/>
-        <bt:String id="paneTipTitle" DefaultValue="Enter your own agenda to insert"/>
-        <bt:String id="settingsTipTitle" DefaultValue="Capute the Agenda Generator settings here"/>
-
-        <bt:String id="menuItem1Label" DefaultValue="P2P Agenda"/>
       </bt:ShortStrings>
 
       <bt:LongStrings>
  
-        <bt:String id="funcTipDesc" DefaultValue="Example function button."/>
-        <bt:String id="menuTipDesc" DefaultValue="Example drop-down menu button."/>
-        <bt:String id="paneTipDesc" DefaultValue="Example task pane button."/>
-        <bt:String id="settingsTipDesc" DefaultValue="sometext"/>
+        <bt:String id="defaultTipDesc" DefaultValue="Default Agenda Tip"/>
+        <bt:String id="defaultInsertTipDesc" DefaultValue="Insert Default Agenda Tip" />
+        <bt:String id="defaultCreateTipDesc" DefaultValue="Create Default Agenda Tip" />
 
-        <bt:String id="menuItem1Tip" DefaultValue="P2P Agenda tooltip." />
+        <bt:String id="specificTipDesc" DefaultValue="Specific Agenda Tip"/>
+        <bt:String id="specificR2RTipDesc" DefaultValue="Insert R2R Agenda Tip" />
+        <bt:String id="specificP2PTipDesc" DefaultValue="Insert P2P Agenda Tip" />
+        <bt:String id="specificO2CTipDesc" DefaultValue="Insert O2C Agenda Tip" />
+
+        <bt:String id="settingsTipDesc" DefaultValue="Settings Tip"/>
+
       </bt:LongStrings>
 
     </Resources>
