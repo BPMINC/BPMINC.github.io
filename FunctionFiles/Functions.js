@@ -3,24 +3,23 @@
 let _mailbox;
 let _settings;
 let _customerName;
-let _customerBalance;
 
 Office.initialize = function () {
   _mailbox = Office.context.mailbox;
   _settings = Office.context.roamingSettings;
-  _customerName = _settings.get("customerName");
-  _customerBalance = _settings.get("customerBalance");
 }
 
 function addDefaultMsg(event) {
-  _settings.set("customerName", "OneWebTech");
-  _settings.saveAsync();
-
   setHTMLToSubject("Default Agenda Subject", "icon-16", event);
   setHTMLToBody("This is the default agenda text<br/>", "icon-16", event);
 }
 
 function addP2PMsg(event) {
+  _settings.set("customerName", "OneWebTech");
+  _settings.saveAsync();
+
+  _customerName = _settings.get("customerName");
+
   setHTMLToSubject(_customerName + " - P2P Requirements Gathering", "icon-16", event);
   setHTMLToBody("<b><i>Meeting Objective</i></b><br/><br/>\
     The objective of this session is for our team to gather \
