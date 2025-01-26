@@ -190,6 +190,22 @@
                     <SourceLocation resid="TaskPaneUrl" />
                   </Action>
                 </Control>
+                <!-- Task pane button -->
+                <Control xsi:type="Button" id="apptOpenPaneButton2">
+                  <Label resid="paneButtonLabel" />
+                  <Supertip>
+                    <Title resid="paneSuperTipTitle" />
+                    <Description resid="paneSuperTipDescription" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon-16" />
+                    <bt:Image size="32" resid="icon-32" />
+                    <bt:Image size="80" resid="icon-80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="TaskPaneUrl" />
+                  </Action>
+                </Control>
               </Group>
             </OfficeTab>
           </ExtensionPoint>
