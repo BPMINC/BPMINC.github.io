@@ -191,11 +191,11 @@
                   </Action>
                 </Control>
                 <!-- Task pane button -->
-                <Control xsi:type="Button" id="apptOpenPaneButton2">
-                  <Label resid="paneButtonLabel" />
+                <Control xsi:type="Button" id="apptSettingsPaneButton">
+                  <Label resid="settingsButtonLabel" />
                   <Supertip>
-                    <Title resid="paneTipTitle" />
-                    <Description resid="paneTipDesc" />
+                    <Title resid="settingsTipTitle" />
+                    <Description resid="settingsTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -203,7 +203,7 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="TaskPaneUrl" />
+                    <SourceLocation resid="SettingsPaneUrl" />
                   </Action>
                 </Control>
               </Group>
@@ -225,6 +225,7 @@
       <bt:Urls>
         <bt:Url id="functionFile" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
         <bt:Url id="TaskPaneUrl" DefaultValue="https://bpminc.github.io/InsertTextPane/InsertText.html"/>
+        <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/SettingsPane/SettingsPane.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
