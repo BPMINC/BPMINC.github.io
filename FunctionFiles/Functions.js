@@ -23,27 +23,34 @@ Office.initialize = function () {
 
 function addHTMLToBody(text, icon, event) {
   const mailItem = Office.context.mailbox.item;
-  let body = '';
+  const base64String =
+    "iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN0S+bUAAAAMdFJOUwAQIDBAUI+fr7/P7yEupu8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVGhD7dfLdoMwDEVR6Cspzf9/b20QYOthS5Zn0Z2kVdY6O2WULrFYLBaLxd5ur4mDZD14b8ogWS/dtxV+dmx9ysA2QUj9TQRWv5D7HyKwuIW9n0vc8tkpHP0W4BOg3wQ8wtlvA+PC1e8Ao8Ld7wFjQtHvAiNC2e8DdqHqKwCrUPc1gE1AfRVgEXBfB+gF0lcCWoH2tYBOYPpqQCNwfT3QF9i+AegJfN8CtAWhbwJagtS3AbIg9o2AJMh9M5C+SVGBvx6zAfmT0r+Bv8JMwP4kyFPir+cswF5KL3WLv14zAFBCLf56Tw9cparFX4upgaJUtPhrOS1QlY5W+vWTXrGgBFB/b72ev3/0igUdQPppP/nfowfKUUEFcP207y/yxKmgAYQ+PywoAFOfCH3A2MdCFzD3kdADBvq10AGG+pXQBgb7pdAEhvuF0AIc/VtoAK7+JciAs38KIuDugyAC/v4hiMCE/i7IwLRBsh68N2WQjMVisVgs9i5bln8LGScNcCrONQAAAABJRU5ErkJggg==";
 
-  mailItem.body.getAsync(Office.CoercionType.Html,
-    function (result){
-      body = result.replace("someText", "someMoreText");
-    })
+  // Get the current body of the message or appointment.
+  mailItem.body.getAsync(Office.CoercionType.Html, (bodyResult) => {
+    if (bodyResult.status === Office.AsyncResultStatus.Succeeded) {
+      // Insert the Base64-encoded image to the beginning of the body.
+      const options = { isInline: true, asyncContext: bodyResult.value };
+      mailItem.addFileAttachmentFromBase64Async(base64String, "sample.png", options, (attachResult) => {
+        if (attachResult.status === Office.AsyncResultStatus.Succeeded) {
+          let body = attachResult.asyncContext;
+          body = body.replace("<p class=MsoNormal>", `<p class=MsoNormal><img src="cid:sample.png">`);
 
-  mailItem.body.setAsync(body,{ coercionType: Office.CoercionType.Html },
-    function (asyncResult){
-      if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-        statusUpdate(icon, "\"" + text + "\" inserted successfully.");
-      }
-      else {
-        Office.context.mailbox.item.notificationMessages.addAsync("addTextError", {
-          type: "errorMessage",
-          message: "Failed to insert \"" + text + "\": " + asyncResult.error.message
-        });
-      }
-    }  
-  );
-  event.completed();
+          mailItem.body.setAsync(body, { coercionType: Office.CoercionType.Html }, (setResult) => {
+            if (setResult.status === Office.AsyncResultStatus.Succeeded) {
+              console.log("Inline Base64-encoded image added to the body.");
+            } else {
+              console.log(setResult.error.message);
+            }
+          });
+        } else {
+          console.log(attachResult.error.message);
+        }
+      });
+    } else {
+      console.log(bodyResult.error.message);
+    }
+  });
 }
 
 
