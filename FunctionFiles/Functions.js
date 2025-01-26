@@ -15,8 +15,8 @@ Office.initialize = function () {
 function addDefaultMsg(event) {
   _settings.set("customerName", "OneWebTech");
   _settings.saveAsync();
-  
-  setHTMLToSubject("Default Agenda Subject", "icon-16", event);
+
+  setHTMLToSubject(_customerName + "Default Agenda Subject", "icon-16", event);
   setHTMLToBody("This is the default agenda text<br/>", "icon-16", event);
 }
 
