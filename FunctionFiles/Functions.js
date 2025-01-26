@@ -41,7 +41,9 @@ function addHTMLToBody(text, icon, event) {
           message: "Failed to insert \"" + text + "\": " + asyncResult.error.message
         });
       }
-    });
+    }  
+  );
+  event.completed();
 }
 
 
