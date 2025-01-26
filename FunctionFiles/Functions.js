@@ -28,14 +28,14 @@ function addHTMLToBody(text, icon, event) {
         Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: icon,
-          message: text,
+          message: "Success",
           persistent: false
         });
       }
       else {
         Office.context.mailbox.item.notificationMessages.addAsync("error", {
           type: "errorMessage",
-          message: "Failed to insert \"" + text + "\": " + asyncResult.error.message,
+          message: "Failed - " + asyncResult.error.message,
           persistent: false
         });
       }
