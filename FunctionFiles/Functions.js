@@ -12,9 +12,9 @@ Office.initialize = function () {
   _customerBalance = _settings.get("customerBalance");
 }
 
-async function addDefaultMsg(event) {
-  await setHTMLToSubject("Default Agenda Subject", "icon-16", event);
-  await setHTMLToBody("<b>This is the default agenda text</b><br/>", "icon-16", event);
+function addDefaultMsg(event) {
+  setHTMLToSubject("Default Agenda Subject", "icon-16", event);
+  setHTMLToBody("<b>This is the default agenda text</b><br/>", "icon-16", event);
 }
 
 function addP2PMsg(event) {
