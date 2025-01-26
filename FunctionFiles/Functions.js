@@ -48,68 +48,6 @@ function addDefaultMsgToBody(event) {
   addHTMLToBody("<b>This is the test agenda text</b><br/>", "blue-icon-16", event);
 }
 
-/* function addDefaultMsgToBody(event) {
-  addTextToBody("This is the R2R agenda text", "blue-icon-16", event);
-} */
-
 function addMsg1ToBody(event) {
   addTextToBody("This is the P2P agenda text", "red-icon-16", event);
-}
-
-// Gets the subject of the item and displays it in the info bar.
-function getSubject(event) {
-  var subject = Office.context.mailbox.item.subject;
-  
-  Office.context.mailbox.item.notificationMessages.addAsync("subject", {
-    type: "informationalMessage",
-    icon: "blue-icon-16",
-    message: "Subject: " + subject,
-    persistent: false
-  });
-  
-  event.completed();
-}
-
-// Gets the item class of the item and displays it in the info bar.
-function getItemClass(event) {
-  var itemClass = Office.context.mailbox.item.itemClass;
-  
-  Office.context.mailbox.item.notificationMessages.addAsync("itemClass", {
-    type: "informationalMessage",
-    icon: "red-icon-16",
-    message: "Item Class: " + itemClass,
-    persistent: false
-  });
-  
-  event.completed();
-}
-
-// Gets the date and time when the item was created and displays it in the info bar.
-function getDateTimeCreated(event) {
-  var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
-  
-  Office.context.mailbox.item.notificationMessages.addAsync("dateTimeCreated", {
-    type: "informationalMessage",
-    icon: "red-icon-16",
-    message: "Created: " + dateTimeCreated.toLocaleString(),
-    persistent: false
-  });
-  
-  event.completed();
-}
-
-// Gets the ID of the item and displays it in the info bar.
-function getItemID(event) {
-  // Limited to 150 characters max in the info bar, so 
-  // only grab the first 50 characters of the ID
-  var itemID = Office.context.mailbox.item.itemId.substring(0, 50);
-  
-  Office.context.mailbox.item.notificationMessages.addAsync("itemID", {
-    type: "informationalMessage",
-    icon: "red-icon-16",
-    message: "Item ID: " + itemID,
-    persistent: false
-  });
-  
-  event.completed();
 }
