@@ -25,7 +25,7 @@ function addHTMLToBody(text, icon, event) {
   Office.context.mailbox.item.body.prependAsync(text, { coercionType: Office.CoercionType.HTML }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-        Office.context.mailbox.item.notificationMessages.replaceAsync("success", {
+        Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           message: "Succesful insert",
           persistent: false
