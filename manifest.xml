@@ -54,14 +54,14 @@
           <!-- Message compose form -->      
           <ExtensionPoint xsi:type="MessageComposeCommandSurface">
             <OfficeTab id="TabDefault">
-              <Group id="msgComposeDemoGroup">
+              <Group id="msgDemoGroup">
                 <Label resid="groupLabel" />
                 <!-- Function (UI-less) button -->
-                <Control xsi:type="Button" id="msgComposeFunctionButton">
-                  <Label resid="funcComposeButtonLabel" />
+                <Control xsi:type="Button" id="msgFunctionButton">
+                  <Label resid="funcButtonLabel" />
                   <Supertip>
-                    <Title resid="funcComposeSuperTipTitle" />
-                    <Description resid="funcComposeSuperTipDescription" />
+                    <Title resid="funcSuperTipTitle" />
+                    <Description resid="funcSuperTipDescription" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -73,11 +73,11 @@
                   </Action>
                 </Control>
                 <!-- Menu (dropdown) button -->
-                <Control xsi:type="Menu" id="msgComposeMenuButton">
-                  <Label resid="menuComposeButtonLabel" />
+                <Control xsi:type="Menu" id="msgMenuButton">
+                  <Label resid="menuButtonLabel" />
                   <Supertip>
-                    <Title resid="menuComposeSuperTipTitle" />
-                    <Description resid="menuComposeSuperTipDescription" />
+                    <Title resid="menuSuperTipTitle" />
+                    <Description resid="menuSuperTipDescription" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -85,11 +85,11 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Items>
-                    <Item id="msgComposeMenuItem1">
-                      <Label resid="menuItem1ComposeLabel" />
+                    <Item id="msgMenuItem1">
+                      <Label resid="menuItem1Label" />
                       <Supertip>
-                        <Title resid="menuItem1ComposeLabel" />
-                        <Description resid="menuItem1ComposeTip" />
+                        <Title resid="menuItem1Label" />
+                        <Description resid="menuItem1Tip" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -103,11 +103,11 @@
                   </Items>
                 </Control>
                 <!-- Task pane button -->
-                <Control xsi:type="Button" id="msgComposeOpenPaneButton">
-                  <Label resid="paneComposeButtonLabel" />
+                <Control xsi:type="Button" id="msgOpenPaneButton">
+                  <Label resid="paneButtonLabel" />
                   <Supertip>
-                    <Title resid="paneComposeSuperTipTitle" />
-                    <Description resid="paneComposeSuperTipDescription" />
+                    <Title resid="paneSuperTipTitle" />
+                    <Description resid="paneSuperTipDescription" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -115,7 +115,7 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="composeTaskPaneUrl" />
+                    <SourceLocation resid="TaskPaneUrl" />
                   </Action>
                 </Control>
               </Group>
@@ -125,14 +125,14 @@
           <!-- Appointment compose form -->
           <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
             <OfficeTab id="TabDefault">
-              <Group id="apptComposeDemoGroup">
+              <Group id="apptDemoGroup">
                 <Label resid="groupLabel" />
                 <!-- Function (UI-less) button -->
-                <Control xsi:type="Button" id="apptComposeFunctionButton">
-                  <Label resid="funcComposeButtonLabel" />
+                <Control xsi:type="Button" id="apptFunctionButton">
+                  <Label resid="funcButtonLabel" />
                   <Supertip>
-                    <Title resid="funcComposeSuperTipTitle" />
-                    <Description resid="funcComposeSuperTipDescription" />
+                    <Title resid="funcSuperTipTitle" />
+                    <Description resid="funcSuperTipDescription" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -144,11 +144,11 @@
                   </Action>
                 </Control>
                 <!-- Menu (dropdown) button -->
-                <Control xsi:type="Menu" id="apptComposeMenuButton">
-                  <Label resid="menuComposeButtonLabel" />
+                <Control xsi:type="Menu" id="apptMenuButton">
+                  <Label resid="menuButtonLabel" />
                   <Supertip>
-                    <Title resid="menuComposeSuperTipTitle" />
-                    <Description resid="menuComposeSuperTipDescription" />
+                    <Title resid="menuSuperTipTitle" />
+                    <Description resid="menuSuperTipDescription" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -156,11 +156,11 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Items>
-                    <Item id="apptComposeMenuItem1">
-                      <Label resid="menuItem1ComposeLabel" />
+                    <Item id="apptMenuItem1">
+                      <Label resid="menuItem1Label" />
                       <Supertip>
-                        <Title resid="menuItem1ComposeLabel" />
-                        <Description resid="menuItem1ComposeTip" />
+                        <Title resid="menuItem1Label" />
+                        <Description resid="menuItem1Tip" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -175,11 +175,11 @@
                   </Items>
                 </Control>
                 <!-- Task pane button -->
-                <Control xsi:type="Button" id="apptComposeOpenPaneButton">
-                  <Label resid="paneComposeButtonLabel" />
+                <Control xsi:type="Button" id="apptOpenPaneButton">
+                  <Label resid="paneButtonLabel" />
                   <Supertip>
-                    <Title resid="paneComposeSuperTipTitle" />
-                    <Description resid="paneComposeSuperTipDescription" />
+                    <Title resid="paneSuperTipTitle" />
+                    <Description resid="paneSuperTipDescription" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -187,7 +187,7 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="composeTaskPaneUrl" />
+                    <SourceLocation resid="TaskPaneUrl" />
                   </Action>
                 </Control>
               </Group>
@@ -209,30 +209,30 @@
 
       <bt:Urls>
         <bt:Url id="functionFile" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
-        <bt:Url id="composeTaskPaneUrl" DefaultValue="https://bpminc.github.io/InsertTextPane/InsertText.html"/>
+        <bt:Url id="TaskPaneUrl" DefaultValue="https://bpminc.github.io/InsertTextPane/InsertText.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Add-in Demo"/>
-        <!-- Compose mode -->
-        <bt:String id="funcComposeButtonLabel" DefaultValue="Insert default agenda"/>
-        <bt:String id="menuComposeButtonLabel" DefaultValue="Insert specific agenda"/>
-        <bt:String id="paneComposeButtonLabel" DefaultValue="Insert custom agenda"/>
+ 
+        <bt:String id="funcButtonLabel" DefaultValue="Insert default agenda"/>
+        <bt:String id="menuButtonLabel" DefaultValue="Insert specific agenda"/>
+        <bt:String id="paneButtonLabel" DefaultValue="Insert custom agenda"/>
 
-        <bt:String id="funcComposeSuperTipTitle" DefaultValue="Inserts the default agenda"/>
-        <bt:String id="menuComposeSuperTipTitle" DefaultValue="Choose a agenda to insert"/>
-        <bt:String id="paneComposeSuperTipTitle" DefaultValue="Enter your own agenda to insert"/>
+        <bt:String id="funcSuperTipTitle" DefaultValue="Inserts the default agenda"/>
+        <bt:String id="menuSuperTipTitle" DefaultValue="Choose a agenda to insert"/>
+        <bt:String id="paneSuperTipTitle" DefaultValue="Enter your own agenda to insert"/>
 
-        <bt:String id="menuItem1ComposeLabel" DefaultValue="P2P Agenda"/>
+        <bt:String id="menuItem1Label" DefaultValue="P2P Agenda"/>
       </bt:ShortStrings>
 
       <bt:LongStrings>
-        <!-- Compose mode -->
-        <bt:String id="funcComposeSuperTipDescription" DefaultValue="Example function button."/>
-        <bt:String id="menuComposeSuperTipDescription" DefaultValue="Example drop-down menu button."/>
-        <bt:String id="paneComposeSuperTipDescription" DefaultValue="Example task pane button."/>
+ 
+        <bt:String id="funcSuperTipDescription" DefaultValue="Example function button."/>
+        <bt:String id="menuSuperTipDescription" DefaultValue="Example drop-down menu button."/>
+        <bt:String id="paneSuperTipDescription" DefaultValue="Example task pane button."/>
 
-        <bt:String id="menuItem1ComposeTip" DefaultValue="P2P Agenda tooltip." />
+        <bt:String id="menuItem1Tip" DefaultValue="P2P Agenda tooltip." />
       </bt:LongStrings>
 
     </Resources>

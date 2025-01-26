@@ -3,17 +3,6 @@
 Office.initialize = function () {
 }
 
-// Helper function to add a status message to
-// the info bar.
-function statusUpdate(icon, text) {
-  Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
-    type: "informationalMessage",
-    icon: icon,
-    message: text,
-    persistent: false
-  });
-}
-
 // Adds text into the body of the item, then reports the results
 // to the info bar.
 /* function addTextToBody(text, icon, event) {
@@ -33,20 +22,39 @@ function statusUpdate(icon, text) {
 } */
 
 function addHTMLToBody(text, icon, event) {
-  Office.context.mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.HTML}, 
-    function (asyncResult){
-      if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-        statusUpdate(icon, "Agenda inserted successfully");
+  let body = '';
+
+  Office.context.mailbox.item.body.getAsync({ coercionType: Office.CoercionType.html },
+    function (result) {
+      if (result.status === Office.AsyncResultStatus.Succeeded) {
+        body = result.value;
+        body.replace("someText","someMoreText");
       }
-      else {
-        Office.context.mailbox.item.notificationMessages.addAsync("addTextError", {
-          type: "errorMessage",
-          message: "Failed to insert agenda - " + asyncResult.error.message
-        });
-      }
-      event.completed();
     });
-}
+        
+    Office.context.mailbox.item.body.setAsync(body, { coercionType: Office.CoercionType.html }, 
+      function (asyncResult){
+        if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+          Office.context.mailbox.item.notificationMessages.addAsync("status", {
+            type: "informationalMessage",
+            icon: icon,
+            message: "Agenda inserted successfully!",
+            persistent: false
+          })
+        }
+        else {
+          Office.context.mailbox.item.notificationMessages.addAsync("error", {
+            type: "errorMessage",
+            icon: icon,
+            message: "Failed to insert agenda - " + asyncResult.error.message,
+            persistent: false
+          });
+        }
+        event.completed();
+      }
+    )
+};
+
 
 function addDefaultMsgToBody(event) {
   addHTMLToBody("<b>This is the test agenda text</b>", "blue-icon-16", event);
