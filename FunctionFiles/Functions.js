@@ -22,38 +22,16 @@ Office.initialize = function () {
 } */
 
 function addHTMLToBody(text, icon, event) {
+  const mailItem = Office.context.mailbox.item;
   let body = '';
 
-  Office.context.mailbox.item.body.getAsync({ coercionType: Office.CoercionType.html },
-    function (result) {
-      if (result.status === Office.AsyncResultStatus.Succeeded) {
-        body = result.value;
-        body.replace("someText","someMoreText");
-      }
-    });
-        
-    Office.context.mailbox.item.body.setAsync(body, { coercionType: Office.CoercionType.html }, 
-      function (asyncResult){
-        if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-          Office.context.mailbox.item.notificationMessages.addAsync("status", {
-            type: "informationalMessage",
-            icon: icon,
-            message: "Agenda inserted successfully!",
-            persistent: false
-          })
-        }
-        else {
-          Office.context.mailbox.item.notificationMessages.addAsync("error", {
-            type: "errorMessage",
-            icon: icon,
-            message: "Failed to insert agenda - " + asyncResult.error.message,
-            persistent: false
-          });
-        }
-        event.completed();
-      }
-    )
-};
+  mailItem.body.getAsync(Office.CoercionType.Html,
+    function (result){
+      body = result.replace("someText", "someMoreText");
+    })
+
+  mailItem.body.setAsync(body,{ coercionType: Office.CoercionType.Html });
+}
 
 
 function addDefaultMsgToBody(event) {
