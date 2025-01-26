@@ -51,78 +51,6 @@
         <DesktopFormFactor>
           <FunctionFile resid="functionFile" />
 
-          <!-- Message compose form -->      
-          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="msgDemoGroup">
-                <Label resid="groupLabel" />
-                <!-- Function (UI-less) button -->
-                <Control xsi:type="Button" id="msgFunctionButton">
-                  <Label resid="funcButtonLabel" />
-                  <Supertip>
-                    <Title resid="funcTipTitle" />
-                    <Description resid="funcTipDesc" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon-16" />
-                    <bt:Image size="32" resid="icon-32" />
-                    <bt:Image size="80" resid="icon-80" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>addDefaultMsg</FunctionName>
-                  </Action>
-                </Control>
-                <!-- Menu (dropdown) button -->
-                <Control xsi:type="Menu" id="msgMenuButton">
-                  <Label resid="menuButtonLabel" />
-                  <Supertip>
-                    <Title resid="menuTipTitle" />
-                    <Description resid="menuTipDesc" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon-16" />
-                    <bt:Image size="32" resid="icon-32" />
-                    <bt:Image size="80" resid="icon-80" />
-                  </Icon>
-                  <Items>
-                    <Item id="msgMenuItem1">
-                      <Label resid="menuItem1Label" />
-                      <Supertip>
-                        <Title resid="menuItem1Label" />
-                        <Description resid="menuItem1Tip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="icon-16" />
-                        <bt:Image size="32" resid="icon-32" />
-                        <bt:Image size="80" resid="icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addP2PMsg</FunctionName>
-                      </Action>
-                    </Item>                  
-                  </Items>
-                </Control>
-                <!-- Task pane button -->
-                <Control xsi:type="Button" id="msgOpenPaneButton">
-                  <Label resid="paneButtonLabel" />
-                  <Supertip>
-                    <Title resid="paneTipTitle" />
-                    <Description resid="paneTipDesc" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon-16" />
-                    <bt:Image size="32" resid="icon-32" />
-                    <bt:Image size="80" resid="icon-80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="TaskPaneUrl" />
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-
-
 
 
           <!-- Appointment compose form -->
@@ -148,7 +76,7 @@
                       <Label resid="defaultInsertLabel" />
                       <Supertip>
                         <Title resid="defaultInsertLabel" />
-                        <Description resid="defaultInsertTip" />
+                        <Description resid="defaultInsertTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -163,7 +91,7 @@
                       <Label resid="defaultCreateLabel" />
                       <Supertip>
                         <Title resid="defaultCreateLabel" />
-                        <Description resid="defaultCreateTip" />
+                        <Description resid="defaultCreateTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -194,7 +122,7 @@
                       <Label resid="specificR2RLabel" />
                       <Supertip>
                         <Title resid="specificR2RLabel" />
-                        <Description resid="specificR2RCTipDesc" />
+                        <Description resid="specificR2RTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -209,7 +137,7 @@
                       <Label resid="specificP2PLabel" />
                       <Supertip>
                         <Title resid="specificP2PLabel" />
-                        <Description resid="specificP2PCTipDesc" />
+                        <Description resid="specificP2PTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
