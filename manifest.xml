@@ -69,7 +69,7 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>addDefaultMsgToBody</FunctionName>
+                    <FunctionName>addDefaultMsg</FunctionName>
                   </Action>
                 </Control>
                 <!-- Menu (dropdown) button -->
@@ -97,7 +97,7 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addMsg1ToBody</FunctionName>
+                        <FunctionName>addP2PMsg</FunctionName>
                       </Action>
                     </Item>                  
                   </Items>
