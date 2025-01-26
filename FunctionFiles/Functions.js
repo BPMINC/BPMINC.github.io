@@ -22,7 +22,7 @@ Office.initialize = function () {
 } */
 
 function addHTMLToBody(text, icon, event) {
-  Office.context.mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.HTML }, 
+  Office.context.mailbox.item.body.prependAsync(text, { coercionType: Office.CoercionType.HTML }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
         Office.context.mailbox.item.notificationMessages.replaceAsync("success", {
