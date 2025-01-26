@@ -55,7 +55,7 @@ function addHTMLToBody(text, icon, event){
 
     }
   )
-
+  event.completed();
 }
 
 
