@@ -41,7 +41,7 @@ function setHTMLToSubject(text, icon, event) {
           persistent: false
         });
       }
-      event.completed();
+      
     });
 } 
 
