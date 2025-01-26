@@ -60,8 +60,8 @@
                 <Control xsi:type="Button" id="msgFunctionButton">
                   <Label resid="funcButtonLabel" />
                   <Supertip>
-                    <Title resid="funcSuperTipTitle" />
-                    <Description resid="funcSuperTipDescription" />
+                    <Title resid="funcTipTitle" />
+                    <Description resid="funcTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -76,8 +76,8 @@
                 <Control xsi:type="Menu" id="msgMenuButton">
                   <Label resid="menuButtonLabel" />
                   <Supertip>
-                    <Title resid="menuSuperTipTitle" />
-                    <Description resid="menuSuperTipDescription" />
+                    <Title resid="menuTipTitle" />
+                    <Description resid="menuTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -106,8 +106,8 @@
                 <Control xsi:type="Button" id="msgOpenPaneButton">
                   <Label resid="paneButtonLabel" />
                   <Supertip>
-                    <Title resid="paneSuperTipTitle" />
-                    <Description resid="paneSuperTipDescription" />
+                    <Title resid="paneTipTitle" />
+                    <Description resid="paneTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -131,8 +131,8 @@
                 <Control xsi:type="Button" id="apptFunctionButton">
                   <Label resid="funcButtonLabel" />
                   <Supertip>
-                    <Title resid="funcSuperTipTitle" />
-                    <Description resid="funcSuperTipDescription" />
+                    <Title resid="funcTipTitle" />
+                    <Description resid="funcTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -147,8 +147,8 @@
                 <Control xsi:type="Menu" id="apptMenuButton">
                   <Label resid="menuButtonLabel" />
                   <Supertip>
-                    <Title resid="menuSuperTipTitle" />
-                    <Description resid="menuSuperTipDescription" />
+                    <Title resid="menuTipTitle" />
+                    <Description resid="menuTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -178,8 +178,8 @@
                 <Control xsi:type="Button" id="apptOpenPaneButton">
                   <Label resid="paneButtonLabel" />
                   <Supertip>
-                    <Title resid="paneSuperTipTitle" />
-                    <Description resid="paneSuperTipDescription" />
+                    <Title resid="paneTipTitle" />
+                    <Description resid="paneTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -194,8 +194,8 @@
                 <Control xsi:type="Button" id="apptOpenPaneButton2">
                   <Label resid="paneButtonLabel" />
                   <Supertip>
-                    <Title resid="paneSuperTipTitle" />
-                    <Description resid="paneSuperTipDescription" />
+                    <Title resid="paneTipTitle" />
+                    <Description resid="paneTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -229,24 +229,27 @@
       </bt:Urls>
 
       <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="Add-in Demo"/>
+        <bt:String id="groupLabel" DefaultValue="Agenda Generator Demo"/>
  
         <bt:String id="funcButtonLabel" DefaultValue="Insert default agenda"/>
         <bt:String id="menuButtonLabel" DefaultValue="Insert specific agenda"/>
         <bt:String id="paneButtonLabel" DefaultValue="Insert custom agenda"/>
+        <bt:String id="settingsButtonLabel" DefaultValue="Settings"/>
 
-        <bt:String id="funcSuperTipTitle" DefaultValue="Inserts the default agenda"/>
-        <bt:String id="menuSuperTipTitle" DefaultValue="Choose a agenda to insert"/>
-        <bt:String id="paneSuperTipTitle" DefaultValue="Enter your own agenda to insert"/>
+        <bt:String id="funcTipTitle" DefaultValue="Inserts the default agenda"/>
+        <bt:String id="menuTipTitle" DefaultValue="Choose a agenda to insert"/>
+        <bt:String id="paneTipTitle" DefaultValue="Enter your own agenda to insert"/>
+        <bt:String id="settingsTipTitle" DefaultValue="Capute the Agenda Generator settings here"/>
 
         <bt:String id="menuItem1Label" DefaultValue="P2P Agenda"/>
       </bt:ShortStrings>
 
       <bt:LongStrings>
  
-        <bt:String id="funcSuperTipDescription" DefaultValue="Example function button."/>
-        <bt:String id="menuSuperTipDescription" DefaultValue="Example drop-down menu button."/>
-        <bt:String id="paneSuperTipDescription" DefaultValue="Example task pane button."/>
+        <bt:String id="funcTipDesc" DefaultValue="Example function button."/>
+        <bt:String id="menuTipDesc" DefaultValue="Example drop-down menu button."/>
+        <bt:String id="paneTipDesc" DefaultValue="Example task pane button."/>
+        <bt:String id="settingsTipDesc" DefaultValue=""/>
 
         <bt:String id="menuItem1Tip" DefaultValue="P2P Agenda tooltip." />
       </bt:LongStrings>
