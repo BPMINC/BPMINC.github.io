@@ -16,12 +16,12 @@ function addDefaultMsg(event) {
   _settings.set("customerName", "OneWebTech");
   _settings.saveAsync();
 
-  setHTMLToSubject(_customerName + "Default Agenda Subject", "icon-16", event);
+  setHTMLToSubject("Default Agenda Subject", "icon-16", event);
   setHTMLToBody("This is the default agenda text<br/>", "icon-16", event);
 }
 
 function addP2PMsg(event) {
-  setHTMLToSubject("P2P Requirements Gathering", "icon-16", event);
+  setHTMLToSubject(_customerName + " - P2P Requirements Gathering", "icon-16", event);
   setHTMLToBody("<b><i>Meeting Objective</i></b><br/><br/>\
     The objective of this session is for our team to gather \
     a solid understanding of your AP processes from vendor \
