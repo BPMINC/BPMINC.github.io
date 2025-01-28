@@ -198,7 +198,7 @@
 
       <bt:Urls>
         <bt:Url id="FunctionsUrl" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
-        <bt:Url id="DefaultPaneUrl" DefaultValue="https://bpminc.github.io/DefaultPane/DefaultPane.html"/>
+        <bt:Url id="DefaultPaneUrl" DefaultValue="https://bpminc.github.io/DefaultAgenda/DefaultAgenda.html"/>
         <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/SettingsPane/SettingsPane.html"/>
       </bt:Urls>
 
