@@ -24,7 +24,7 @@ let _settings;
         await saveSubject();
         await saveBody();  
         
-        _settings.saveAsync();
+        await _settings.saveAsync();
         console.log("done"); 
 
         event.completed()
