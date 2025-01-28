@@ -18,9 +18,9 @@ let _settings;
         });
     };
     
-    function saveAgenda(event){
-        saveSubject();
-        saveBody();  
+    async function saveAgenda(event){
+        await saveSubject();
+        await saveBody();  
         
         _settings.saveAsync();   
     }
@@ -28,11 +28,15 @@ let _settings;
     function saveSubject(){
         var text = $('#subjectToSave').val();
         _settings.set("subject", text);
+
+        return new Promise(resolve, reject);
     }
 
     function saveBody(){
         var html = $('#bodyToSave').val();
         _settings.set("body", html);  
+
+        return new Promise(resolve, reject);
     }
     
 })();
