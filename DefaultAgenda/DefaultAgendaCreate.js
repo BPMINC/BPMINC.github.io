@@ -31,7 +31,7 @@ let _settings;
         var text = $('#subjectToSave').val();
         _settings.set("subject", text);
 
-        console.log(text);
+        console.log(text + " - logging");
         return new Promise((resolve, reject) => {  
             // Fake success  
             setTimeout(() => {  
