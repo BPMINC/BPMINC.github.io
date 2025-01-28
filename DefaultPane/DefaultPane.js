@@ -22,6 +22,9 @@ let _settings;
 
         var text = $('#subjectToSave').val();
         _settings.set("subject", text);
+
+        var html = $('#bodyToSave').val();
+        _settings.set("body", html);        
     }
     
 })();
