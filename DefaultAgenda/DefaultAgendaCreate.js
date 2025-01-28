@@ -31,6 +31,7 @@ let _settings;
         var text = $('#subjectToSave').val();
         _settings.set("subject", text);
 
+        console.log("somedamnthing");
         return new Promise(resolve, reject);
     }
 
