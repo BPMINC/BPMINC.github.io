@@ -8,13 +8,13 @@ Office.initialize = function () {
   _settings = Office.context.roamingSettings;
 }
 
-function insertDefaultAgenda(event) {
+async function insertDefaultAgenda(event) {
 
   _subject = _settings.get("subject");
-  setTextToSubject("somesubject", "icon-16", event);
+  await setTextToSubject("somesubject", "icon-16", event);
 
   _body = _settings.get("body");
-  setHTMLToBody("someBody", "icon-16", event);
+  await setHTMLToBody("someBody", "icon-16", event);
 }
 
 
@@ -47,7 +47,7 @@ async function setTextToSubject(text, icon, event) {
   event.completed();
 } 
 
-function setHTMLToBody(html, icon, event) {
+async function setHTMLToBody(html, icon, event) {
   Office.context.mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
@@ -65,6 +65,8 @@ function setHTMLToBody(html, icon, event) {
           persistent: false
         });
       }
+
+      return new Promise(resolve, reject);
     }
   );
   event.completed();
