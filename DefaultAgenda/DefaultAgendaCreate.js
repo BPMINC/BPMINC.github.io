@@ -5,73 +5,60 @@
 let _settings;
 
 (function () {
-    "use strict";
+  "use strict";
+
+  // The Office initialize function must be run each time a new page is loaded
+  Office.initialize = function (reason) {
+    $(document).ready(function () {
+      app.initialize();
+      
+      _settings = Office.context.roamingSettings;
+
+      var subject = _settings.get("subject")
+      $('#subjectToSave').val(subject);
+
+      var body = _settings.get("body")
+      $('#bodyToSave').val(body);
+
+      $('#save').click(saveAgenda);
+    });
+  };
   
-    // The Office initialize function must be run each time a new page is loaded
-    Office.initialize = function (reason) {
-        $(document).ready(function () {
-            app.initialize();
-            
-            _settings = Office.context.roamingSettings;
-
-            var subject = _settings.get("subject")
-            $('#subjectToSave').val(subject);
-
-            var body = _settings.get("body")
-            $('#bodyToSave').val(body);
-
-            $('#save').click(saveAgenda);
-        });
-    };
+  async function saveAgenda(event){
+      
+    saveSubject();
+    saveBody();  
     
-    async function saveAgenda(event){
-        
-        await saveSubject();
-        await saveBody();  
-        
-        await _settings.saveAsync(updateNotification);
+    await _settings.saveAsync(statusUpdate);
 
-        event.completed();
+    event.completed();
+  }
+
+  function saveSubject(){
+      var text = $('#subjectToSave').val();
+      _settings.set("subject", text);;
+  }
+
+  function saveBody(){
+      var html = $('#bodyToSave').val();
+      _settings.set("body", html);       
+  }
+
+  function statusUpdate(asyncResult){
+    if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+      Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
+        type: "informationalMessage",
+        message: "Success",
+        persistent: false
+      });
     }
-
-    async function saveSubject(){
-        var text = $('#subjectToSave').val();
-        _settings.set("subject", text);
-
-        return new Promise((resolve, reject) => {  
-            // Fake success  
-              resolve("success");
-        });
+    else {
+      Office.context.mailbox.item.notificationMessages.replaceAsync("error", {
+        type: "errorMessage",
+        message: "Failed - " + asyncResult.error.message,
+        persistent: false
+      });
     }
-
-   async function saveBody(){
-        var html = $('#bodyToSave').val();
-        _settings.set("body", html);  
-
-        return new Promise((resolve, reject) => {  
-            // Fake success   
-              resolve("success");  
-        });        
-    }
-
-    function updateNotification(asyncResult){
-        if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-          Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
-            type: "informationalMessage",
-            message: "Success",
-            persistent: false
-          });
-        }
-        else {
-          Office.context.mailbox.item.notificationMessages.addAsync("error", {
-            type: "errorMessage",
-            message: "Failed - " + asyncResult.error.message,
-            persistent: false
-          });
-        }
-        
-        return new Promise(resolve, reject);
-  
-    }
+  }
     
 })();

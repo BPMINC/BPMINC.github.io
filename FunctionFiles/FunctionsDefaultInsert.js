@@ -1,19 +1,12 @@
-let _mailbox;
-let _settings;
-
-Office.initialize = function () {
-  _mailbox = Office.context.mailbox;
-  _settings = Office.context.roamingSettings;
-}
 
 async function insertDefaultAgenda(event) {
 
-  var subject = _settings.get("subject");
+  var subject = Office.context.roamingSettings.get("subject");
   console.log(subject + " - sub")
 
   await setTextToSubject(subject, "icon-16");
 
-  var body = _settings.get("body");
+  var body = Office.context.roamingSettings.get("body");
   console.log(body + " - body");
 
   await setHTMLToBody(body, "icon-16");
@@ -23,11 +16,11 @@ async function insertDefaultAgenda(event) {
 
 async function setTextToSubject(text, icon, event) {
 
-  _mailbox.item.subject.setAsync(text, 
+  Office.context.mailbox.item.subject.setAsync(text, 
 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-        _mailbox.item.notificationMessages.replaceAsync("status", {
+        Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: icon,
           message: "Success",
@@ -35,7 +28,7 @@ async function setTextToSubject(text, icon, event) {
         });
       }
       else {
-        _mailbox.item.notificationMessages.addAsync("error", {
+        Office.context.mailbox.item.notificationMessages.addAsync("error", {
           type: "errorMessage",
           message: "Failed - " + asyncResult.error.message,
           persistent: false
