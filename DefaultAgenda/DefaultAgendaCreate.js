@@ -24,7 +24,8 @@ let _settings;
         await saveSubject();
         await saveBody();  
         
-        _settings.saveAsync();   
+        _settings.saveAsync();
+        console.log("done"); 
     }
 
     async function saveSubject(){
@@ -43,7 +44,7 @@ let _settings;
    async function saveBody(){
         var html = $('#bodyToSave').val();
         _settings.set("body", html);  
-        
+
         return new Promise((resolve, reject) => {  
             // Fake success  
             setTimeout(() => {  
