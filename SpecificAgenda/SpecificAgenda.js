@@ -1,11 +1,5 @@
 ﻿// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 
-let _mailbox;
-
-Office.initialize = function () {
-  _mailbox = Office.context.mailbox;
-}
-
  async function P2PSpecificAgenda(event) {
   
   await setTextToSubject("P2P Requirements Gathering", "icon-16", event);
@@ -24,11 +18,11 @@ Office.initialize = function () {
 
 async function setTextToSubject(text, icon, event) {
 
-  _mailbox.item.subject.setAsync(text, 
+  Office.context.mailbox.item.subject.setAsync(text, 
 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-        _mailbox.item.notificationMessages.replaceAsync("status", {
+        Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: icon,
           message: "Success",
@@ -36,7 +30,7 @@ async function setTextToSubject(text, icon, event) {
         });
       }
       else {
-        _mailbox.item.notificationMessages.addAsync("error", {
+        Office.context.mailbox.item.notificationMessages.addAsync("error", {
           type: "errorMessage",
           message: "Failed - " + asyncResult.error.message,
           persistent: false
