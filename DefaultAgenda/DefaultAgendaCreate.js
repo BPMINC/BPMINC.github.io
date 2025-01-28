@@ -17,7 +17,7 @@ let _settings;
             var subject = _settings.get("subject")
             $('#subjectToSave').val(subject);
 
-            var body = _settings.get("subject")
+            var body = _settings.get("body")
             $('#bodyToSave').val(body);
 
             $('#save').click(saveAgenda);
