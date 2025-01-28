@@ -32,7 +32,7 @@ let _settings;
     _settings.saveAsync(function (asyncResult) {
       // Display the result to the user
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-        console.log(`saved2`);
+        console.log(`saved3`);
         Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: "icon-16",
