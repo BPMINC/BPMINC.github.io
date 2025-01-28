@@ -2,6 +2,7 @@
 
 /// <reference path="../App.js" />
 
+let _mailbox
 let _settings;
 
 (function () {
@@ -12,6 +13,7 @@ let _settings;
     $(document).ready(function () {
       app.initialize();
       
+      _mailbox = Office.context.mailbox;
       _settings = Office.context.roamingSettings;
 
       var subject = _settings.get("subject")
@@ -32,18 +34,21 @@ let _settings;
     _settings.saveAsync(function (asyncResult) {
       // Display the result to the user
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-        console.log(`saved3`);
+
+        console.log("saved4")
         Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: "icon-16",
-          message: "Success",
+          message: "Save successful",
           persistent: false
         });        
-        /* app.showNotification("Success", "saved successfully"); */
       }
       else {
-        console.log(`not saved`);
-        /* app.showNotification("Error", "Failed to save: " + asyncResult.error.message); */
+        Office.context.mailbox.item.notificationMessages.addAsync("error", {
+          type: "errorMessage",
+          message: "Save Failed - " + asyncResult.error.message,
+          persistent: false
+        }); 
       }
     })
   }
