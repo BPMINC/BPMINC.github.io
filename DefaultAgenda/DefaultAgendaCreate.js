@@ -32,6 +32,7 @@ let _settings;
     await _settings.saveAsync(statusUpdate);
 
     event.completed();
+    console.log("done - DACreate");
   }
 
   function saveSubject(){
