@@ -24,15 +24,14 @@ let _settings;
     });
   };
   
-  async function saveAgenda(event){
+  async function saveAgenda(){
     console.log("start - DACreate");
-    
+
     saveSubject();
     saveBody();  
     
     await _settings.saveAsync(statusUpdate);
 
-    event.completed();
     console.log("done - DACreate");
   }
 
@@ -46,20 +45,13 @@ let _settings;
       _settings.set("body", html);       
   }
 
-  function statusUpdate(asyncResult){
+  function statusUpdate(asyncResult) {
+    // Display the result to the user
     if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-      Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
-        type: "informationalMessage",
-        message: "Success",
-        persistent: false
-      });
+      app.showNotification("Success", "saved successfully");
     }
     else {
-      Office.context.mailbox.item.notificationMessages.replaceAsync("error", {
-        type: "errorMessage",
-        message: "Failed - " + asyncResult.error.message,
-        persistent: false
-      });
+      app.showNotification("Error", "Failed to save: " + asyncResult.error.message);
     }
   }
     
