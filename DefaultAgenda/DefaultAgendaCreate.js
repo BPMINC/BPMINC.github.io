@@ -13,9 +13,9 @@ let _settings;
             app.initialize();
             
             _settings = Office.context.roamingSettings;
-            $('#subjectToSave').val() = _settings.get("subject");
-            $('#bodyToSave').val() = _settings.get("body");
-            
+            $('#subjectToSave').val(_settings.get("subject"));
+            $('#bodyToSave').val(_settings.get("body"));
+
             $('#save').click(saveAgenda);
         });
     };
