@@ -25,7 +25,8 @@ let _settings;
   };
   
   async function saveAgenda(event){
-      
+    console.log("start - DACreate");
+    
     saveSubject();
     saveBody();  
     
