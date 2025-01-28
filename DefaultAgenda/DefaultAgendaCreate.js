@@ -58,7 +58,6 @@ let _settings;
         if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
           Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
             type: "informationalMessage",
-            icon: icon,
             message: "Success",
             persistent: false
           });
