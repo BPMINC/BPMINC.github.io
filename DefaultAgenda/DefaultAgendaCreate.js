@@ -35,6 +35,7 @@ let _settings;
         console.log(`saved2`);
         Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
+          icon: "icon-16",
           message: "Success",
           persistent: false
         });        
