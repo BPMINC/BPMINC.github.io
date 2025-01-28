@@ -9,6 +9,9 @@
     Office.initialize = function (reason) {
         $(document).ready(function () {
             app.initialize();
+
+            _settings = Office.context.roamingSettings;
+            $('#customerToAdd').val(_settings.get("customer"));
   
             $('#addCustomer').click(addCustomer);
         });
@@ -16,6 +19,15 @@
     
     function addCustomer() {
       var customerToAdd = $('#customerToAdd').val();
+
+      _settings.set("customer", customerToAdd);
+
+        return new Promise((resolve, reject) => {  
+            // Fake success  
+            setTimeout(() => {  
+              resolve("success");  
+            }, 1000);
+        });
       
 
       

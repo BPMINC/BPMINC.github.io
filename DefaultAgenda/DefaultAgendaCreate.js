@@ -13,8 +13,12 @@ let _settings;
             app.initialize();
             
             _settings = Office.context.roamingSettings;
-            $('#subjectToSave').val(_settings.get("subject"));
-            $('#bodyToSave').val(_settings.get("body"));
+
+            var subject = _settings.get("subject")
+            $('#subjectToSave').val(subject);
+
+            var body = _settings.get("subject")
+            $('#bodyToSave').val(body);
 
             $('#save').click(saveAgenda);
         });
@@ -25,7 +29,6 @@ let _settings;
         await saveBody();  
         
         await _settings.saveAsync();
-        console.log("done"); 
 
         event.completed()
     }
@@ -34,7 +37,6 @@ let _settings;
         var text = $('#subjectToSave').val();
         _settings.set("subject", text);
 
-        console.log(text + " - logging");
         return new Promise((resolve, reject) => {  
             // Fake success  
             setTimeout(() => {  

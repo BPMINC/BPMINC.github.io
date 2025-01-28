@@ -1,7 +1,5 @@
 let _mailbox;
 let _settings;
-let _subject;
-let _body;
 
 Office.initialize = function () {
   _mailbox = Office.context.mailbox;
@@ -10,11 +8,11 @@ Office.initialize = function () {
 
 async function insertDefaultAgenda(event) {
 
-  _subject = _settings.get("subject");
-  await setTextToSubject(_subject, "icon-16", event);
+  var subject = _settings.get("subject");
+  await setTextToSubject(subject, "icon-16", event);
 
-  _body = _settings.get("body");
-  await setHTMLToBody(_body, "icon-16", event);
+  var body = _settings.get("body");
+  await setHTMLToBody(body, "icon-16", event);
 }
 
 
