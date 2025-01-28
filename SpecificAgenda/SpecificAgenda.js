@@ -1,44 +1,14 @@
 ﻿// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 
 let _mailbox;
-let _settings;
-let _subject;
-let _body;
 
 Office.initialize = function () {
   _mailbox = Office.context.mailbox;
-  _settings = Office.context.roamingSettings;
 }
 
-function createDefaultAgenda(event) {
+function P2PSpecificAgenda(event) {
   
-  saveHTMLForSubject("Default Agenda Subject", "icon-16", event);
-  saveHTMLForBody("This is the default agenda text<br/>", event);
-
-  _settings.saveAsync();
-}
-
-function saveHTMLForSubject(text, event ){
-  _settings.set("subject", text);
-}
-
-function saveHTMLForBody(html, event ){
-  _settings.set("subject", text);
-}
-
-
-
-
-
-
-
-function addP2PMsg(event) {
-  
- 
-
-
-
-  setTextToSubject( + " - P2P Requirements Gathering", "icon-16", event);
+  setTextToSubject(" - P2P Requirements Gathering", "icon-16", event);
   setHTMLToBody("<b><i>Meeting Objective</i></b><br/><br/>\
     The objective of this session is for our team to gather \
     a solid understanding of your AP processes from vendor \
