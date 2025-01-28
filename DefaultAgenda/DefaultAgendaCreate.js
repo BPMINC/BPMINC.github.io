@@ -24,12 +24,14 @@ let _settings;
         });
     };
     
-    async function saveAgenda(){
+    async function saveAgenda(event){
         
         await saveSubject();
         await saveBody();  
         
         await _settings.saveAsync(updateNotification);
+
+        event.completed();
     }
 
     async function saveSubject(){
