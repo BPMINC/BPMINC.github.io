@@ -20,7 +20,9 @@ let _settings;
     
     function saveAgenda(event){
         saveSubject();
-        saveBody();      
+        saveBody();  
+        
+        _settings.saveAsync();   
     }
 
     function saveSubject(){
