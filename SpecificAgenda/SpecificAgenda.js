@@ -2,7 +2,7 @@
 
  async function P2PSpecificAgenda(event) {
   
-  await setTextToSubject("P2P Requirements Gathering", "icon-16", event);
+  await setTextToSubject("P2P Requirements Gathering", "icon-16");
   await setHTMLToBody("<b><i>Meeting Objective</i></b><br/><br/>\
     The objective of this session is for our team to gather \
     a solid understanding of your AP processes from vendor \
@@ -12,11 +12,13 @@
     <ul><li>Vendor Master</li><li>Employee Master</li>\
     <li>Vendor Bills</li><li>Vendor Payments</li>\
     <li>Expense Reports</li><li>Fixed Assets</li></ul>\
-    ", "icon-16", event);
+    ", "icon-16");
+
+  event.completed();
 }
 
 
-async function setTextToSubject(text, icon, event) {
+async function setTextToSubject(text, icon) {
 
   Office.context.mailbox.item.subject.setAsync(text, 
 
@@ -41,10 +43,9 @@ async function setTextToSubject(text, icon, event) {
 
     }
   );    
-  event.completed();
 } 
 
-async function setHTMLToBody(html, icon, event) {
+async function setHTMLToBody(html, icon) {
   Office.context.mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
@@ -66,5 +67,4 @@ async function setHTMLToBody(html, icon, event) {
       return new Promise(resolve, reject);
     }
   );
-  event.completed();
 } 
