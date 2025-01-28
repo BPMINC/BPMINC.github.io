@@ -9,15 +9,17 @@ Office.initialize = function () {
 async function insertDefaultAgenda(event) {
 
   var subject = _settings.get("subject");
-  await setTextToSubject(subject, "icon-16", event);
+  await setTextToSubject(subject, "icon-16");
 
   var body = _settings.get("body");
-  await setHTMLToBody(body, "icon-16", event);
+  await setHTMLToBody(body, "icon-16");
+
+  event.completed();
 }
 
 
 
-async function setTextToSubject(text, icon, event) {
+async function setTextToSubject(text, icon) {
 
   _mailbox.item.subject.setAsync(text, 
 
@@ -41,11 +43,10 @@ async function setTextToSubject(text, icon, event) {
       return new Promise(resolve, reject);
 
     }
-  );    
-  event.completed();
+  ); 
 } 
 
-async function setHTMLToBody(html, icon, event) {
+async function setHTMLToBody(html, icon) {
   Office.context.mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
@@ -67,5 +68,4 @@ async function setHTMLToBody(html, icon, event) {
       return new Promise(resolve, reject);
     }
   );
-  event.completed();
 } 
