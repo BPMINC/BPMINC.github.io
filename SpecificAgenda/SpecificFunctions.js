@@ -10,15 +10,6 @@ Office.initialize = function () {
   _settings = Office.context.roamingSettings;
 }
 
-function insertDefaultAgenda(event) {
-
-  _subject = _settings.get("subject");
-  setTextToSubject(_subject, "icon-16", event);
-
-  _body = _settings.get("body");
-  setHTMLToBody(_body, "icon-16", event);
-}
-
 function createDefaultAgenda(event) {
   
   saveHTMLForSubject("Default Agenda Subject", "icon-16", event);
