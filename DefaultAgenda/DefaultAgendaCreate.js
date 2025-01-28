@@ -26,6 +26,8 @@ let _settings;
         
         _settings.saveAsync();
         console.log("done"); 
+
+        event.completed()
     }
 
     async function saveSubject(){
