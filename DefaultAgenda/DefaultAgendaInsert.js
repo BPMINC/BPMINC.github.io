@@ -13,13 +13,11 @@ async function insertDefaultAgenda(event) {
 
   var body = _settings.get("body");
   await setHTMLToBody(body, "icon-16");
-
-  event.completed();
 }
 
 
 
-async function setTextToSubject(text, icon) {
+async function setTextToSubject(text, icon, event) {
 
   _mailbox.item.subject.setAsync(text, 
 
@@ -43,10 +41,12 @@ async function setTextToSubject(text, icon) {
       return new Promise(resolve, reject);
 
     }
+
   ); 
+  event.completed();
 } 
 
-async function setHTMLToBody(html, icon) {
+async function setHTMLToBody(html, icon, event) {
   Office.context.mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
@@ -68,4 +68,5 @@ async function setHTMLToBody(html, icon) {
       return new Promise(resolve, reject);
     }
   );
+  event.completed();
 } 
