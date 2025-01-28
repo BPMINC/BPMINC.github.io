@@ -37,7 +37,7 @@ Office.initialize = function () {
   }
 
   function saveSettings(){
-    
+
     _settings.saveAsync(function (asyncResult) {
 
       // Display the result to the user
@@ -45,7 +45,7 @@ Office.initialize = function () {
         Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: "icon-16",
-          message: "Save successfully",
+          message: "Save successful",
           persistent: false
         });        
       }
