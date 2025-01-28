@@ -6,10 +6,10 @@ Office.initialize = function () {
   _mailbox = Office.context.mailbox;
 }
 
- function P2PSpecificAgenda(event) {
+ async function P2PSpecificAgenda(event) {
   
-  setTextToSubject("P2P Requirements Gathering", "icon-16", event);
-/*   await setHTMLToBody("<b><i>Meeting Objective</i></b><br/><br/>\
+  await setTextToSubject("P2P Requirements Gathering", "icon-16", event);
+  await setHTMLToBody("<b><i>Meeting Objective</i></b><br/><br/>\
     The objective of this session is for our team to gather \
     a solid understanding of your AP processes from vendor \
     creation, vendor bills and associated approvals, vendor \
@@ -18,11 +18,11 @@ Office.initialize = function () {
     <ul><li>Vendor Master</li><li>Employee Master</li>\
     <li>Vendor Bills</li><li>Vendor Payments</li>\
     <li>Expense Reports</li><li>Fixed Assets</li></ul>\
-    ", "icon-16", event); */
+    ", "icon-16", event);
 }
 
 
-function setTextToSubject(text, icon, event) {
+async function setTextToSubject(text, icon, event) {
 
   _mailbox.item.subject.setAsync(text, 
 
@@ -43,7 +43,7 @@ function setTextToSubject(text, icon, event) {
         });
       }
       
-/*       return new Promise(resolve, reject); */
+      return new Promise(resolve, reject);
 
     }
   );    
