@@ -29,7 +29,7 @@ let _settings;
         await saveSubject();
         await saveBody();  
         
-        await _settings.saveAsync();
+        await _settings.saveAsync(updateNotification);
 
         event.completed()
     }
@@ -40,9 +40,7 @@ let _settings;
 
         return new Promise((resolve, reject) => {  
             // Fake success  
-            setTimeout(() => {  
-              resolve("success");  
-            }, 1000);
+              resolve("success");
         });
     }
 
@@ -51,11 +49,30 @@ let _settings;
         _settings.set("body", html);  
 
         return new Promise((resolve, reject) => {  
-            // Fake success  
-            setTimeout(() => {  
+            // Fake success   
               resolve("success");  
-            }, 1000);
-        });
+        });        
+    }
+
+    function updateNotification(asyncResult){
+        if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+          Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
+            type: "informationalMessage",
+            icon: icon,
+            message: "Success",
+            persistent: false
+          });
+        }
+        else {
+          Office.context.mailbox.item.notificationMessages.addAsync("error", {
+            type: "errorMessage",
+            message: "Failed - " + asyncResult.error.message,
+            persistent: false
+          });
+        }
+        
+        return new Promise(resolve, reject);
+  
     }
     
 })();
