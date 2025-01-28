@@ -29,7 +29,15 @@ let _settings;
     saveSubject();
     saveBody();  
     
-    _settings.saveAsync(statusUpdate);
+    _settings.saveAsync(function (asyncResult) {
+      // Display the result to the user
+      if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+        app.showNotification("Success", "saved successfully");
+      }
+      else {
+        app.showNotification("Error", "Failed to save: " + asyncResult.error.message);
+      }
+    })
   }
 
   function saveSubject(){
@@ -42,7 +50,7 @@ let _settings;
       _settings.set("body", html);       
   }
 
-  function statusUpdate(asyncResult) {
+/*   function statusUpdate(asyncResult) {
     // Display the result to the user
     if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
       app.showNotification("Success", "saved successfully");
@@ -50,6 +58,6 @@ let _settings;
     else {
       app.showNotification("Error", "Failed to save: " + asyncResult.error.message);
     }
-  }
+  } */
     
 })();
