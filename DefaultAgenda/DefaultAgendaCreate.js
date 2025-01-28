@@ -43,8 +43,13 @@ let _settings;
    async function saveBody(){
         var html = $('#bodyToSave').val();
         _settings.set("body", html);  
-
-        return new Promise(resolve, reject);
+        
+        return new Promise((resolve, reject) => {  
+            // Fake success  
+            setTimeout(() => {  
+              resolve("success");  
+            }, 1000);
+        });
     }
     
 })();
