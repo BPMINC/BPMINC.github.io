@@ -32,9 +32,11 @@ let _settings;
     _settings.saveAsync(function (asyncResult) {
       // Display the result to the user
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+        console.log(`saved`);
         app.showNotification("Success", "saved successfully");
       }
       else {
+        console.log(`not saved`);
         app.showNotification("Error", "Failed to save: " + asyncResult.error.message);
       }
     })
