@@ -10,6 +10,7 @@ async function insertDefaultAgenda(event) {
 
   var subject = _settings.get("subject");
   console.log(subject + " - sub")
+
   await setTextToSubject(subject, "icon-16");
 
   var body = _settings.get("body");
@@ -41,7 +42,10 @@ async function setTextToSubject(text, icon, event) {
         });
       }
       
-      return new Promise(resolve, reject);
+      return new Promise((resolve, reject) => {  
+        // Fake success  
+        resolve("success");
+      });
 
     }
 
@@ -68,7 +72,10 @@ async function setHTMLToBody(html, icon, event) {
         });
       }
 
-      return new Promise(resolve, reject);
+      return new Promise((resolve, reject) => {  
+        // Fake success  
+        resolve("success");
+      });      
     }
   );
   event.completed();
