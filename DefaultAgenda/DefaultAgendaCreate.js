@@ -27,7 +27,7 @@ let _settings;
         _settings.saveAsync();   
     }
 
-    function saveSubject(){
+    async function saveSubject(){
         var text = $('#subjectToSave').val();
         _settings.set("subject", text);
 
@@ -35,7 +35,7 @@ let _settings;
         return new Promise(resolve, reject);
     }
 
-    function saveBody(){
+   async  function saveBody(){
         var html = $('#bodyToSave').val();
         _settings.set("body", html);  
 
