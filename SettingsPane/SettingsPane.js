@@ -7,14 +7,16 @@
   
     // The Office initialize function must be run each time a new page is loaded
     Office.initialize = function (reason) {
-        $(document).ready(function () {
-            app.initialize();
+      $(document).ready(function () {
+          app.initialize();
 
-            _settings = Office.context.roamingSettings;
-            $('#customerToAdd').val(_settings.get("customer"));
-  
-            $('#addCustomer').click(addCustomer);
-        });
+          _settings = Office.context.roamingSettings;
+          
+          var customer = _settings.get("customer")
+          $('#customerToAdd').val(customer);
+
+          $('#addCustomer').click(addCustomer);
+      });
     };
     
     function addCustomer() {
@@ -22,14 +24,12 @@
 
       _settings.set("customer", customerToAdd);
 
-        return new Promise((resolve, reject) => {  
-            // Fake success  
-            setTimeout(() => {  
-              resolve("success");  
-            }, 1000);
-        });
-      
-
-      
+      return new Promise((resolve, reject) => {  
+          // Fake success  
+          setTimeout(() => {  
+            resolve("success");  
+          }, 1000);
+      });    
     }
-  });
+  }
+);
