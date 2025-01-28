@@ -98,8 +98,8 @@
                         <bt:Image size="32" resid="icon-32" />
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>createDefaultAgenda</FunctionName>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="DefaultPaneUrl" />
                       </Action>
                     </Item>                    
                   </Items>
@@ -199,6 +199,7 @@
       <bt:Urls>
         <bt:Url id="functionFile" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
         <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/SettingsPane/SettingsPane.html"/>
+        <bt:Url id="DefaultPaneUrl" DefaultValue="https://bpminc.github.io/DefaultPane/DefaultPane.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>

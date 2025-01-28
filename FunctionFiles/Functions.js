@@ -2,25 +2,52 @@
 
 let _mailbox;
 let _settings;
-let _customerName;
+let _subject;
+let _body;
 
 Office.initialize = function () {
   _mailbox = Office.context.mailbox;
   _settings = Office.context.roamingSettings;
 }
 
-function addDefaultMsg(event) {
-  setHTMLToSubject("Default Agenda Subject", "icon-16", event);
-  setHTMLToBody("This is the default agenda text<br/>", "icon-16", event);
+function insertDefaultAgenda(event) {
+
+  _subject = _settings.get("subject");
+  setTextToSubject(_subject, "icon-16", event);
+
+  _body = _settings.get("body");
+  setHTMLToBody(_body, "icon-16", event);
 }
 
-function addP2PMsg(event) {
-  _settings.set("customerName", "OneWebTech");
+function createDefaultAgenda(event) {
+  
+  saveHTMLForSubject("Default Agenda Subject", "icon-16", event);
+  saveHTMLForBody("This is the default agenda text<br/>", event);
+
   _settings.saveAsync();
+}
 
-  _customerName = _settings.get("customerName");
+function saveHTMLForSubject(text, event ){
+  _settings.set("subject", text);
+}
 
-  setHTMLToSubject(_customerName + " - P2P Requirements Gathering", "icon-16", event);
+function saveHTMLForBody(html, event ){
+  _settings.set("subject", text);
+}
+
+
+
+
+
+
+
+function addP2PMsg(event) {
+  
+ 
+
+
+
+  setTextToSubject( + " - P2P Requirements Gathering", "icon-16", event);
   setHTMLToBody("<b><i>Meeting Objective</i></b><br/><br/>\
     The objective of this session is for our team to gather \
     a solid understanding of your AP processes from vendor \
@@ -34,8 +61,10 @@ function addP2PMsg(event) {
 }
 
 
-async function setHTMLToSubject(text, icon, event) {
+async function setTextToSubject(text, icon, event) {
+
   _mailbox.item.subject.setAsync(text, 
+
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
         _mailbox.item.notificationMessages.replaceAsync("status", {
@@ -60,8 +89,8 @@ async function setHTMLToSubject(text, icon, event) {
   event.completed();
 } 
 
-async function setHTMLToBody(text, icon, event) {
-  Office.context.mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.Html }, 
+async function setHTMLToBody(html, icon, event) {
+  Office.context.mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
     function (asyncResult){
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
         Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
