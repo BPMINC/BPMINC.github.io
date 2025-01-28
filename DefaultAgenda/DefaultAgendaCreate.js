@@ -52,7 +52,7 @@ Office.initialize = function () {
         Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: "icon-16",
-          message: "Save successful",
+          message: "Save successfully",
           persistent: false
         });        
       }
