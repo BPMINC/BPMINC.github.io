@@ -1,11 +1,25 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 
-/// <reference path="../App.js" />
+/* /// <reference path="../App.js" /> */
 
 let _mailbox
 let _settings;
 
-(function () {
+Office.initialize = function () {
+  _mailbox = Office.context.mailbox;
+  _settings = Office.context.roamingSettings;
+
+  var subject = _settings.get("subject")
+  $('#subjectToSave').val(subject);
+
+  var body = _settings.get("body")
+  $('#bodyToSave').val(body);
+
+  $('#save').click(saveAgenda);
+}
+
+
+/* (function () {
   "use strict";
 
   // The Office initialize function must be run each time a new page is loaded
@@ -24,7 +38,7 @@ let _settings;
 
       $('#save').click(saveAgenda);
     });
-  };
+  }; */
   
   function saveAgenda(){
 
@@ -32,10 +46,9 @@ let _settings;
     saveBody();  
     
     _settings.saveAsync(function (asyncResult) {
+
       // Display the result to the user
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-
-        console.log("saved4")
         Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: "icon-16",
@@ -63,4 +76,4 @@ let _settings;
       _settings.set("body", html);       
   }
     
-})();
+/* })(); */
