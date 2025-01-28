@@ -11,10 +11,10 @@ Office.initialize = function () {
 async function insertDefaultAgenda(event) {
 
   _subject = _settings.get("subject");
-  await setTextToSubject("somesubject", "icon-16", event);
+  await setTextToSubject(_subject, "icon-16", event);
 
   _body = _settings.get("body");
-  await setHTMLToBody("someBody", "icon-16", event);
+  await setHTMLToBody(_body, "icon-16", event);
 }
 
 
