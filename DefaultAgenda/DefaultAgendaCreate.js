@@ -24,15 +24,12 @@ let _settings;
     });
   };
   
-  async function saveAgenda(){
-    console.log("start - DACreate");
+  function saveAgenda(){
 
     saveSubject();
     saveBody();  
     
-    await _settings.saveAsync(statusUpdate);
-
-    console.log("done - DACreate");
+    _settings.saveAsync(statusUpdate);
   }
 
   function saveSubject(){
