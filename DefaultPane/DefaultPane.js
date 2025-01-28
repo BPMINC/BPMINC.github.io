@@ -19,12 +19,18 @@ let _settings;
     };
     
     function saveAgenda(event){
+        saveSubject();
+        saveBody();      
+    }
 
+    function saveSubject(){
         var text = $('#subjectToSave').val();
         _settings.set("subject", text);
+    }
 
+    function saveBody(){
         var html = $('#bodyToSave').val();
-        _settings.set("body", html);        
+        _settings.set("body", html);  
     }
     
 })();
