@@ -33,11 +33,16 @@ let _settings;
       // Display the result to the user
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
         console.log(`saved`);
-        app.showNotification("Success", "saved successfully");
+        Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
+          type: "informationalMessage",
+          message: "Success",
+          persistent: false
+        });        
+        /* app.showNotification("Success", "saved successfully"); */
       }
       else {
         console.log(`not saved`);
-        app.showNotification("Error", "Failed to save: " + asyncResult.error.message);
+        /* app.showNotification("Error", "Failed to save: " + asyncResult.error.message); */
       }
     })
   }
@@ -51,15 +56,5 @@ let _settings;
       var html = $('#bodyToSave').val();
       _settings.set("body", html);       
   }
-
-/*   function statusUpdate(asyncResult) {
-    // Display the result to the user
-    if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-      app.showNotification("Success", "saved successfully");
-    }
-    else {
-      app.showNotification("Error", "Failed to save: " + asyncResult.error.message);
-    }
-  } */
     
 })();
