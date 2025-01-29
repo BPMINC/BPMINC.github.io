@@ -26,20 +26,20 @@ Office.initialize = function () {
        // });
     }; */
 
-/*     function insertDefaultAgenda(event) {
+function insertDefaultAgenda(event) {
 
-        var subject = _settings.get("subject");
-        console.log(subject + " - sub7")
+    var subject = _settings.get("subject");
+    console.log(subject + " - sub7")
 
-        //setTextToSubject(subject);
+    //setTextToSubject(subject);
 
-        //var body = _settings.get("body");
-        //console.log(body + " - body7");
+    //var body = _settings.get("body");
+    //console.log(body + " - body7");
 
-        //await setHTMLToBody(body, event);
+    //await setHTMLToBody(body, event);
 
-        event.completed();
-    }
+    event.completed();
+}
     
     
     
@@ -81,6 +81,6 @@ Office.initialize = function () {
                 }   
             }
         );
-    }  */
+    } 
 
 /* })(); */
