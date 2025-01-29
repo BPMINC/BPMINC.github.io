@@ -1,4 +1,3 @@
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 
 
 let _mailbox
@@ -42,7 +41,7 @@ Office.initialize = function () {
 
       // Display the result to the user
       if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-        Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
+        _mailbox.item.notificationMessages.replaceAsync("status", {
           type: "informationalMessage",
           icon: "icon-16",
           message: "Save successful",
@@ -50,7 +49,7 @@ Office.initialize = function () {
         });        
       }
       else {
-        Office.context.mailbox.item.notificationMessages.addAsync("error", {
+        _mailbox.item.notificationMessages.addAsync("error", {
           type: "errorMessage",
           message: "Save Failed - " + asyncResult.error.message,
           persistent: false
