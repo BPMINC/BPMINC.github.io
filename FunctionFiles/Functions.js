@@ -47,19 +47,10 @@ let _settings;
             function (asyncResult){
                 // Display the result to the user
                 if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-                    _mailbox.item.notificationMessages.replaceAsync("status", {
-                    type: "informationalMessage",
-                    icon: "icon-16",
-                    message: "Save successful",
-                    persistent: false
-                    });        
+                    app.showNotification("Success", "\"" + text + "\" inserted successfully.");       
                 }
                 else {
-                    _mailbox.item.notificationMessages.replaceAsync("error", {
-                    type: "errorMessage",
-                    message: "Save Failed - " + asyncResult.error.message,
-                    persistent: false
-                    }); 
+                    app.showNotification("Error", "Failed to insert \"" + textToInsert + "\": " + asyncResult.error.message);
                 }    
             }
         ); 
