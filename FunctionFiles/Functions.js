@@ -26,7 +26,7 @@ let _settings;
         var subject = _settings.get("subject");
         console.log(subject + " - sub7")
 
-        setTextToSubject(subject);
+        //setTextToSubject(subject);
 
         //var body = _settings.get("body");
         //console.log(body + " - body7");

@@ -49,7 +49,7 @@ Office.initialize = function () {
         });        
       }
       else {
-        _mailbox.item.notificationMessages.addAsync("error", {
+        _mailbox.item.notificationMessages.replaceAsync("error", {
           type: "errorMessage",
           message: "Save Failed - " + asyncResult.error.message,
           persistent: false
