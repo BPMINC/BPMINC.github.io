@@ -11,12 +11,12 @@ Office.initialize = function () {
 async function insertDefaultAgenda(event) {
 
     var subject = _settings.get("subject");
-    console.log(subject + " - sub5")
+    console.log(subject + " - sub6")
 
     //await setTextToSubject(subject, event);
 
     var body = _settings.get("body");
-    console.log(body + " - body4");
+    console.log(body + " - body6");
 
     await setHTMLToBody(body, event);
 
@@ -49,6 +49,8 @@ async function setTextToSubject(text, event) {
         }
     ); 
 
+    await return new Promise.resolve();
+
 } 
   
 async function setHTMLToBody(html, event) {
@@ -73,5 +75,7 @@ async function setHTMLToBody(html, event) {
             }   
         }
     );
+
+    await return new Promise.resolve();
 
 } 
