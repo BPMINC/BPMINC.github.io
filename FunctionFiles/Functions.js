@@ -21,7 +21,7 @@ let _settings;
 
             $('#insertText').click(insertText);
         });
-    };)
+    };
 
     function insertDefaultAgenda(event) {
 
