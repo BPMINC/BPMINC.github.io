@@ -8,17 +8,17 @@ Office.initialize = function () {
   _settings = Office.context.roamingSettings;
 }
 
-function insertDefaultAgenda(event) {
+async function insertDefaultAgenda(event) {
 
     var subject = _settings.get("subject");
     console.log(subject + " - sub")
 
-    setTextToSubject(subject, event);
+    await setTextToSubject(subject, event);
 
     var body = _settings.get("body");
     console.log(body + " - body");
 
-    setHTMLToBody(body, event);
+    await setHTMLToBody(body, event);
 
     event.completed();
 }
@@ -27,7 +27,7 @@ function insertDefaultAgenda(event) {
   
 function setTextToSubject(text, event) {
 
-    await _mailbox.item.subject.setAsync(text, 
+    _mailbox.item.subject.setAsync(text, 
 
         function (asyncResult){
             // Display the result to the user
