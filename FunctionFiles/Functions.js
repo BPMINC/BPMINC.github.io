@@ -11,12 +11,12 @@ Office.initialize = function () {
 async function insertDefaultAgenda(event) {
 
     var subject = _settings.get("subject");
-    console.log(subject + " - sub3")
+    console.log(subject + " - sub4")
 
     await setTextToSubject(subject, event);
 
     var body = _settings.get("body");
-    console.log(body + " - body3");
+    console.log(body + " - body4");
 
     await setHTMLToBody(body, event);
 
