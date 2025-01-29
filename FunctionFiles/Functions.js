@@ -43,44 +43,44 @@ function insertDefaultAgenda(event) {
     
     
     
-    function setTextToSubject(text) {
+function setTextToSubject(text) {
 
-        _mailbox.item.subject.setAsync(text, 
+    _mailbox.item.subject.setAsync(text, 
 
-            function (asyncResult){
-                // Display the result to the user
-                if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-                    app.showNotification("Success", "\"" + text + "\" inserted successfully.");       
-                }
-                else {
-                    app.showNotification("Error", "Failed to insert \"" + textToInsert + "\": " + asyncResult.error.message);
-                }    
+        function (asyncResult){
+            // Display the result to the user
+            if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+                app.showNotification("Success", "\"" + text + "\" inserted successfully.");       
             }
-        ); 
-    } 
+            else {
+                app.showNotification("Error", "Failed to insert \"" + textToInsert + "\": " + asyncResult.error.message);
+            }    
+        }
+    ); 
+} 
     
-    function setHTMLToBody(html, event) {
-        _mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
+function setHTMLToBody(html, event) {
+    _mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
 
-            function (asyncResult){
-                // Display the result to the user
-                if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-                    _mailbox.item.notificationMessages.replaceAsync("status", {
-                    type: "informationalMessage",
-                    icon: "icon-16",
-                    message: "Save successful",
-                    persistent: false
-                    });        
-                }
-                else {
-                    _mailbox.item.notificationMessages.replaceAsync("error", {
-                    type: "errorMessage",
-                    message: "Save Failed - " + asyncResult.error.message,
-                    persistent: false
-                    }); 
-                }   
+        function (asyncResult){
+            // Display the result to the user
+            if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+                _mailbox.item.notificationMessages.replaceAsync("status", {
+                type: "informationalMessage",
+                icon: "icon-16",
+                message: "Save successful",
+                persistent: false
+                });        
             }
-        );
-    } 
+            else {
+                _mailbox.item.notificationMessages.replaceAsync("error", {
+                type: "errorMessage",
+                message: "Save Failed - " + asyncResult.error.message,
+                persistent: false
+                }); 
+            }   
+        }
+    );
+} 
 
 /* })(); */
