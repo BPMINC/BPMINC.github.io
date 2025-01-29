@@ -13,7 +13,7 @@ function insertDefaultAgenda(event) {
     var subject = _settings.get("subject");
     console.log(subject + " - sub")
 
-    await setTextToSubject(subject, event);
+    setTextToSubject(subject, event);
 
     var body = _settings.get("body");
     console.log(body + " - body");
@@ -27,7 +27,7 @@ function insertDefaultAgenda(event) {
   
 function setTextToSubject(text, event) {
 
-    _mailbox.item.subject.setAsync(text, 
+    await _mailbox.item.subject.setAsync(text, 
 
         function (asyncResult){
             // Display the result to the user
