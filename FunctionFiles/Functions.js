@@ -20,7 +20,7 @@ let _settings;
             app.initialize();
         });
     };
-
+/* 
     function insertDefaultAgenda(event) {
 
         var subject = _settings.get("subject");
@@ -76,6 +76,6 @@ let _settings;
                 }   
             }
         );
-    } 
+    }  */
 
 })();
