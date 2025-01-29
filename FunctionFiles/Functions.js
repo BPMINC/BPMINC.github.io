@@ -25,7 +25,7 @@ async function insertDefaultAgenda(event) {
   
   
   
-function setTextToSubject(text, event) {
+async function setTextToSubject(text, event) {
 
     _mailbox.item.subject.setAsync(text, 
 
@@ -51,7 +51,7 @@ function setTextToSubject(text, event) {
 
 } 
   
-function setHTMLToBody(html, event) {
+async function setHTMLToBody(html, event) {
     _mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
 
         function (asyncResult){
