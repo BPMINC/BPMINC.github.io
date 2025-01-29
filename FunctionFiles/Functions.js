@@ -5,13 +5,13 @@
 let _mailbox;
 let _settings;
 
-/* Office.initialize = function () {
+Office.initialize = function () {
   _mailbox = Office.context.mailbox;
   _settings = Office.context.roamingSettings;
-} */
+}
 
 
-(function () {
+/* (function () {
     "use strict";
 
     // The Office initialize function must be run each time a new page is loaded
@@ -19,7 +19,7 @@ let _settings;
         //$(document).ready(function () {
             //app.initialize();
        // });
-    };
+    }; */
 
 /*     function insertDefaultAgenda(event) {
 
@@ -78,4 +78,4 @@ let _settings;
         );
     }  */
 
-})();
+/* })(); */
