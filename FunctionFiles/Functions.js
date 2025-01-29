@@ -15,11 +15,11 @@ let _settings;
     "use strict";
 
     // The Office initialize function must be run each time a new page is loaded
-    Office.initialize = function (reason) {
-        $(document).ready(function () {
+    //Office.initialize = function (reason) {
+        //$(document).ready(function () {
             //app.initialize();
-        });
-    };
+       // });
+    //};
 /* 
     function insertDefaultAgenda(event) {
 
