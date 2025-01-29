@@ -11,12 +11,12 @@ Office.initialize = function () {
 async function insertDefaultAgenda(event) {
 
     var subject = _settings.get("subject");
-    console.log(subject + " - sub2")
+    console.log(subject + " - sub3")
 
     await setTextToSubject(subject, event);
 
     var body = _settings.get("body");
-    console.log(body + " - body2");
+    console.log(body + " - body3");
 
     await setHTMLToBody(body, event);
 
@@ -25,7 +25,7 @@ async function insertDefaultAgenda(event) {
   
   
   
-async function setTextToSubject(text, event) {
+function setTextToSubject(text, event) {
 
     _mailbox.item.subject.setAsync(text, 
 
@@ -51,7 +51,7 @@ async function setTextToSubject(text, event) {
 
 } 
   
-async function setHTMLToBody(html, event) {
+function setHTMLToBody(html, event) {
     _mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
 
         function (asyncResult){
