@@ -38,7 +38,7 @@ async function setTextToSubject(text, event) {
                 });        
             }
             else {
-                _mailbox.item.notificationMessages.addAsync("error", {
+                _mailbox.item.notificationMessages.replaceAsync("error", {
                 type: "errorMessage",
                 message: "Save Failed - " + asyncResult.error.message,
                 persistent: false
@@ -62,7 +62,7 @@ function setHTMLToBody(html, event) {
                 });        
             }
             else {
-                _mailbox.item.notificationMessages.addAsync("error", {
+                _mailbox.item.notificationMessages.replaceAsync("error", {
                 type: "errorMessage",
                 message: "Save Failed - " + asyncResult.error.message,
                 persistent: false
