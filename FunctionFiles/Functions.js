@@ -18,8 +18,6 @@ let _settings;
     Office.initialize = function (reason) {
         $(document).ready(function () {
             app.initialize();
-
-            $('#insertText').click(insertText);
         });
     };
 
