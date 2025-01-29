@@ -8,26 +8,26 @@ Office.initialize = function () {
   _settings = Office.context.roamingSettings;
 }
 
-async function insertDefaultAgenda(event) {
+function insertDefaultAgenda(event) {
 
     var subject = _settings.get("subject");
     console.log(subject + " - sub")
 
-    await setTextToSubject(subject, event);
+    setTextToSubject(subject, event);
 
     var body = _settings.get("body");
     console.log(body + " - body");
 
-    await setHTMLToBody(body, event);
+    setHTMLToBody(body, event);
 
     event.completed();
 }
   
   
   
-function setTextToSubject(text, event) {
+async function setTextToSubject(text, event) {
 
-    _mailbox.item.subject.setAsync(text, 
+    await _mailbox.item.subject.setAsync(text, 
 
         function (asyncResult){
             // Display the result to the user
@@ -51,8 +51,9 @@ function setTextToSubject(text, event) {
 
 } 
   
-function setHTMLToBody(html, event) {
-    _mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
+async function setHTMLToBody(html, event) {
+    await _mailbox.item.body.setSelectedDataAsync(html, { coercionType: Office.CoercionType.Html }, 
+        
         function (asyncResult){
             // Display the result to the user
             if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
