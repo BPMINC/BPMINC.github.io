@@ -10,16 +10,16 @@
       $(document).ready(function () {
           app.initialize();
 
-          $('#insertText').click(insertText);
+          //$('#insertText').click(insertText);
       });
   };
   
-  function insertText() {
-    var textToInsert = $('#textToInsert').val();
+  function insertDefaultAgenda() {
+    //var textToInsert = $('#textToInsert').val();
     
     // Insert as plain text (CoercionType.Text)
     Office.context.mailbox.item.body.setSelectedDataAsync(
-      textToInsert, 
+      "sometext", 
       { coercionType: Office.CoercionType.Text }, 
       function (asyncResult) {
         // Display the result to the user
