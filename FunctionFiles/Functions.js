@@ -11,7 +11,7 @@ let _settings;
 } */
 
 
-/* (function () {
+(function () {
     "use strict";
 
     // The Office initialize function must be run each time a new page is loaded
@@ -19,9 +19,9 @@ let _settings;
         //$(document).ready(function () {
             //app.initialize();
        // });
-    }; */
-/* 
-    function insertDefaultAgenda(event) {
+    };
+
+/*     function insertDefaultAgenda(event) {
 
         var subject = _settings.get("subject");
         console.log(subject + " - sub7")
@@ -78,4 +78,4 @@ let _settings;
         );
     }  */
 
-/* })(); */
+})();
