@@ -13,7 +13,7 @@ async function insertDefaultAgenda(event) {
     var subject = _settings.get("subject");
     console.log(subject + " - sub6")
 
-    //await setTextToSubject(subject, event);
+    await setTextToSubject(subject, event);
 
     var body = _settings.get("body");
     console.log(body + " - body6");
