@@ -52,7 +52,6 @@
           <FunctionFile resid="FunctionsUrl" />
 
 
-
           <!-- Appointment compose form -->
           <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
             <OfficeTab id="TabDefault">
@@ -87,21 +86,21 @@
                         <FunctionName>insertDefaultAgenda</FunctionName>
                       </Action>
                     </Item>                    
-                    <Item id="apptDefaultCreate">
-                      <Label resid="defaultCreateLabel" />
+                    <Item id="apptDefaultSave">
+                      <Label resid="defaultSaveLabel" />
                       <Supertip>
-                        <Title resid="defaultCreateLabel" />
-                        <Description resid="defaultCreateTipDesc" />
+                        <Title resid="defaultSaveLabel" />
+                        <Description resid="defaultSaveTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
                         <bt:Image size="32" resid="icon-32" />
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
-                      <Action xsi:type="ShowTaskpane">
-                        <SourceLocation resid="DefaultPaneUrl" />
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>saveDefaultAgenda</FunctionName>
                       </Action>
-                    </Item>                    
+                    </Item>                                                      
                   </Items>
                 </Control>
 
@@ -208,7 +207,7 @@
         <bt:String id="defaultButtonLabel" DefaultValue="Default agenda"/>
         <bt:String id="defaultTipTitle" DefaultValue="Default Agenda Tip Title"/>
         <bt:String id="defaultInsertLabel" DefaultValue="Insert"/>
-        <bt:String id="defaultCreateLabel" DefaultValue="Create"/>
+        <bt:String id="defaultSaveLabel" DefaultValue="Save"/>
 
         <bt:String id="specificButtonLabel" DefaultValue="Specific agenda"/>
         <bt:String id="specificTipTitle" DefaultValue="Specific Agenda Tip Title"/>
@@ -225,7 +224,7 @@
  
         <bt:String id="defaultTipDesc" DefaultValue="Default Agenda Tip"/>
         <bt:String id="defaultInsertTipDesc" DefaultValue="Insert Default Agenda Tip" />
-        <bt:String id="defaultCreateTipDesc" DefaultValue="Create Default Agenda Tip" />
+        <bt:String id="defaultSaveTipDesc" DefaultValue="Save Default Agenda Tip" />
 
         <bt:String id="specificTipDesc" DefaultValue="Specific Agenda Tip"/>
         <bt:String id="specificR2RTipDesc" DefaultValue="Insert R2R Agenda Tip" />
