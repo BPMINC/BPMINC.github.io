@@ -8,12 +8,13 @@ function insertDefaultAgenda(event) {
     setHTMLToBody(body, event);
 }
 
-function setTextToSubject(text, event) {
+async function setTextToSubject(text, event) {
 
-    _mailbox.item.subject.setAsync(
+    await _mailbox.item.subject.setAsync(
         text,         
         function (asyncResult){
           statusUpdate(asyncResult);
+          event.completed();
         });
 }
 
