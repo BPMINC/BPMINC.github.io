@@ -8,7 +8,21 @@ Office.initialize = function () {
 
 }
 
-function insertDefaultAgenda(event) {
+function insertDefaultAgenda(event){
+
+    _mailbox.item.body.getAsync(
+        { coercionType: Office.CoercionType.Html },
+        function (asyncResult){
+            _settings.set("body", html);
+            event.completed();  
+        }
+    )
+
+    
+
+}
+
+function tempfunc(event) {
 
     var subject = _settings.get("subject")
     setTextToSubject(subject, event);
