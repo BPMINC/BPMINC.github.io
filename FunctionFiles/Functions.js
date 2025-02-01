@@ -11,23 +11,26 @@ Office.initialize = function () {
 function insertDefaultAgenda(event) {
 
     var subject = _settings.get("subject")
-    console.log(subject + " - sub1")
-
     setTextToSubject(subject, event);
 
-    //var body = _settings.get("body")
-    //console.log(body + " - body7");
-
-    //await setHTMLToBody(body, event);
-
-   //event.completed();
+    var body = _settings.get("body")
+    setHTMLToBody(body, event);
 }
-    
 
 function setTextToSubject(text, event) {
 
+    _mailbox.item.subject.setAsync(
+        text,         
+        function (asyncResult){
+          statusUpdate(asyncResult);
+          event.completed();
+        });
+}
+
+function setHTMLToBody(html, event) {
+
     _mailbox.item.body.setSelectedDataAsync(
-        text, 
+        html, 
         { coercionType: Office.CoercionType.Text }, 
         function (asyncResult){
           statusUpdate(asyncResult);
