@@ -30,6 +30,7 @@ function setTextToSubject(text) {
 
         function (asyncResult) {
             // Display the result to the user
+            console.log("attempt result")
             if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
                 console.log("success result")
               _mailbox.item.notificationMessages.replaceAsync("status", {
