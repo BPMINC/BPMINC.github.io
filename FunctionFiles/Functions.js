@@ -12,9 +12,9 @@ function insertDefaultAgenda(event){
 
     _mailbox.item.body.getAsync(
         { coercionType: Office.CoercionType.Html }
-    )
+    );
 
-    
+    event.completed();
 
 }
 
