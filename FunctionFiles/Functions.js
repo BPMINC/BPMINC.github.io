@@ -26,13 +26,18 @@ function insertDefaultAgenda(event) {
 
 function setTextToSubject(text, event) {
 
-    Office.context.mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.Text }, 
+    _mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.Text }, 
         function (asyncResult){
           if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-            statusUpdate("inserted successfully.");
+            _mailbox.item.notificationMessages.replaceAsync("status", {
+                type: "informationalMessage",
+                icon: "icon-16",
+                message: text,
+                persistent: false
+              });
           }
           else {
-            Office.context.mailbox.item.notificationMessages.addAsync("addTextError", {
+            _mailbox.item.notificationMessages.addAsync("addTextError", {
               type: "errorMessage",
               message: "Failed to insert " + asyncResult.error.message
             });
@@ -43,7 +48,7 @@ function setTextToSubject(text, event) {
 
 
 function statusUpdate(text) {
-    Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
+    _mailbox.item.notificationMessages.replaceAsync("status", {
       type: "informationalMessage",
       icon: "icon-16",
       message: text,
