@@ -51,7 +51,7 @@ Office.initialize = function () {
         _mailbox.item.notificationMessages.replaceAsync("error", {
           type: "errorMessage",
           message: "Save Failed - " + asyncResult.error.message,
-          persistent: false
+          persistent: true
         }); 
       }
     })
