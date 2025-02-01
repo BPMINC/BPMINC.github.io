@@ -36,7 +36,7 @@ function setTextToSubject(text) {
                 type: "informationalMessage",
                 icon: "icon-16",
                 message: "Insert successful",
-                persistent: false
+                persistent: true
               });        
             }
             else {

@@ -44,7 +44,7 @@ Office.initialize = function () {
           type: "informationalMessage",
           icon: "icon-16",
           message: "Save successful",
-          persistent: false
+          persistent: true
         });        
       }
       else {
