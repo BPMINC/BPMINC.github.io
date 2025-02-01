@@ -29,7 +29,7 @@ function setTextToSubject(text, event) {
     Office.context.mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.Text }, 
         function (asyncResult){
           if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-            statusUpdate(icon, "inserted successfully.");
+            statusUpdate("inserted successfully.");
           }
           else {
             Office.context.mailbox.item.notificationMessages.addAsync("addTextError", {
@@ -42,7 +42,7 @@ function setTextToSubject(text, event) {
 }
 
 
-function statusUpdate(icon, text) {
+function statusUpdate(text) {
     Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
       type: "informationalMessage",
       icon: "icon-16",
