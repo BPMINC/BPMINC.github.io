@@ -14,7 +14,6 @@ function setTextToSubject(text, event) {
         text,         
         function (asyncResult){
           statusUpdate(asyncResult);
-          event.completed();
         });
 }
 
