@@ -31,6 +31,7 @@ function setTextToSubject(text) {
         function (asyncResult) {
             // Display the result to the user
             if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+                console.log("success result")
               _mailbox.item.notificationMessages.replaceAsync("status", {
                 type: "informationalMessage",
                 icon: "icon-16",
