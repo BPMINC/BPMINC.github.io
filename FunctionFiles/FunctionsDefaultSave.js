@@ -22,10 +22,10 @@ function getBody(){
         try{
             let body;
 
-            body = _mailbox.item.body.getAsync(
+            _mailbox.item.body.getAsync(
                 Office.CoercionType.Html,
                 function(asyncResult){
-                    console.log("done");
+                    body = asyncResult;
                 }
             );
             
