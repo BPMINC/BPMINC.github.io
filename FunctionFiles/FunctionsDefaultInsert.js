@@ -10,7 +10,7 @@ async function insertDefaultAgenda(event) {
 
 function setTextToSubject(text, event) {
 
-  return new OfficeExtension.Promise(function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     try{
 
       _mailbox.item.subject.setAsync(
