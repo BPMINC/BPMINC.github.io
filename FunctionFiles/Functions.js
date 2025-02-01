@@ -45,7 +45,7 @@ function setTextToSubject(text, event) {
 function statusUpdate(icon, text) {
     Office.context.mailbox.item.notificationMessages.replaceAsync("status", {
       type: "informationalMessage",
-      icon: icon,
+      icon: "icon-16",
       message: text,
       persistent: false
     });
