@@ -28,7 +28,8 @@ function getBody(){
                     console.log("done");
                 }
             );
-
+            
+            console.log("done");
             resolve(body);
         }
         catch (error){
