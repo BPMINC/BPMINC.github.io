@@ -1,6 +1,5 @@
 
-let _mailbox
-let _settings;
+
 
 Office.initialize = function () {
   _mailbox = Office.context.mailbox;
