@@ -1,5 +1,4 @@
 
-
 let _mailbox
 let _settings;
 
