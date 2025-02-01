@@ -20,7 +20,7 @@ function getBody(){
     return new Promise(function (resolve, reject) {
     
         try{
-            var body;
+            let body;
 
             body = _mailbox.item.body.getAsync(
                 Office.CoercionType.Html,
