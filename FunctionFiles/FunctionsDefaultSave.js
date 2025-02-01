@@ -25,7 +25,7 @@ function getBody(){
             _mailbox.item.body.getAsync(
                 Office.CoercionType.Html,
                 function(asyncResult){
-                    body = asyncResult;
+                    body = asyncResult.value;
                 }
             );
             
