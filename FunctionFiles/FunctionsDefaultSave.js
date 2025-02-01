@@ -24,7 +24,8 @@ function getBody(){
         try{
 
             body = _mailbox.item.body.getAsync(
-                { coercionType: Office.CoercionType.Html }
+                { coercionType: Office.CoercionType.Html },
+                function(asyncResult){}
             );
 
             resolve(body);
@@ -39,7 +40,6 @@ function getBody(){
 function setBody(body){
 
     return new Promise(function (resolve, reject) {
-
            
         try{
     
