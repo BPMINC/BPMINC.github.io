@@ -14,10 +14,10 @@ function insertDefaultAgenda(event){
         Office.CoercionType.Html, (bodyResult) => {
             _settings.set("body", html);
             _settings.saveAsync();
+
+            event.completed()
         }
     );
-
-    event.completed();
 
 }
 
