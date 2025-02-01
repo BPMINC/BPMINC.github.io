@@ -28,9 +28,16 @@ function setTextToSubject(text) {
 
     _mailbox.item.subject.setAsync(text,
         function (asyncResult) {
-            console.log("finished check");
+            myLogger("finished check");
         }
     ); 
 
     console.log("finish function")
+}
+
+
+function myLogger(message){
+    return function(){
+        console.log(message);
+    }      
 }
