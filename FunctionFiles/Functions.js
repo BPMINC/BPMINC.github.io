@@ -51,6 +51,8 @@ function setTextToSubject(text) {
             console.log("finished check")
         }
     ); 
+
+    console.log("finish function")
 } 
     
 function setHTMLToBody(html, event) {
