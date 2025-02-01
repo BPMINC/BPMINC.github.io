@@ -32,7 +32,7 @@ function setTextToSubject(text) {
             // Display the result to the user
             console.log("attempt result")
             if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-                console.log("success result")
+                console.log(asyncResult)
               _mailbox.item.notificationMessages.replaceAsync("status", {
                 type: "informationalMessage",
                 icon: "icon-16",
@@ -41,13 +41,14 @@ function setTextToSubject(text) {
               });        
             }
             else {
-                console.log("attempt error")
+                console.log(asyncResult)
               _mailbox.item.notificationMessages.replaceAsync("error", {
                 type: "errorMessage",
                 message: "Insert Failed - " + asyncResult.error.message,
                 persistent: false
               }); 
             }
+            console.log("finished check")
         }
     ); 
 } 
