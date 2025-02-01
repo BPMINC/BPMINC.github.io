@@ -29,7 +29,7 @@ function getBody(){
                 }
             );
             
-            console.log("done");
+            console.log("done " + body);
             resolve(body);
         }
         catch (error){
