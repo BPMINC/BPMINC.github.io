@@ -40,14 +40,14 @@ function statusUpdate(asyncResult){
         _mailbox.item.notificationMessages.replaceAsync("status", {
             type: "informationalMessage",
             icon: "icon-16",
-            message: text,
+            message: "Insert Successful",
             persistent: false
         });
     }
     else {
-        _mailbox.item.notificationMessages.addAsync("addTextError", {
+        _mailbox.item.notificationMessages.addAsync("error", {
         type: "errorMessage",
-        message: "Failed to insert " + asyncResult.error.message
+        message: "Save Failed - " + asyncResult.error.message
         });
     }
 }
