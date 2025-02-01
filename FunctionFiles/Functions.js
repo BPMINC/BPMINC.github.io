@@ -12,8 +12,8 @@ function insertDefaultAgenda(event){
 
     _mailbox.item.body.getAsync(
         Office.CoercionType.Html, (bodyResult) => {
-            console.log("ready");
-            console.log(bodyResult);
+            _settings.set("body", html);
+            _settings.saveAsync();
         }
     );
 
