@@ -2,13 +2,15 @@
 async function insertDefaultAgenda(event) {
 
   var subject = _settings.get("subject")
-  await setTextToSubject(subject, event);
+  await setTextToSubject(subject);
 
   var body = _settings.get("body")
-  setHTMLToBody(body, event);
+  await setHTMLToBody(body);
+
+  event.completed();
 }
 
-function setTextToSubject(text, event) {
+function setTextToSubject(text) {
 
   return new Promise(function (resolve, reject) {
     try{
@@ -17,7 +19,6 @@ function setTextToSubject(text, event) {
         text,         
         function (asyncResult){
           statusUpdate(asyncResult);
-          event.completed();
           resolve();
         }
       );
@@ -28,14 +29,22 @@ function setTextToSubject(text, event) {
   })
 }
 
-function setHTMLToBody(html, event) {
+function setHTMLToBody(html) {
 
-  _mailbox.item.body.setSelectedDataAsync(
-    html, 
-    { coercionType: Office.CoercionType.Html }, 
-    function (asyncResult){
-      statusUpdate(asyncResult);
-      event.completed();
+  return new Promise(function (resolve, reject) {
+    try{
+
+      _mailbox.item.body.setSelectedDataAsync(
+        html, 
+        { coercionType: Office.CoercionType.Html }, 
+        function (asyncResult){
+          statusUpdate(asyncResult);
+          resolve();
+        }
+      );
     }
-  );
+    catch (error){
+          reject();
+    }
+  })
 }
