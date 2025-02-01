@@ -26,32 +26,28 @@ function insertDefaultAgenda(event) {
 
 function setTextToSubject(text, event) {
 
-    _mailbox.item.body.setSelectedDataAsync(text, { coercionType: Office.CoercionType.Text }, 
+    _mailbox.item.body.setSelectedDataAsync(
+        text, 
+        { coercionType: Office.CoercionType.Text }, 
         function (asyncResult){
-          if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-            _mailbox.item.notificationMessages.replaceAsync("status", {
-                type: "informationalMessage",
-                icon: "icon-16",
-                message: text,
-                persistent: false
-              });
-          }
-          else {
-            _mailbox.item.notificationMessages.addAsync("addTextError", {
-              type: "errorMessage",
-              message: "Failed to insert " + asyncResult.error.message
-            });
-          }
+          statusUpdate(asyncResult);
           event.completed();
         });
 }
 
-
-function statusUpdate(text) {
-    _mailbox.item.notificationMessages.replaceAsync("status", {
-      type: "informationalMessage",
-      icon: "icon-16",
-      message: text,
-      persistent: false
-    });
-  }
+function statusUpdate(asyncResult){
+    if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+        _mailbox.item.notificationMessages.replaceAsync("status", {
+            type: "informationalMessage",
+            icon: "icon-16",
+            message: text,
+            persistent: false
+        });
+    }
+    else {
+        _mailbox.item.notificationMessages.addAsync("addTextError", {
+        type: "errorMessage",
+        message: "Failed to insert " + asyncResult.error.message
+        });
+    }
+}
