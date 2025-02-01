@@ -18,22 +18,17 @@ async function saveDefaultAgenda(event){
 function getBody(){
 
     return new Promise(function (resolve, reject) {
-    
-        try{
-            let body;
 
-            _mailbox.item.body.getAsync(
-                Office.CoercionType.Html,
-                function(asyncResult){
-                    body = asyncResult.value;
-                }
-            );
-            
-            console.log("done " + body);
-            resolve(body);
-        }
-        catch (error){
-            reject();
+        try {
+            Office.context.mailbox.item.body.getAsync(Office.CoercionType.Html, (result) => {
+            if (result.status === Office.AsyncResultStatus.Succeeded) {
+                resolve(result.value);
+            } else {
+                reject(result.error);
+            }
+            });
+        } catch {
+            reject("Unable to get email body text.");
         }
     })
 }
