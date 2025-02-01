@@ -31,7 +31,7 @@ function setHTMLToBody(html, event) {
 
     _mailbox.item.body.setSelectedDataAsync(
         html, 
-        { coercionType: Office.CoercionType.Text }, 
+        { coercionType: Office.CoercionType.Html }, 
         function (asyncResult){
           statusUpdate(asyncResult);
           event.completed();
