@@ -41,6 +41,7 @@ function setTextToSubject(text) {
               });        
             }
             else {
+                console.log("attempt error")
               _mailbox.item.notificationMessages.replaceAsync("error", {
                 type: "errorMessage",
                 message: "Insert Failed - " + asyncResult.error.message,
