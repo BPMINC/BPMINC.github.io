@@ -13,7 +13,7 @@ function insertDefaultAgenda(event){
     _mailbox.item.body.getAsync(
         { coercionType: Office.CoercionType.Html },
         function (asyncResult){
-            _settings.set("body", html);
+            _settings.set("body", asyncResult.value);
             event.completed();  
         }
     )
