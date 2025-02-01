@@ -18,14 +18,15 @@ async function saveDefaultAgenda(event){
 function getBody(){
 
     return new Promise(function (resolve, reject) {
-
-        var body;
-
+    
         try{
+            var body;
 
             body = _mailbox.item.body.getAsync(
                 Office.CoercionType.Html,
-                function(asyncResult){}
+                function(asyncResult){
+                    console.log("done");
+                }
             );
 
             resolve(body);
