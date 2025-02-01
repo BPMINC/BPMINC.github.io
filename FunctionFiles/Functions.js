@@ -11,7 +11,7 @@ Office.initialize = function () {
 function insertDefaultAgenda(event){
 
     _mailbox.item.body.getAsync(
-        { coercionType: Office.CoercionType.Html }
+        Office.CoercionType.Html, (bodyResult) => {}
     );
 
     event.completed();
