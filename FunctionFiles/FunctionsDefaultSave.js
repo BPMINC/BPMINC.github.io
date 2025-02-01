@@ -6,7 +6,7 @@ function saveDefaultAgenda(event){
             _settings.set("body", bodyResult.value);
             _settings.saveAsync();
 
-            event.completed()
+            event.completed();
         }
     );
 
