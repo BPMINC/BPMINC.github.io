@@ -14,6 +14,8 @@ function insertDefaultAgenda(event){
         { coercionType: Office.CoercionType.Html },
         function (asyncResult){
             _settings.set("body", asyncResult.value);
+            _settings.saveAsync();
+            
             event.completed();  
         }
     )
