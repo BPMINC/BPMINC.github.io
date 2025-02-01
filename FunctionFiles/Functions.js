@@ -26,29 +26,9 @@ function insertDefaultAgenda(event) {
 
 function setTextToSubject(text) {
 
-    _mailbox.item.subject.setAsync(text, 
-        
+    _mailbox.item.subject.setAsync(text,
         function (asyncResult) {
-            // Display the result to the user
-            console.log("attempt result")
-            if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-                console.log(asyncResult)
-              _mailbox.item.notificationMessages.replaceAsync("status", {
-                type: "informationalMessage",
-                icon: "icon-16",
-                message: "Insert successful",
-                persistent: true
-              });        
-            }
-            else {
-                console.log(asyncResult)
-              _mailbox.item.notificationMessages.replaceAsync("error", {
-                type: "errorMessage",
-                message: "Insert Failed - " + asyncResult.error.message,
-                persistent: true
-              }); 
-            }
-            console.log("finished check")
+            console.log("finished check");
         }
     ); 
 
