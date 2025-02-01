@@ -27,7 +27,7 @@ function insertDefaultAgenda(event) {
 function setTextToSubject(text) {
 
     _mailbox.item.subject.setAsync(text, 
-        console.log("attempt function")
+        
         function (asyncResult) {
             // Display the result to the user
             console.log("attempt result")
