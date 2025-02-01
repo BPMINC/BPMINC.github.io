@@ -1,12 +1,5 @@
 
 
-
-Office.initialize = function () {
-  _mailbox = Office.context.mailbox;
-  _settings = Office.context.roamingSettings;
-
-}
-
 function saveDefaultAgenda(event){
 
     _mailbox.item.body.getAsync(
