@@ -1,30 +1,41 @@
 
-function insertDefaultAgenda(event) {
+async function insertDefaultAgenda(event) {
 
-    var subject = _settings.get("subject")
-    setTextToSubject(subject, event);
+  var subject = _settings.get("subject")
+  await setTextToSubject(subject, event);
 
-    var body = _settings.get("body")
-    setHTMLToBody(body, event);
+  var body = _settings.get("body")
+  setHTMLToBody(body, event);
 }
 
-async function setTextToSubject(text, event) {
+function setTextToSubject(text, event) {
 
-    await _mailbox.item.subject.setAsync(
+  return new OfficeExtension.Promise(function (resolve, reject) {
+    try{
+
+      _mailbox.item.subject.setAsync(
         text,         
         function (asyncResult){
           statusUpdate(asyncResult);
           event.completed();
-        });
+          resolve();
+        }
+      );
+    }
+    catch (error){
+          reject();
+    }
+  })
 }
 
 function setHTMLToBody(html, event) {
 
-    _mailbox.item.body.setSelectedDataAsync(
-        html, 
-        { coercionType: Office.CoercionType.Html }, 
-        function (asyncResult){
-          statusUpdate(asyncResult);
-          event.completed();
-        });
+  _mailbox.item.body.setSelectedDataAsync(
+    html, 
+    { coercionType: Office.CoercionType.Html }, 
+    function (asyncResult){
+      statusUpdate(asyncResult);
+      event.completed();
+    }
+  );
 }
