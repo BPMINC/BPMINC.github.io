@@ -37,7 +37,7 @@ function setSubject(text){
            
         try{
     
-            _settings.set("body", text);
+            _settings.set("subject", text);
             _settings.saveAsync();
 
             resolve();
