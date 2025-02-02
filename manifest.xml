@@ -104,12 +104,12 @@
                   </Items>
                 </Control>
 
-                <!-- Specific Agenda Menu -->
-                <Control xsi:type="Menu" id="apptSpecificButton">
-                  <Label resid="specificButtonLabel" />
+                <!-- Requirements Agenda Menu -->
+                <Control xsi:type="Menu" id="apptReqsButton">
+                  <Label resid="reqsButtonLabel" />
                   <Supertip>
-                    <Title resid="specificTipTitle" />
-                    <Description resid="specificTipDesc" />
+                    <Title resid="reqsTipTitle" />
+                    <Description resid="reqsTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -117,11 +117,11 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Items>
-                    <Item id="apptSpecificR2R">
-                      <Label resid="specificR2RLabel" />
+                    <Item id="apptReqsR2R">
+                      <Label resid="reqsR2RLabel" />
                       <Supertip>
-                        <Title resid="specificR2RLabel" />
-                        <Description resid="specificR2RTipDesc" />
+                        <Title resid="reqsR2RLabel" />
+                        <Description resid="reqsR2RTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -129,14 +129,14 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>R2RSpecificAgenda</FunctionName>
+                        <FunctionName>R2RReqsAgenda</FunctionName>
                       </Action>
                     </Item>                    
-                    <Item id="apptSpecificP2P">
-                      <Label resid="specificP2PLabel" />
+                    <Item id="apptReqsP2P">
+                      <Label resid="reqsP2PLabel" />
                       <Supertip>
-                        <Title resid="specificP2PLabel" />
-                        <Description resid="specificP2PTipDesc" />
+                        <Title resid="reqsP2PLabel" />
+                        <Description resid="reqsP2PTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -144,14 +144,14 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>P2PSpecificAgenda</FunctionName>
+                        <FunctionName>P2PReqsAgenda</FunctionName>
                       </Action>
                     </Item>                    
-                    <Item id="apptSpecificO2C">
-                      <Label resid="specificO2CLabel" />
+                    <Item id="apptReqsO2C">
+                      <Label resid="reqsO2CLabel" />
                       <Supertip>
-                        <Title resid="specificO2CLabel" />
-                        <Description resid="specificO2CTipDesc" />
+                        <Title resid="reqsO2CLabel" />
+                        <Description resid="reqsO2CTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -159,7 +159,7 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>O2CSpecificAgenda</FunctionName>
+                        <FunctionName>O2CReqsAgenda</FunctionName>
                       </Action>
                     </Item>                    
                   </Items>
@@ -208,11 +208,11 @@
         <bt:String id="defaultInsertLabel" DefaultValue="Insert"/>
         <bt:String id="defaultSaveLabel" DefaultValue="Save"/>
 
-        <bt:String id="specificButtonLabel" DefaultValue="Specific agenda"/>
-        <bt:String id="specificTipTitle" DefaultValue="Specific Agenda Tip Title"/>
-        <bt:String id="specificR2RLabel" DefaultValue="R2R Agenda"/>
-        <bt:String id="specificP2PLabel" DefaultValue="P2P Agenda"/>
-        <bt:String id="specificO2CLabel" DefaultValue="O2C Agenda"/>
+        <bt:String id="reqsButtonLabel" DefaultValue="Reqs agenda"/>
+        <bt:String id="reqsTipTitle" DefaultValue="Reqs Agenda Tip Title"/>
+        <bt:String id="reqsR2RLabel" DefaultValue="R2R Agenda"/>
+        <bt:String id="reqsP2PLabel" DefaultValue="P2P Agenda"/>
+        <bt:String id="reqsO2CLabel" DefaultValue="O2C Agenda"/>
 
         <bt:String id="settingsButtonLabel" DefaultValue="Settings"/>
         <bt:String id="settingsTipTitle" DefaultValue="Settings Tip Title"/>
@@ -225,10 +225,10 @@
         <bt:String id="defaultInsertTipDesc" DefaultValue="Insert Default Agenda Tip" />
         <bt:String id="defaultSaveTipDesc" DefaultValue="Save Default Agenda Tip" />
 
-        <bt:String id="specificTipDesc" DefaultValue="Specific Agenda Tip"/>
-        <bt:String id="specificR2RTipDesc" DefaultValue="Insert R2R Agenda Tip" />
-        <bt:String id="specificP2PTipDesc" DefaultValue="Insert P2P Agenda Tip" />
-        <bt:String id="specificO2CTipDesc" DefaultValue="Insert O2C Agenda Tip" />
+        <bt:String id="reqsTipDesc" DefaultValue="Reqs Agenda Tip"/>
+        <bt:String id="reqsR2RTipDesc" DefaultValue="Insert R2R Agenda Tip" />
+        <bt:String id="reqsP2PTipDesc" DefaultValue="Insert P2P Agenda Tip" />
+        <bt:String id="reqsO2CTipDesc" DefaultValue="Insert O2C Agenda Tip" />
 
         <bt:String id="settingsTipDesc" DefaultValue="Settings Tip"/>
 
