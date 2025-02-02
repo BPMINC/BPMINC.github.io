@@ -12,7 +12,7 @@ function saveSubject(){
     return new Promise(function (resolve, reject) {
 
         try {
-            Office.context.mailbox.item.subject.getAsync(
+            _mailbox.item.subject.getAsync(
                 Office.CoercionType.text, 
                 function (result) {
                     if (result.status === Office.AsyncResultStatus.Succeeded) {
@@ -30,7 +30,7 @@ function saveSubject(){
             );
         } 
         catch {
-            reject("Unable to get email subject text.");
+            reject("Unable to get email subject text");
         }
     })
 }
