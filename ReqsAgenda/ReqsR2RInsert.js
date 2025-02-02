@@ -3,7 +3,7 @@ function insertReqsR2RAgenda(event) {
 
   const url = "https://bpmcpa.app.box.com/file/1666928015557?s=7ajotsruy10tzhr952euf8efhp4nrp8r";
   const params = {method: "GET", mode: "cors"}
-  }
+  
   try {
     const response = fetch(url, params);
     if (!response.ok) {
@@ -25,7 +25,7 @@ function insertReqsR2RAgenda(event) {
     //var body = getHTMLForBody();
     //await setHTMLToBody(body);
   
-    event.completed();
+    //event.completed();
   }
 
   function getTextForSubject(){
