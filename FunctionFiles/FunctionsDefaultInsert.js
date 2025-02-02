@@ -18,7 +18,7 @@ function setTextToSubject(text) {
       _mailbox.item.subject.setAsync(
         text,         
         function (asyncResult){
-          statusUpdate(asyncResult);
+          statusUpdate(asyncResult,"Insert");
           resolve();
         }
       );
@@ -38,7 +38,7 @@ function setHTMLToBody(html) {
         html, 
         { coercionType: Office.CoercionType.Html }, 
         function (asyncResult){
-          statusUpdate(asyncResult);
+          statusUpdate(asyncResult,"Insert");
           resolve();
         }
       );

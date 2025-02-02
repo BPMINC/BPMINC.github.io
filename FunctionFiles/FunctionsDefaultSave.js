@@ -17,7 +17,7 @@ function saveSubject(){
                         _settings.set("subject", result.value);
                         _settings.saveAsync();
             
-                        statusUpdate(result);
+                        statusUpdate(result,"Save");
                         resolve(result.value);                        
                     } 
                     else {
@@ -45,7 +45,7 @@ function saveBody(){
                         _settings.set("body", result.value);
                         _settings.saveAsync();
             
-                        statusUpdate(result);
+                        statusUpdate(result,"Save");
                         resolve(result.value);                        
                     } 
                     else {

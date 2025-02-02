@@ -1,16 +1,16 @@
-function statusUpdate(asyncResult){
+function statusUpdate(asyncResult, text){
     if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
         _mailbox.item.notificationMessages.replaceAsync("status", {
             type: "informationalMessage",
             icon: "icon-16",
-            message: "Insert Successful",
+            message: text + " Successful",
             persistent: false
         });
     }
     else {
         _mailbox.item.notificationMessages.replaceAsync("error", {
         type: "errorMessage",
-        message: "Save Failed - " + asyncResult.error.message
+        message: text + " Failed - " + asyncResult.error.message
         });
     }
 }
