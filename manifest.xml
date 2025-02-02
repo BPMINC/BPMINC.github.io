@@ -129,7 +129,7 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>R2RReqsAgenda</FunctionName>
+                        <FunctionName>insertReqsR2RAgenda</FunctionName>
                       </Action>
                     </Item>                    
                     <Item id="apptReqsP2P">
@@ -144,7 +144,7 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>P2PReqsAgenda</FunctionName>
+                        <FunctionName>insertReqsP2PAgenda</FunctionName>
                       </Action>
                     </Item>                    
                     <Item id="apptReqsO2C">
@@ -159,7 +159,7 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>O2CReqsAgenda</FunctionName>
+                        <FunctionName>insertReqsO2CAgenda</FunctionName>
                       </Action>
                     </Item>                    
                   </Items>
