@@ -4,24 +4,15 @@ async function insertReqsR2RAgenda(event) {
     var subject = getTextForSubject();
     await setTextToSubject(subject);
   
-    //var body = _settings.get("body")
-    //await setHTMLToBody(body);
+    var body = getHTMLForBody();
+    await setHTMLToBody(body);
   
     event.completed();
   }
 
   function getTextForSubject(){
 
-    return "<b><i>Meeting Objective</i></b><br/><br/>\
-    The objective of this session is for our team to gather \
-    a solid understanding of your AP processes from vendor \
-    creation, vendor bills and associated approvals, vendor \
-    payments and advanced electronic payments and expense reporting\
-    <br/><br/><br/><b><i>Meeting Agenda</i></b><br/>\
-    <ul><li>Vendor Master</li><li>Employee Master</li>\
-    <li>Vendor Bills</li><li>Vendor Payments</li>\
-    <li>Expense Reports</li><li>Fixed Assets</li></ul>\
-    "
+    return "CLIENTNAME - R2R Requirements Gathering"
 
   }
   
@@ -42,6 +33,20 @@ async function insertReqsR2RAgenda(event) {
             reject();
       }
     })
+  }
+
+  function getHTMLForBody(){
+
+    return "<b><i>Meeting Objective</i></b><br/><br/>\
+    The objective of this session is for our team to gather \
+    a solid understanding of your AP processes from vendor \
+    creation, vendor bills and associated approvals, vendor \
+    payments and advanced electronic payments and expense reporting\
+    <br/><br/><br/><b><i>Meeting Agenda</i></b><br/>\
+    <ul><li>Vendor Master</li><li>Employee Master</li>\
+    <li>Vendor Bills</li><li>Vendor Payments</li>\
+    <li>Expense Reports</li><li>Fixed Assets</li></ul>\
+    "
   }
   
   function setHTMLToBody(html) {
