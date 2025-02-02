@@ -1,14 +1,6 @@
 
 async function saveDefaultAgenda(event){
 
-/*     _mailbox.item.body.getAsync(
-        Office.CoercionType.Html, 
-        function (bodyResult){
-            _settings.set("body", bodyResult.value);
-            _settings.saveAsync();        
-        }
-    ); */
-
     let result = await getBody();
     await setBody(result);
 
