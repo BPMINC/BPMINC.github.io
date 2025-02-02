@@ -3,7 +3,7 @@ async function saveDefaultAgenda(event){
 
     await saveSubject();
 
-    await saveBody();
+    //await saveBody();
 
 }
 
