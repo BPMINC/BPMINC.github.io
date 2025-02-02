@@ -1,11 +1,11 @@
 
-async function insertReqsR2RAgenda(event) {
+function insertReqsR2RAgenda(event) {
 
   const url = "https://bpmcpa.app.box.com/file/1666928015557?s=7ajotsruy10tzhr952euf8efhp4nrp8r";
   const params = {method: "GET", mode: "cors"}
   }
   try {
-    const response = await fetch(url, params);
+    const response = fetch(url, params);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
