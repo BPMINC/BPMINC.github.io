@@ -31,13 +31,13 @@ function getSubject(){
 }
 
 
-function setSubject(body){
+function setSubject(text){
 
     return new Promise(function (resolve, reject) {
            
         try{
     
-            _settings.set("body", body);
+            _settings.set("body", text);
             _settings.saveAsync();
 
             resolve();
@@ -71,13 +71,13 @@ function getBody(){
 }
 
 
-function setBody(body){
+function setBody(html){
 
     return new Promise(function (resolve, reject) {
            
         try{
     
-            _settings.set("body", body);
+            _settings.set("body", html);
             _settings.saveAsync();
 
             resolve();
