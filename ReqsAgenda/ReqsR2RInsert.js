@@ -1,7 +1,7 @@
 
 async function insertReqsR2RAgenda(event) {
 
-  const url = "https://bpmcpa.app.box.com/file/1666928015557";
+  const url = "https://bpmcpa.app.box.com/file/1666928015557?s=7ajotsruy10tzhr952euf8efhp4nrp8r";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -12,7 +12,7 @@ async function insertReqsR2RAgenda(event) {
     console.log(response);
 
   } catch (error) {
-    console.error("my error");
+    console.error("my error - " + error.message);
   }
   
   
