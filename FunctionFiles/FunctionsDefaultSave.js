@@ -12,7 +12,6 @@ async function saveDefaultAgenda(event){
     let result = await getBody();
     await setBody(result);
 
-    event.completed();
 }
 
 function getBody(){
