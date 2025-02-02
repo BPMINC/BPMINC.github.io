@@ -21,11 +21,11 @@ function saveSubject(){
                         //_settings.set("subject", "Idunno");
                         //_settings.saveAsync();
             
-                        resolve("something");
+                        resolve();
                         
                     } 
                     else {
-                        reject(result.error);
+                        reject();
                     }            
                 }
             );
@@ -36,7 +36,7 @@ function saveSubject(){
     })
 }
 
-function saveBody(){
+/* function saveBody(){
 
     return new Promise(function (resolve, reject) {
 
@@ -62,4 +62,4 @@ function saveBody(){
             reject("Unable to get email body text.");
         }
     })
-}
+} */
