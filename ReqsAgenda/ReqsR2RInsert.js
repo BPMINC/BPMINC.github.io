@@ -8,8 +8,9 @@ async function insertReqsR2RAgenda(event) {
       throw new Error(`Response status: ${response.status}`);
     }
 
-    const json = await response.json();
-    console.log(json);
+    //const json = await response.json();
+    console.log(response);
+
   } catch (error) {
     console.error(error.message);
   }
