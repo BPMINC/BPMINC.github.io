@@ -2,7 +2,7 @@
 function insertReqsR2RAgenda(event) {
 
   const url = "https://bpmcpa.app.box.com/file/1666928015557?s=7ajotsruy10tzhr952euf8efhp4nrp8r";
-  const params = {method: "GET", mode: "cors"}
+  const params = {method: "GET", mode: "no-cors"}
   
   try {
     const response = fetch(url, params);
