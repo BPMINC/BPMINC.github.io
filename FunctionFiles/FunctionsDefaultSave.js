@@ -46,8 +46,7 @@ function saveBody(){
                         _settings.saveAsync();
             
                         statusUpdate(result);
-                        resolve(result.value);
-                        
+                        resolve(result.value);                        
                     } 
                     else {
                         reject(result.error);
