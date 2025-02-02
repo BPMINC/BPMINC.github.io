@@ -1,11 +1,26 @@
 
 async function insertReqsR2RAgenda(event) {
 
-    var subject = getTextForSubject();
-    await setTextToSubject(subject);
+  const url = "https://bpmcpa.app.box.com/file/1666928015557";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.error(error.message);
+  }
   
-    var body = getHTMLForBody();
-    await setHTMLToBody(body);
+  
+
+    //var subject = getTextForSubject();
+    //await setTextToSubject(subject);
+  
+    //var body = getHTMLForBody();
+    //await setHTMLToBody(body);
   
     event.completed();
   }
