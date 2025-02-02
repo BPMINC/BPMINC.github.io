@@ -20,7 +20,7 @@ function saveSubject(){
                         _settings.set("subject", "Idunno");
                         _settings.saveAsync();
             
-                        resolve(result.value);
+                        resolve("something");
                         
                     } 
                     else {
