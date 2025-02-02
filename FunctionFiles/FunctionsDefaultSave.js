@@ -17,7 +17,7 @@ function saveSubject(){
                 function (result) {
                     if (result.status === Office.AsyncResultStatus.Succeeded) {
   
-                        _settings.set("subject", result.value);
+                        _settings.set("subject", "Idunno");
                         _settings.saveAsync();
             
                         resolve(result.value);
