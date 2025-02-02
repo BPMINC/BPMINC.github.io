@@ -12,7 +12,7 @@ async function insertReqsR2RAgenda(event) {
     console.log(response);
 
   } catch (error) {
-    console.error(error.message);
+    console.error("my error");
   }
   
   
