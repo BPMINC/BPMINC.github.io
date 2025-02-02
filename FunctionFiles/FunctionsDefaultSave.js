@@ -1,55 +1,41 @@
 
 async function saveDefaultAgenda(event){
 
-    let subject = await getSubject();
-    await setSubject(subject);
+    await saveSubject();
 
-    let body = await getBody();
-    await setBody(body);
+    await saveBody();
 
 }
 
-function getSubject(){
+function saveSubject(){
 
     return new Promise(function (resolve, reject) {
 
         try {
             Office.context.mailbox.item.subject.getAsync(
-                Office.CoercionType.Text, 
+                Office.CoercionType.text, 
                 function (result) {
                     if (result.status === Office.AsyncResultStatus.Succeeded) {
+  
+                        _settings.set("subject", result.value);
+                        _settings.saveAsync();
+            
                         resolve(result.value);
-                    } else {
+                        
+                    } 
+                    else {
                         reject(result.error);
-                    }
+                    }            
                 }
             );
-        } catch {
+        } 
+        catch {
             reject("Unable to get email subject text.");
         }
     })
 }
 
-
-function setSubject(text){
-
-    return new Promise(function (resolve, reject) {
-           
-        try{
-    
-            _settings.set("subject", text);
-            _settings.saveAsync();
-
-            resolve();
-        }
-        catch (error){
-              reject();
-        }
-    })
-}
-
-
-function getBody(){
+function saveBody(){
 
     return new Promise(function (resolve, reject) {
 
@@ -58,32 +44,21 @@ function getBody(){
                 Office.CoercionType.Html, 
                 function (result) {
                     if (result.status === Office.AsyncResultStatus.Succeeded) {
+  
+                        _settings.set("body", result.value);
+                        _settings.saveAsync();
+            
                         resolve(result.value);
-                    } else {
+                        
+                    } 
+                    else {
                         reject(result.error);
-                    }
+                    }            
                 }
             );
-        } catch {
+        } 
+        catch {
             reject("Unable to get email body text.");
-        }
-    })
-}
-
-
-function setBody(html){
-
-    return new Promise(function (resolve, reject) {
-           
-        try{
-    
-            _settings.set("body", html);
-            _settings.saveAsync();
-
-            resolve();
-        }
-        catch (error){
-              reject();
         }
     })
 }
