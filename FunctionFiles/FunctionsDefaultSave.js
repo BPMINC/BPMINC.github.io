@@ -3,7 +3,7 @@ async function saveDefaultAgenda(event){
 
     await saveSubject();
 
-    //await saveBody();
+    await saveBody();
 
     event.completed();
 }
@@ -13,13 +13,12 @@ function saveSubject(){
     return new Promise(function (resolve, reject) {
 
         try {
-            _mailbox.item.subject.getAsync(
-                Office.CoercionType.text, 
+            _mailbox.item.subject.getAsync(                
                 function (result) {
                     if (result.status === Office.AsyncResultStatus.Succeeded) {
   
-                        //_settings.set("subject", "Idunno");
-                        //_settings.saveAsync();
+                        _settings.set("subject", result.value);
+                        _settings.saveAsync();
             
                         resolve();
                         
@@ -36,7 +35,7 @@ function saveSubject(){
     })
 }
 
-/* function saveBody(){
+function saveBody(){
 
     return new Promise(function (resolve, reject) {
 
@@ -62,4 +61,4 @@ function saveSubject(){
             reject("Unable to get email body text.");
         }
     })
-} */
+}
