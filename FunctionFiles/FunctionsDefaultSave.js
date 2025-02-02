@@ -5,6 +5,7 @@ async function saveDefaultAgenda(event){
 
     //await saveBody();
 
+    event.completed();
 }
 
 function saveSubject(){
