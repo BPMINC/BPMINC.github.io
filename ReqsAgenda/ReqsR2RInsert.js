@@ -46,7 +46,7 @@ async function insertReqsR2RAgenda(event) {
     <ul><li>Vendor Master</li><li>Employee Master</li>\
     <li>Vendor Bills</li><li>Vendor Payments</li>\
     <li>Expense Reports</li><li>Fixed Assets</li></ul>\
-    "
+    <br /><br />Thanks,<br />Joe"
   }
   
   function setHTMLToBody(html) {
