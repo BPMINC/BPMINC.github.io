@@ -1,28 +1,13 @@
 
-function insertReqsR2RAgenda(event) {
+async function insertReqsR2RAgenda(event) {
 
-  var file = "file:///C:/Users/JosephSmith/OneDrive - BPM/Desktop/Personal/Templates/thisfile.txt";
-
-  var rawFile = new XMLHttpRequest();
-  rawFile.open("GET", file, false);
-  rawFile.onreadystatechange = function () {
-    if(rawFile.readyState === 4)  {
-      if(rawFile.status === 200 || rawFile.status == 0) {
-        var allText = rawFile.responseText;
-        console.log(allText);
-       }
-    }
-  }
-  rawFile.send(null);
+    var subject = getTextForSubject();
+    await setTextToSubject(subject);
   
-
-    //var subject = getTextForSubject();
-    //await setTextToSubject(subject);
+    var body = getHTMLForBody();
+    await setHTMLToBody(body);
   
-    //var body = getHTMLForBody();
-    //await setHTMLToBody(body);
-  
-    //event.completed();
+    event.completed();
   }
 
   function getTextForSubject(){
