@@ -12,9 +12,9 @@
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 
     <script src="SettingsDeclarations.js" type="text/javascript"></script>
-<!--     <script src="SettingsNotifications.js" type="text/javascript"></script> -->
+    <!--     <script src="SettingsNotifications.js" type="text/javascript"></script> -->
 
-<!--     <script src="SettingsPane.js" type="text/javascript"></script> -->
+    <!--     <script src="SettingsPane.js" type="text/javascript"></script> -->
 
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" />
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" />
@@ -24,7 +24,16 @@
 </head>
 
 <body>
-    <div id="content-header">
+
+    <div class="app-Title-bar ms-bgColor-themeDarker ms-fontColor-themeLighter ms-font-xxl ms-fontWeight-semibold">Module extension sample</div>
+
+    <div class="app-Data-display">
+        <div class="app-Grid-title ms-fontColor-themeDarker ms-font-xl ms-fontWeight-semibold">Meetings</div>
+        <div id="app-Meetings-table" class="app-Grid ms-Grid app-Grid ms-font-m-plus"></div>
+    </div>
+
+    <div id="app-Running-total"> </div>
+    <!--     <div id="content-header">
 
         <div class="padding">
             <h1 class="ms-font-xl ms-fontWeight-light ms-fontColor-white">List of customers2</h1>
@@ -61,14 +70,7 @@
 
             </div>
         </div>
-    </div>
-
-    <div class="app-Title-bar ms-bgColor-themeDarker ms-fontColor-themeLighter ms-font-xxl ms-fontWeight-semibold">Office Add-ins Outlook module extension sample</div>
-    <div class="app-Data-display">
-        <div class="app-Grid-title ms-fontColor-themeDarker ms-font-xl ms-fontWeight-semibold">Meetings</div>
-        <div id="app-Meetings-table" class="app-Grid ms-Grid app-Grid ms-font-m-plus"></div>
-    </div>
-    <div id="app-Running-total"> </div>
+    </div> -->
 </body>
 
 </html>
