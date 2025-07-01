@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "docx-tables": "^0.3.0"
+  }
+}
