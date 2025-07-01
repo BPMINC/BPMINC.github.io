@@ -46,7 +46,7 @@
 
 async function openPicker() {
 
-    const { fromEvent } = 'file-Selector';
+    const { fromEvent } = 'file-selector';
 
     document.addEventListener('drop', async evt => {
 
