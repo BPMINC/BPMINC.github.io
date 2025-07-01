@@ -121,7 +121,7 @@
                   </Items>
                 </Control>
 
-                <!-- Create Agenda Menu -->
+                <!-- Create Agenda Menu
                 <Control xsi:type="Menu" id="apptReqsButton">
                   <Label resid="reqsButtonLabel" />
                   <Supertip>
@@ -184,7 +184,7 @@
                       </Action>
                     </Item>                    
                   </Items>
-                </Control>
+                </Control> -->
 
 
                 <!-- Settings Menu -->
@@ -221,7 +221,7 @@
       <bt:Urls>
         <bt:Url id="createAgendaUrl" DefaultValue="https://bpminc.github.io/Agendas/CreateAgenda.html"/>
         <bt:Url id="FunctionsUrl" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
-        <bt:Url id="ReqsP2PUrl" DefaultValue="https://bpminc.github.io/ReqsAgenda/ReqsP2P.html"/>
+        <!-- <bt:Url id="ReqsP2PUrl" DefaultValue="https://bpminc.github.io/ReqsAgenda/ReqsP2P.html"/> -->
         <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/SettingsPane/SettingsPane.html"/>
       </bt:Urls>
 
@@ -236,11 +236,11 @@
         <bt:String id="defaultInsertLabel" DefaultValue="Insert"/>
         <bt:String id="defaultSaveLabel" DefaultValue="Save"/>
 
-        <bt:String id="reqsButtonLabel" DefaultValue="Reqs agenda"/>
+        <!-- <bt:String id="reqsButtonLabel" DefaultValue="Reqs agenda"/>
         <bt:String id="reqsTipTitle" DefaultValue="Reqs Agenda Tip Title"/>
         <bt:String id="reqsR2RLabel" DefaultValue="R2R Agenda"/>
         <bt:String id="reqsP2PLabel" DefaultValue="P2P Agenda"/>
-        <bt:String id="reqsO2CLabel" DefaultValue="O2C Agenda"/>
+        <bt:String id="reqsO2CLabel" DefaultValue="O2C Agenda"/> -->
 
         <bt:String id="settingsButtonLabel" DefaultValue="Settings"/>
         <bt:String id="settingsTipTitle" DefaultValue="Settings Tip Title"/>
@@ -255,10 +255,10 @@
         <bt:String id="defaultInsertTipDesc" DefaultValue="Insert Default Agenda Tip" />
         <bt:String id="defaultSaveTipDesc" DefaultValue="Save Default Agenda Tip" />
 
-        <bt:String id="reqsTipDesc" DefaultValue="Reqs Agenda Tip"/>
+        <!-- <bt:String id="reqsTipDesc" DefaultValue="Reqs Agenda Tip"/>
         <bt:String id="reqsR2RTipDesc" DefaultValue="Insert R2R Agenda Tip" />
         <bt:String id="reqsP2PTipDesc" DefaultValue="Insert P2P Agenda Tip" />
-        <bt:String id="reqsO2CTipDesc" DefaultValue="Insert O2C Agenda Tip" />
+        <bt:String id="reqsO2CTipDesc" DefaultValue="Insert O2C Agenda Tip" /> -->
 
         <bt:String id="settingsTipDesc" DefaultValue="Settings Tip"/>
 
