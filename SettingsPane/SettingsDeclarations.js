@@ -16,35 +16,15 @@
     // The initialze function is run each time the page is loaded.
     Office.initialize = function (reason) {
         $(document).ready(function () {
-            setBillingRates(127);
+            getCustomers();
         });
     };
 })();
 
-var runningTotalHours;
-var runningTotalAmount;
-
-
-function setBillingRates(rate) {
-
-  runningTotalHours = 0;
-  runningTotalAmount = 0;
-
-  var xhr = [
-    setMeetingsRate(rate),
-    setMeetingsRate(rate),
-    setMeetingsRate(rate)
-  ];
-
-  $.when(xhr[0], xhr[1], xhr[2]).then(function () {
-    //showGrandTotal();
-  });
-}
-
 
 // Constructs the meetings table and calculated the total
 // billing amount for each item and for all meetings.
-function setMeetingsRate(rate) {
+function getCustomers() {
     return $.getJSON("../assets/customerList.json", function (data) {
         var jsonData = data.Customers;
 
@@ -52,32 +32,30 @@ function setMeetingsRate(rate) {
         dataTable.html("");
 
         var headerRow = $('<div />');
-        headerRow.append(makeHeaderCell("Name", "5"));
-        headerRow.append(makeHeaderCell("RMID", "5"));
-        headerRow.append(makeHeaderCell("SOW", "1", "true"));
+        headerRow.append(makeHeaderCell("Name", "3"));
+        headerRow.append(makeHeaderCell("RMID", "2"));
+        headerRow.append(makeHeaderCell("SOW", "5", "true"));
 
         dataTable.append(headerRow);
 
-        var totalHours = 0;
-        var totalAmount = 0;
+
 
         for (var i in jsonData) {
             var dataRow = $("<div />", {
                 "class": "ms-Grid-row app-Grid-row"
             });
-            dataRow.append(makeRowCell(jsonData[i].Name, "5"));
-            dataRow.append(makeRowCell(jsonData[i].RMID, "5"));
-            dataRow.append(makeRowCell(jsonData[i].SOW_Path, "1", "true"));
+            dataRow.append(makeRowCell(jsonData[i].Name, "3"));
+            dataRow.append(makeRowCell(jsonData[i].RMID, "2"));
+            dataRow.append(makeRowCell(jsonData[i].SOW_Path, "5", "true"));
 
-            totalHours += Number(jsonData[i].Hours);
-            totalAmount += rate * (jsonData[i].Hours);
+   
 
             dataTable.append(dataRow);
         }
         
 
-        runningTotalHours += totalHours;
-        runningTotalAmount += totalAmount;
+        console.log(jsonData);
+
     });
 };
 
