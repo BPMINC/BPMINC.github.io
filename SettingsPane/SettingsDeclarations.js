@@ -28,7 +28,7 @@ function getCustomers() {
     return $.getJSON("../Assets/customerList.json", function (data) {
         var jsonData = data.Customers;
 
-        var dataTable = $("#app-Meetings-table");
+        var dataTable = $("#app-Customers-table");
         dataTable.html("");
 
         var headerRow = $('<div />');
