@@ -61,7 +61,7 @@ function getCustomers() {
 
 
 function makeHeaderCell(text, width, right) {
-    var cssClass = "ms-Grid-col ms-fontColor-themeDark ms-font-l ms-u-lg" + width;
+    var cssClass = "ms-Grid-col ms-font-l ms-u-lg" + width;
 
     if (right) {
         cssClass += " app-Cell-right";
