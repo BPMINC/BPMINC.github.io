@@ -1,4 +1,4 @@
-const docxTables = require('docx-tables');
+import docxTables from 'docx-tables';
 
 docxTables({ file: 'c:/temp/simple.docx' })
   .then((data) => {
