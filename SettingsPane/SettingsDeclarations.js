@@ -1,14 +1,25 @@
 
-Office.initialize = function () {
+// Office.initialize = function () {
 
-  "use strict"
+//   "use strict"
 
-  $(document).ready(function () {
+//   $(document).ready(function () {
 
-    setBillingRates(127);
-  });
+//     setBillingRates(127);
+//   });
 
-}
+// }
+
+
+(function () {
+    "use strict"
+    // The initialze function is run each time the page is loaded.
+    Office.initialize = function (reason) {
+        $(document).ready(function () {
+            setBillingRates(127);
+        });
+    };
+})();
 
 var runningTotalHours;
 var runningTotalAmount;
@@ -149,5 +160,12 @@ function setBillingRates(rate) {
 //      }));
 
 //     totalTable.append(totalRow);
+// };
+
+
+// function completeEvent(event) {
+//     if (event) {
+//         event.completed(true);
+//     }
 // };
 
