@@ -7,9 +7,13 @@ Office.initialize = function () {
   _settings = Office.context.roamingSettings;
 
   const { fromEvent } = fileSelector;
+
   document.addEventListener('drop', async evt => {
     const files = await fromEvent(evt);
+
+    console.log("start")
     console.log(files);
+    console.log("finish")
   });
 
 }
