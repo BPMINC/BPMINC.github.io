@@ -9,7 +9,7 @@ export default function App() {
   if (loading) {
     return <div>Loading...</div>;
   }
-
+}
 
 
 // import docxTables from 'docx-tables';
