@@ -222,7 +222,7 @@
         <bt:Url id="createAgendaUrl" DefaultValue="https://bpminc.github.io/Agendas/CreateAgenda.html"/>
         <bt:Url id="FunctionsUrl" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
         <!-- <bt:Url id="ReqsP2PUrl" DefaultValue="https://bpminc.github.io/ReqsAgenda/ReqsP2P.html"/> -->
-        <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/SettingsPane/SettingsPane.html"/>
+        <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/Settings/Settings.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
