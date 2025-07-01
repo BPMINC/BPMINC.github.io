@@ -28,7 +28,7 @@
 
 //import {fromEvent} from 'file-selector';
 
- // Open file picker
+// Open file picker
 //const handles = await window.showOpenFilePicker({multiple: true});
 // // Get the files
 // const files = await fromEvent(handles);
@@ -43,14 +43,15 @@
 // console.log(newFile);
 
 
-import {fromEvent} from 'file-selector';
-
 
 async function openPicker() {
 
-// Open file picker
-const handles = await window.showOpenFilePicker({multiple: true});
+    const { fromEvent } = fileSelector;
 
-// Get the files
-const files = await fromEvent(handles);
+    document.addEventListener('drop', async evt => {
+
+        const files = await fromEvent(evt);
+        console.log(files);
+        
+    });
 }
