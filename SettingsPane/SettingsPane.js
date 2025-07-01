@@ -1,15 +1,15 @@
-import { useFilePicker } from 'use-file-picker';
-import React from 'react';
+// import { useFilePicker } from 'use-file-picker';
+// import React from 'react';
 
-export default function App() {
-  const { openFilePicker, filesContent, loading } = useFilePicker({
-    accept: '.txt',
-  });
+// export default function App() {
+//   const { openFilePicker, filesContent, loading } = useFilePicker({
+//     accept: '.txt',
+//   });
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-}
+//   if (loading) {
+//     return <div>Loading...</div>;
+//   }
+// }
 
 
 // import docxTables from 'docx-tables';
@@ -41,3 +41,16 @@ export default function App() {
 // let newFile = fs.readFileSync(filePath);
 
 // console.log(newFile);
+
+
+import {fromEvent} from 'file-selector';
+
+
+async function openPicker() {
+
+// Open file picker
+const handles = await window.showOpenFilePicker({multiple: true});
+
+// Get the files
+const files = await fromEvent(handles);
+}
