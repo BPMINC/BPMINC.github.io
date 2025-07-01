@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+ * See LICENSE in the project root for license information.
+ */
+ 
+ html,
+ body {
+     margin-right: 4px;
+     margin-left:4px;
+ }
+ 
+ .app-Data {
+     width: 100%;
+     height: auto;
+     z-index: 1;
+     min-height: 200px;
+     padding-left: 4px;
+     padding-top: 2px;
+     padding-right: 4px;
+ }
+ 
+ .app-Grid {
+     padding-right: 8px;
+     margin-bottom:4px;
+ }
+ 
+ .app-Grid-row {
+     padding: 6px;
+ }
+ 
+ .app-Cell-right {
+     text-align: right;
+ }
+ 
+ 

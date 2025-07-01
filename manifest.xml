@@ -116,7 +116,8 @@
                     <bt:Image size="32" resid="icon-32" />
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
-                  <Items>
+                  
+                  <Items>        
                     <Item id="apptReqsR2R">
                       <Label resid="reqsR2RLabel" />
                       <Supertip>
@@ -131,7 +132,9 @@
                       <Action xsi:type="ExecuteFunction">
                         <FunctionName>insertReqsR2RAgenda</FunctionName>
                       </Action>
-                    </Item>                    
+                    </Item>   
+
+
                     <Item id="apptReqsP2P">
                       <Label resid="reqsP2PLabel" />
                       <Supertip>
@@ -143,10 +146,11 @@
                         <bt:Image size="32" resid="icon-32" />
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>insertReqsP2PAgenda</FunctionName>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="ReqsP2PUrl" />
                       </Action>
-                    </Item>                    
+                    </Item> 
+
                     <Item id="apptReqsO2C">
                       <Label resid="reqsO2CLabel" />
                       <Supertip>
@@ -165,6 +169,7 @@
                   </Items>
                 </Control>
 
+
                 <!-- Settings Menu -->
                 <Control xsi:type="Button" id="apptSettingsButton">
                   <Label resid="settingsButtonLabel" />
@@ -181,6 +186,7 @@
                     <SourceLocation resid="SettingsPaneUrl" />
                   </Action>
                 </Control>
+
               </Group>
             </OfficeTab>
           </ExtensionPoint>
@@ -197,6 +203,7 @@
 
       <bt:Urls>
         <bt:Url id="FunctionsUrl" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
+        <bt:Url id="ReqsP2PUrl" DefaultValue="https://bpminc.github.io/ReqsAgenda/ReqsP2P.html"/>
         <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/SettingsPane/SettingsPane.html"/>
       </bt:Urls>
 
