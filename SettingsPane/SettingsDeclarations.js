@@ -25,7 +25,7 @@
 // Constructs the meetings table and calculated the total
 // billing amount for each item and for all meetings.
 function getCustomers() {
-    return $.getJSON("../assets/customerList.json", function (data) {
+    return $.getJSON("../Assets/customerList.json", function (data) {
         var jsonData = data.Customers;
 
         var dataTable = $("#app-Meetings-table");
