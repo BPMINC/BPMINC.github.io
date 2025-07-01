@@ -51,7 +51,9 @@ async function openPicker() {
     document.addEventListener('drop', async evt => {
 
         const files = await fromEvent(evt);
+        console.log("start");
         console.log(files);
+        console.log("finish");
         
     });
 }
