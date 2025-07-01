@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "docx-tables": "^0.3.0",
-    "file-selector": "^2.1.2"
+    "docx-tables": "^0.3.0"
   }
 }

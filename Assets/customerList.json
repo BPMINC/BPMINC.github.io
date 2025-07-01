@@ -1,0 +1,24 @@
+{
+  "Customers": [
+    {
+      "Name": "SPE",
+      "RMID": "10448484",
+      "SOW_Path": "SomePath/Caravel_SOW.docx"
+    },
+    {
+      "Name": "RevelXP PRM",
+      "RMID": "9633437",
+      "SOW_Path": "SomePath/Caravel_SOW.docx"
+    },
+    {
+      "Name": "Rocktop PRM",
+      "RMID": "9911363",
+      "SOW_Path": "SomePath/Caravel_SOW.docx"
+    },
+    {
+      "Name": "TeamDynamix",
+      "RMID": "9768724",
+      "SOW_Path": "SomePath/Caravel_SOW.docx"
+    }
+  ]
+}
