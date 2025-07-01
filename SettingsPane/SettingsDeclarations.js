@@ -88,35 +88,6 @@ function makeRowCell(text, width, right) {
 }
 
 
-
-// // Creates the row that displays the grand total for the page.
-// function showGrandTotal() {
-//     var totalTable = $("#app-Running-total");
-//     totalTable.html("");
-
-//      var totalRow = $("<div />", {
-//          "class": "app-Title-bar ms-bgColor-themeDarker ms-fontColor-themeLighter ms-font-xxl ms-fontWeight-semibold"
-//      });
-
-//      totalRow.append($("<div />", {
-//          "class": "app-Cell-right ms-Grid-col ms-u-lg10",
-//          "html": "Grand total:"
-//      }));
-
-//      totalRow.append($("<div />", {
-//          "class": "app-Cell-right ms-Grid-col ms-u-lg1",
-//          "html": runningTotalHours
-//      }));
-
-//      totalRow.append($("<div />", {
-//          "class": "app-Cell-right ms-Grid-col ms-u-lg1",
-//          "html": runningTotalAmount
-//      }));
-
-//     totalTable.append(totalRow);
-// };
-
-
 // function completeEvent(event) {
 //     if (event) {
 //         event.completed(true);
