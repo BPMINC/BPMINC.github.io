@@ -58,6 +58,23 @@
               <Group id="apptAgendaGeneratorGroup">
                 <Label resid="groupLabel" />
 
+                <!-- Create Agenda Button -->
+                <Control xsi:type="Button" id="createAgendaButton">
+                  <Label resid="createAgendaButtonLabel" />
+                  <Supertip>
+                    <Title resid="createAgendaTipTitle" />
+                    <Description resid="createAgendaTipDesc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon-16" />
+                    <bt:Image size="32" resid="icon-32" />
+                    <bt:Image size="80" resid="icon-80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="createAgendaUrl" />
+                  </Action>
+                </Control>
+
                 <!-- Default Agenda Menu -->
                 <Control xsi:type="Menu" id="apptDefaultButton">
                   <Label resid="defaultButtonLabel" />
@@ -104,7 +121,7 @@
                   </Items>
                 </Control>
 
-                <!-- Requirements Agenda Menu -->
+                <!-- Create Agenda Menu -->
                 <Control xsi:type="Menu" id="apptReqsButton">
                   <Label resid="reqsButtonLabel" />
                   <Supertip>
@@ -202,6 +219,7 @@
       </bt:Images>
 
       <bt:Urls>
+        <bt:Url id="createAgendaUrl" DefaultValue="https://bpminc.github.io/Agendas/CreateAgenda.html"/>
         <bt:Url id="FunctionsUrl" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
         <bt:Url id="ReqsP2PUrl" DefaultValue="https://bpminc.github.io/ReqsAgenda/ReqsP2P.html"/>
         <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/SettingsPane/SettingsPane.html"/>
