@@ -228,6 +228,9 @@
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Agenda Generator"/>
         
+        <bt:String id="createAgendaButtonLabel" DefaultValue="Create agenda"/>
+        <bt:String id="createAgendaTipTitle" DefaultValue="Create Agenda Tip Title"/>
+
         <bt:String id="defaultButtonLabel" DefaultValue="Default agenda"/>
         <bt:String id="defaultTipTitle" DefaultValue="Default Agenda Tip Title"/>
         <bt:String id="defaultInsertLabel" DefaultValue="Insert"/>
@@ -246,6 +249,8 @@
 
       <bt:LongStrings>
  
+        <bt:String id="createAgendaTipDesc" DefaultValue="Create Agenda Tip"/>
+
         <bt:String id="defaultTipDesc" DefaultValue="Default Agenda Tip"/>
         <bt:String id="defaultInsertTipDesc" DefaultValue="Insert Default Agenda Tip" />
         <bt:String id="defaultSaveTipDesc" DefaultValue="Save Default Agenda Tip" />
