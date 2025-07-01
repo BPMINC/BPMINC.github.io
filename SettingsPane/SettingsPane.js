@@ -44,16 +44,16 @@
 
 
 
-async function openPicker() {
+// async function openPicker() {
 
-    // const { fromEvent } = 'file-selector';
+//     // const { fromEvent } = 'file-selector';
 
-    // document.addEventListener('drop', async evt => {
+//     // document.addEventListener('drop', async evt => {
 
-    //     const files = await fromEvent(evt);
-    //     console.log("start");
-    //     console.log(files);
-    //     console.log("finish");
+//     //     const files = await fromEvent(evt);
+//     //     console.log("start");
+//     //     console.log(files);
+//     //     console.log("finish");
         
-    // });
-}
+//     // });
+// }
