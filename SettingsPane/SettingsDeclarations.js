@@ -6,7 +6,7 @@ Office.initialize = function () {
   _mailbox = Office.context.mailbox;
   _settings = Office.context.roamingSettings;
 
-  const { fromEvent } = fileSelector;
+  const { fromEvent } = 'file-selector';
 
   document.addEventListener('drop', async evt => {
     const files = await fromEvent(evt);
