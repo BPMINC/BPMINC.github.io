@@ -19,10 +19,10 @@
 
             //adds listener to Phases for any change
             setPhasesListener();
-            
+
             //adds listener to submit button for any change
             setGenerateAgendaListener();
-            
+
             //populates our default list values
             getCustomersToList();
             getPhasesToList();
@@ -74,7 +74,7 @@ function getPhasesToList() {
         for (var i in jsonData) {
 
             var dataOption = $("<option />", {
-                "class": "ms-Dropdown-item"                
+                "class": "ms-Dropdown-item"
             });
 
             dataOption.append(jsonData[i]);
@@ -90,7 +90,7 @@ function getPhasesToList() {
 function getAgendasToList() {
     return $.getJSON("../Assets/agendaList.json", function (data) {
         var jsonData = data.Agendas;
-        
+
         var selectedPhase = $("#app-Phase-dropdown").val();
 
         var dataTable = $("#app-Agenda-dropdown");
@@ -102,18 +102,18 @@ function getAgendasToList() {
             if (jsonData[i].name == selectedPhase) {
 
 
-                for (var j in jsonData[i].type){
+                for (var j in jsonData[i].type) {
 
                     var dataOption = $("<option />", {
-                        "class": "ms-Dropdown-item"                
+                        "class": "ms-Dropdown-item"
                     });
-        
+
                     dataOption.append(jsonData[i].type[j]);
-        
-        
+
+
                     dataTable.append(dataOption);
                 }
-                
+
             }
 
         }
@@ -122,22 +122,28 @@ function getAgendasToList() {
 }
 
 
-
-
 function generateAgenda() {
-    var selectedCustomer = $("#app-Customer-dropdown").val();
-    var selectedPhase = $("#app-Phase-dropdown").val();
-    var selectedAgenda = $("#app-Agenda-dropdown").val();
+    return $.getJSON("../Assets/agendaDetails.json", function (data) {
+        var jsonData = data.Agendas;
 
-    _settings.set("customer", customerToAdd);
+        var selectedCustomer = $("#app-Customer-dropdown").val();
+        var selectedPhase = $("#app-Phase-dropdown").val();
+        var selectedAgenda = $("#app-Agenda-dropdown").val();
 
-    return new Promise((resolve, reject) => {  
-        // Fake success  
-        setTimeout(() => {  
-        resolve("success");  
-        }, 1000);
-    });    
-}
+        var agenda = selectedPhase && "-" && selectedAgenda
+
+        for (var i in jsonData) {
+
+            if (agenda == jsonData[i].name) {
+
+                Office.context.mailbox.item.subject.setAsync(text,function (asyncResult){});
+
+            }
+
+        }
+
+
+    }
 
 
 

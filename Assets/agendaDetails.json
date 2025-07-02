@@ -1,0 +1,35 @@
+{
+  "Agendas": [
+    {
+      "name": "Requirements - R2R",
+      "subject": "R2R Requirements Gathering",
+      "body": "Please join for a review of the R2R requirements."
+    },
+    {
+      "name": "Design - R2R",
+      "subject": "R2R Design Session",
+      "body": "Please join for a working R2R design session."
+    },
+    {
+      "name": "Configure - R2R",
+      "subject": "R2R Configuration Review",
+      "body": "Please join for a review of the R2R configurations."
+    },
+    {
+      "name": "Requirements - P2P",
+      "subject": "P2P Requirements Gathering",
+      "body": "Please join for a review of the P2P requirements."
+    },
+    {
+      "name": "Design - P2P",
+      "subject": "P2P Design Session",
+      "body": "Please join for a working P2P design session."
+    },
+    {
+      "name": "Configure - P2P",
+      "subject": "P2P Configuration Review",
+      "body": "Please join for a review of the P2P configurations."
+    }
+
+  ]
+}
