@@ -31,9 +31,11 @@ function getCustomersToList() {
         dataTable.html("");
 
         for (var i in jsonData) {
+
             var dataRow = $("<option />", {
                 "class": "ms-Dropdown-item"
             });
+
             dataRow.append(jsonData[i].Name);
 
             dataTable.append(dataRow);
@@ -50,12 +52,16 @@ function getProcessesToList() {
         dataTable.html("");
 
         for (var i in jsonData) {
-            var dataRow = $("<option />", {
-                "class": "ms-Dropdown-item"
-            });
-            dataRow.append(jsonData[i].Name);
 
-            dataTable.append(dataRow);
+            var dataOptgroup = $("<optgroup />", {
+                "label": jsonData[i].Name,
+                "class": "ms-Dropdown-items"
+                
+            });
+
+            dataOptgroup.append(jsonData[i].Name);
+
+            dataTable.append(dataOptgroup);
         }
 
     });
