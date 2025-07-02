@@ -141,10 +141,13 @@ function generateAgenda() {
                 var agendaSubject = jsonData[1].subject
 
                 //Office.context.mailbox.item.subject.setAsync(`${selectedCustomer} - ${agendaSubject}`, function (asyncResult) { });
-                setTextToSubject(`${selectedCustomer} - ${agendaSubject}`)
+                setTextToSubject(`${selectedCustomer} - ${agendaSubject}`);
 
+                
                 //set the HTML body
-                setHTMLToBody(`${selectedCustomer} - ${agendaSubject}`)
+                var agendaBody = jsonData[1].body
+
+                setHTMLToBody(agendaBody);
 
 
             }
