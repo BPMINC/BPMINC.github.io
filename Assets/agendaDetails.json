@@ -3,32 +3,34 @@
     {
       "name": "Requirements - R2R",
       "subject": "R2R Requirements Gathering",
-      "body": "<div><p>Hi Team,</p><p></p><p>Please join for a review of the R2R requirements.</p><p> </p><p>Meeting Objective  </p><p>Ensure we are on track with Data Migration activities. </p><p>  </p><p>Meeting Agenda  </p><p>Review Data Migration Status & Upcoming Deliverables</p><p>Review Data Migration Strategy Document as needed </p><p>Discuss relevant Data Migration Templates</p><p></p><p>Thanks,</p><p>Joe</p></div>"
+      "bodyIntro": "<div> <p>Hi Team,</p> <p></p> <p></p> <p>Please join for a review of the R2R business requirements.</p> </div>",
+      "bodyObjective": "<div> <p></p> <p></p> <p><b>Meeting Objective</b></p> </div>",
+      "bodyAgenda": "<div> <p><b>Meeting Agenda</b</p> </div>",
+      "bodyClosing": "<div> <p>Thanks,</p> <p></p> <p>Joseph</p> </div>"
     },
     {
       "name": "Design - R2R",
       "subject": "R2R Design Session",
-      "body": "Please join for a working R2R design session."
+      "bodyIntro": "<div> <p>Hi Team,</p> <p></p> <p></p> <p>Please join for an R2R design session.</p> </div>",
+      "bodyObjective": "<div> <p></p> <p></p> <p><b>Meeting Objective</b></p> </div>",
+      "bodyAgenda": "<div> <p><b>Meeting Agenda</b</p> </div>",
+      "bodyClosing": "<div> <p>Thanks,</p> <p></p> <p>Joseph</p> </div>"
     },
     {
       "name": "Configure - R2R",
       "subject": "R2R Configuration Review",
-      "body": "Please join for a review of the R2R configurations."
+      "bodyIntro": "<div> <p>Hi Team,</p> <p></p> <p></p> <p>Please join for a review of the R2R configurations.</p> </div>",
+      "bodyObjective": "<div> <p></p> <p></p> <p><b>Meeting Objective</b></p> </div>",
+      "bodyAgenda": "<div> <p><b>Meeting Agenda</b</p> </div>",
+      "bodyClosing": "<div> <p>Thanks,</p> <p></p> <p>Joseph</p> </div>"
     },
     {
       "name": "Requirements - P2P",
       "subject": "P2P Requirements Gathering",
-      "body": "Please join for a review of the P2P requirements."
-    },
-    {
-      "name": "Design - P2P",
-      "subject": "P2P Design Session",
-      "body": "Please join for a working P2P design session."
-    },
-    {
-      "name": "Configure - P2P",
-      "subject": "P2P Configuration Review",
-      "body": "Please join for a review of the P2P configurations."
+      "bodyIntro": "<div> <p>Hi Team,</p> <p></p> <p></p> <p>Please join for a review of the P2P business requirements.</p> </div>",
+      "bodyObjective": "<div> <p></p> <p></p> <p><b>Meeting Objective</b></p> </div>",
+      "bodyAgenda": "<div> <p><b>Meeting Agenda</b</p> </div>",
+      "bodyClosing": "<div> <p>Thanks,</p> <p></p> <p>Joseph</p> </div>"
     }
   ]
 }
