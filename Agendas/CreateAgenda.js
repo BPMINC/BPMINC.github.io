@@ -17,7 +17,7 @@
     Office.initialize = function (reason) {
         $(document).ready(function () {
             getCustomersToList();
-            getProcessesToList();
+            getPhasesToList();
             getAgendasToList();
         });
     };
@@ -49,8 +49,6 @@ function getCustomersToList() {
 function getPhasesToList() {
     return $.getJSON("../Assets/phaseList.json", function (data) {
         var jsonData = data.Phases;
-
-        console.log(jsonData)
 
         var dataTable = $("#app-Phase-dropdown");
         dataTable.html("");
