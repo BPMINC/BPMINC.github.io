@@ -2,15 +2,15 @@
   "Processes": [
     {
       "Name": "R2R",
-      "type": ["reqs","design", "config"]
+      "type": ["Requirements","Design", "Config Review"]
     },
     {
       "Name": "P2P",
-      "type": ["reqs","design", "config"]
+      "type": ["Requirements","Design", "Config Review"]
     },
     {
       "Name": "O2C",
-      "type": ["reqs","design", "config"]
+      "type": ["Requirements","Design", "Config Review"]
     }
 
   ]
