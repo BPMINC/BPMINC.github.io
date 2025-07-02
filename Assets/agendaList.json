@@ -17,11 +17,11 @@
       "type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Reports/Searches", "General Features", "Roles"]
     },
     {
-      "name": "Test Cyle 1",
+      "name": "Test Cycle 1",
       "type": ["UAT Check In"]
     },
     {
-      "name": "Test Cyle 2",
+      "name": "Test Cycle 2",
       "type": ["UAT Check In"]
     },
     {
