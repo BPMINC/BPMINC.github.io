@@ -16,9 +16,14 @@
     // The initialze function is run each time the page is loaded.
     Office.initialize = function (reason) {
         $(document).ready(function () {
+
+            //populates our default list values
             getCustomersToList();
             getPhasesToList();
             getAgendasToList();
+
+            //adds listener to Phases for any change
+            setPhasesListener();
         });
     };
 })();
@@ -72,15 +77,16 @@ function getPhasesToList() {
 function getAgendasToList() {
     return $.getJSON("../Assets/agendaList.json", function (data) {
         var jsonData = data.Agendas;
+        
+        var selectedPhase = $("#app-Phase-dropdown").val();
 
         var dataTable = $("#app-Agenda-dropdown");
         dataTable.html("");
 
-        var selectedVal = $("#app-Phase-dropdown").val();
 
         for (var i in jsonData) {
 
-            if (jsonData[i].name == selectedVal) {
+            if (jsonData[i].name == selectedPhase) {
 
 
                 for (var j in jsonData[i].type)
@@ -99,6 +105,11 @@ function getAgendasToList() {
 
     });
 }
+
+
+function setPhasesListener() {
+    return $("#app-Phase-dropdown").on("change", getAgendasToList);
+};
 
 
 
