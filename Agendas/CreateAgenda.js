@@ -50,6 +50,8 @@ function getPhasesToList() {
     return $.getJSON("../Assets/phaseList.json", function (data) {
         var jsonData = data.Phases;
 
+        console.log(jsonData)
+
         var dataTable = $("#app-Phase-dropdown");
         dataTable.html("");
 
@@ -78,30 +80,18 @@ function getAgendasToList() {
 
         for (var i in jsonData) {
 
-            var dataOptgroup = $("<optgroup />", {
-                "label": jsonData[i].Name,
-                "class": "ms-Dropdown-label"                
+            var dataOption = $("<option />", {
+                "class": "ms-Dropdown-item"                
             });
 
-            //dataOptgroup.append(jsonData[i].Name);
-            
-            for (var j in jsonData[i].type){
-
-                var dataOption = $("<option />",{
-                    "class": "ms-Dropdown-item"
-                });
-
-                dataOption.append(jsonData[i].type[j]);
-
-                dataOptgroup.append(dataOption);
-            }
+            dataOption.append(jsonData[i].type);
 
 
-            dataTable.append(dataOptgroup);
+            dataTable.append(dataOption);
         }
 
     });
-};
+}
 
 
 
