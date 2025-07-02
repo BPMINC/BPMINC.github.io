@@ -45,39 +45,30 @@ function getCustomersToList() {
     });
 };
 
-function getProcessesToList() {
-    return $.getJSON("../Assets/processList.json", function (data) {
-        var jsonData = data.Processes;
 
-        var dataTable = $("#app-Process-dropdown");
+function getPhasesToList() {
+    return $.getJSON("../Assets/phaseList.json", function (data) {
+        var jsonData = data.Phases;
+
+        var dataTable = $("#app-Phase-dropdown");
         dataTable.html("");
 
         for (var i in jsonData) {
 
-            var dataOptgroup = $("<optgroup />", {
-                "label": jsonData[i].Name,
-                "class": "ms-Dropdown-label"                
+            var dataOption = $("<option />", {
+                "class": "ms-Dropdown-item"                
             });
 
-            //dataOptgroup.append(jsonData[i].Name);
-            
-            for (var j in jsonData[i].type){
-
-                var dataOption = $("<option />",{
-                    "class": "ms-Dropdown-item"
-                });
-
-                dataOption.append(jsonData[i].type[j]);
-
-                dataOptgroup.append(dataOption);
-            }
+            dataOption.append(jsonData[i]);
 
 
-            dataTable.append(dataOptgroup);
+            dataTable.append(dataOption);
         }
 
     });
 };
+
+
 function getAgendasToList() {
     return $.getJSON("../Assets/agendaList.json", function (data) {
         var jsonData = data.Agendas;

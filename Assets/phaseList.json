@@ -1,0 +1,13 @@
+{
+  "Phases": [
+    "Requirements",
+    "Design",
+    "Configure",
+    "Train",
+    "Test Cycle 1",
+    "Test Cycle 2",
+    "Go Live Prep",
+    "Go Live",
+    "Post Go Live"
+  ]
+}
