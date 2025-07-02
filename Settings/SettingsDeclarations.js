@@ -16,7 +16,7 @@
     // The initialze function is run each time the page is loaded.
     Office.initialize = function (reason) {
         $(document).ready(function () {
-            getCustomers();
+            getCustomersToTable();
         });
     };
 })();
@@ -24,7 +24,7 @@
 
 // Constructs the meetings table and calculated the total
 // billing amount for each item and for all meetings.
-function getCustomers() {
+function getCustomersToTable() {
     return $.getJSON("../Assets/customerList.json", function (data) {
         var jsonData = data.Customers;
 
