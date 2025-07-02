@@ -55,11 +55,22 @@ function getProcessesToList() {
 
             var dataOptgroup = $("<optgroup />", {
                 "label": jsonData[i].Name,
-                "class": "ms-Dropdown-items"
-                
+                "class": "ms-Dropdown-items"                
             });
 
-            dataOptgroup.append(jsonData[i].Name);
+            //dataOptgroup.append(jsonData[i].Name);
+            
+            for (var j in jsonData[i].type){
+
+                var dataOption = $("<option />",{
+                    "class": "ms-Dropdown-item"
+                });
+
+                dataOption.append(jsonData[i].type[j]);
+
+                dataOptgroup.append(dataOption);
+            }
+
 
             dataTable.append(dataOptgroup);
         }
