@@ -44,33 +44,19 @@ function getCustomersToList() {
 
 function getProcessesToList() {
     return $.getJSON("../Assets/processList.json", function (data) {
-        var jsonData = data.processes;
+        var jsonData = data.Processes;
 
         var dataTable = $("#app-Process-dropdown");
         dataTable.html("");
 
         for (var i in jsonData) {
-            var dataGroup = $("<optgroup />", {
-                "class": "ms-Dropdown-items"
+            var dataRow = $("<option />", {
+                "class": "ms-Dropdown-item"
             });
+            dataRow.append(jsonData[i].Name);
 
-            dataGroup.append(jsonData[i].name);
-            
-            for (var j in jsonData[i].type){
-                var dataOption = $("<option />", {
-                    "class": "ms-Dropdown-item"
-                });
-                
-                dataOption.append(jsonData[i].type[j]);
-
-                dataGroup.append(dataOption);
-                
-            }
-            
-
-            dataTable.append(dataGroup);
+            dataTable.append(dataRow);
         }
-
 
     });
 };
