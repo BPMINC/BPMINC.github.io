@@ -164,8 +164,8 @@
 
         <bt:String id="createAgendaButtonLabel" DefaultValue="Create agenda"/>
         <bt:String id="quickAgendaButtonLabel" DefaultValue="Quick agenda"/>
-        <bt:String id="quickAgendaInsertLabel" DefaultValue="Insert quick agenda"/>
-        <bt:String id="quickAgendaSaveLabel" DefaultValue="Save quick agenda"/>
+        <bt:String id="quickAgendaInsertLabel" DefaultValue="Insert"/>
+        <bt:String id="quickAgendaSaveLabel" DefaultValue="Save"/>
         <bt:String id="settingsButtonLabel" DefaultValue="Settings"/>
 
         <bt:String id="createAgendaTipTitle" DefaultValue="Create Agenda Tip Title"/>
