@@ -1,0 +1,41 @@
+{
+  "Agendas": [
+    {
+      "Name": "Requirements",
+      "type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Integrations", "Business Overview"]
+    },
+    {
+      "Name": "Design",
+      "type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Integrations","Roles"]
+    },
+    {
+      "Name": "Configure",
+      "type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Integrations", "Generic Review"]
+    },
+    {
+      "Name": "Train",
+      "type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Reports/Searches", "General Features", "Roles"]
+    },
+    {
+      "Name": "Test Cyle 1",
+      "type": ["UAT Check In"]
+    },
+    {
+      "Name": "Test Cyle 2",
+      "type": ["UAT Check In"]
+    },
+    {
+      "Name": "Go Live Prep",
+      "type": ["GL Checklist Review"]
+    },
+    {
+      "Name": "Go Live",
+      "type": ["Go/NoGo Review"]
+    },
+    {
+      "Name": "Post Go Live",
+      "type": ["Post Live Check In"]
+    }
+
+  ]
+}

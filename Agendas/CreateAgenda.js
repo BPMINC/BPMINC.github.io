@@ -18,6 +18,7 @@
         $(document).ready(function () {
             getCustomersToList();
             getProcessesToList();
+            getAgendasToList();
         });
     };
 })();
@@ -49,6 +50,39 @@ function getProcessesToList() {
         var jsonData = data.Processes;
 
         var dataTable = $("#app-Process-dropdown");
+        dataTable.html("");
+
+        for (var i in jsonData) {
+
+            var dataOptgroup = $("<optgroup />", {
+                "label": jsonData[i].Name,
+                "class": "ms-Dropdown-label"                
+            });
+
+            //dataOptgroup.append(jsonData[i].Name);
+            
+            for (var j in jsonData[i].type){
+
+                var dataOption = $("<option />",{
+                    "class": "ms-Dropdown-item"
+                });
+
+                dataOption.append(jsonData[i].type[j]);
+
+                dataOptgroup.append(dataOption);
+            }
+
+
+            dataTable.append(dataOptgroup);
+        }
+
+    });
+};
+function getAgendasToList() {
+    return $.getJSON("../Assets/agendaList.json", function (data) {
+        var jsonData = data.Agendas;
+
+        var dataTable = $("#app-Agenda-dropdown");
         dataTable.html("");
 
         for (var i in jsonData) {
