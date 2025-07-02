@@ -76,16 +76,25 @@ function getAgendasToList() {
         var dataTable = $("#app-Agenda-dropdown");
         dataTable.html("");
 
+        var selectedVal = $("#app-Phase-dropdown").val();
+
         for (var i in jsonData) {
 
-            var dataOption = $("<option />", {
-                "class": "ms-Dropdown-item"                
-            });
-
-            dataOption.append(jsonData[i].type);
+            if (jsonData[i].name == selectedVal) {
 
 
-            dataTable.append(dataOption);
+                for (var j in jsonData[i].type)
+
+                var dataOption = $("<option />", {
+                    "class": "ms-Dropdown-item"                
+                });
+    
+                dataOption.append(jsonData[i].type[j]);
+    
+    
+                dataTable.append(dataOption);
+            }
+
         }
 
     });
