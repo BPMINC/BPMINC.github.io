@@ -136,14 +136,15 @@ function generateAgenda() {
 
             if (agenda == jsonData[i].name) {
 
-                Office.context.mailbox.item.subject.setAsync(text,function (asyncResult){});
+                Office.context.mailbox.item.subject.setAsync(text, function (asyncResult) { });
 
             }
 
         }
 
 
-    }
+    });
+}
 
 
 
