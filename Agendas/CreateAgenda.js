@@ -17,16 +17,29 @@
     Office.initialize = function (reason) {
         $(document).ready(function () {
 
+            //adds listener to Phases for any change
+            setPhasesListener();
+            
+            //adds listener to submit button for any change
+            setGenerateAgendaListener();
+            
             //populates our default list values
             getCustomersToList();
             getPhasesToList();
             getAgendasToList();
-
-            //adds listener to Phases for any change
-            setPhasesListener();
         });
     };
 })();
+
+
+function setPhasesListener() {
+    return $("#app-Phase-dropdown").on("change", getAgendasToList);
+}
+
+
+function setGenerateAgendaListener() {
+    return $("#app-generateAgenda-button").on("click", generateAgenda);
+}
 
 
 function getCustomersToList() {
@@ -109,9 +122,6 @@ function getAgendasToList() {
 }
 
 
-function setPhasesListener() {
-    return $("#app-Phase-dropdown").on("change", getAgendasToList);
-}
 
 
 function generateAgenda() {
