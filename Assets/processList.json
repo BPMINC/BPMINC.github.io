@@ -1,14 +1,6 @@
 {
-  "Processes": {
-    "process": [
-      "R2R",
-      "P2P",
-      "O2C"
-    ],
-    "type": [
-      "reqs",
-      "design",
-      "config"
-    ]
-  }
+	"processes" : [
+		["R2R", "P2P", "O2C"],
+		["reqs", "design", "config"]
+	]
 }
