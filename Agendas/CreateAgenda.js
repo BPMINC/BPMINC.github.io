@@ -130,13 +130,14 @@ function generateAgenda() {
         var selectedPhase = $("#app-Phase-dropdown").val();
         var selectedAgenda = $("#app-Agenda-dropdown").val();
 
-        var agenda = selectedPhase && "-" && selectedAgenda
+        var agendaName = selectedPhase && "-" && selectedAgenda
 
         for (var i in jsonData) {
 
-            if (agenda == jsonData[i].name) {
+            if (agendaName == jsonData[i].name) {
 
-                Office.context.mailbox.item.subject.setAsync(text, function (asyncResult) { });
+                var agendaSubject = jsonData[1].subject
+                Office.context.mailbox.item.subject.setAsync(agendaSubject, function (asyncResult) { });
 
             }
 
