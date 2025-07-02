@@ -1,5 +1,5 @@
 
-async function insertDefaultAgenda(event) {
+async function insertQuickAgenda(event) {
 
   var subject = _settings.get("subject")
   await setTextToSubject(subject);

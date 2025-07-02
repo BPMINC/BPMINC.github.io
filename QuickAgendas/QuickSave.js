@@ -1,5 +1,5 @@
 
-async function saveDefaultAgenda(event){
+async function saveQuickAgenda(event){
 
     await saveSubject();
     await saveBody();

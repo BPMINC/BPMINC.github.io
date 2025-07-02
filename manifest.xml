@@ -51,8 +51,7 @@
         <DesktopFormFactor>
           <FunctionFile resid="FunctionsUrl" />
 
-
-          <!-- Appointment compose form -->
+          <!-- Appointment command surface -->
           <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
             <OfficeTab id="TabDefault">
               <Group id="apptAgendaGeneratorGroup">
@@ -75,12 +74,13 @@
                   </Action>
                 </Control>
 
-                <!-- Default Agenda Menu -->
-                <Control xsi:type="Menu" id="apptDefaultButton">
-                  <Label resid="defaultButtonLabel" />
+
+                <!-- Quick Agenda Menu -->
+                <Control xsi:type="Menu" id="quickAgendaButton">
+                  <Label resid="quickAgendaButtonLabel" />
                   <Supertip>
-                    <Title resid="defaultTipTitle" />
-                    <Description resid="defaultTipDesc" />
+                    <Title resid="quickAgendaTipTitle" />
+                    <Description resid="quickAgendaTipDesc" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon-16" />
@@ -88,11 +88,11 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Items>
-                    <Item id="apptDefaultInsert">
-                      <Label resid="defaultInsertLabel" />
+                    <Item id="quickAgendaInsert">
+                      <Label resid="quickAgendaInsertLabel" />
                       <Supertip>
-                        <Title resid="defaultInsertLabel" />
-                        <Description resid="defaultInsertTipDesc" />
+                        <Title resid="quickAgendaInsertTipTitle" />
+                        <Description resid="quickAgendaInsertTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -100,14 +100,14 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>insertDefaultAgenda</FunctionName>
+                        <FunctionName>insertQuickAgenda</FunctionName>
                       </Action>
                     </Item>                    
-                    <Item id="apptDefaultSave">
-                      <Label resid="defaultSaveLabel" />
+                    <Item id="quickAgendaSave">
+                      <Label resid="quickAgendaSaveLabel" />
                       <Supertip>
-                        <Title resid="defaultSaveLabel" />
-                        <Description resid="defaultSaveTipDesc" />
+                        <Title resid="quickAgendaSaveTipTitle" />
+                        <Description resid="quickAgendaSaveTipDesc" />
                       </Supertip>
                       <Icon>
                         <bt:Image size="16" resid="icon-16" />
@@ -115,76 +115,11 @@
                         <bt:Image size="80" resid="icon-80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
-                        <FunctionName>saveDefaultAgenda</FunctionName>
+                        <FunctionName>saveQuickAgenda</FunctionName>
                       </Action>
                     </Item>                                                      
                   </Items>
                 </Control>
-
-                <!-- Create Agenda Menu
-                <Control xsi:type="Menu" id="apptReqsButton">
-                  <Label resid="reqsButtonLabel" />
-                  <Supertip>
-                    <Title resid="reqsTipTitle" />
-                    <Description resid="reqsTipDesc" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon-16" />
-                    <bt:Image size="32" resid="icon-32" />
-                    <bt:Image size="80" resid="icon-80" />
-                  </Icon>
-                  
-                  <Items>        
-                    <Item id="apptReqsR2R">
-                      <Label resid="reqsR2RLabel" />
-                      <Supertip>
-                        <Title resid="reqsR2RLabel" />
-                        <Description resid="reqsR2RTipDesc" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="icon-16" />
-                        <bt:Image size="32" resid="icon-32" />
-                        <bt:Image size="80" resid="icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>insertReqsR2RAgenda</FunctionName>
-                      </Action>
-                    </Item>   
-
-
-                    <Item id="apptReqsP2P">
-                      <Label resid="reqsP2PLabel" />
-                      <Supertip>
-                        <Title resid="reqsP2PLabel" />
-                        <Description resid="reqsP2PTipDesc" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="icon-16" />
-                        <bt:Image size="32" resid="icon-32" />
-                        <bt:Image size="80" resid="icon-80" />
-                      </Icon>
-                      <Action xsi:type="ShowTaskpane">
-                        <SourceLocation resid="ReqsP2PUrl" />
-                      </Action>
-                    </Item> 
-
-                    <Item id="apptReqsO2C">
-                      <Label resid="reqsO2CLabel" />
-                      <Supertip>
-                        <Title resid="reqsO2CLabel" />
-                        <Description resid="reqsO2CTipDesc" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="icon-16" />
-                        <bt:Image size="32" resid="icon-32" />
-                        <bt:Image size="80" resid="icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>insertReqsO2CAgenda</FunctionName>
-                      </Action>
-                    </Item>                    
-                  </Items>
-                </Control> -->
 
 
                 <!-- Settings Menu -->
@@ -221,51 +156,34 @@
       <bt:Urls>
         <bt:Url id="createAgendaUrl" DefaultValue="https://bpminc.github.io/Agendas/CreateAgenda.html"/>
         <bt:Url id="FunctionsUrl" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
-        <!-- <bt:Url id="ReqsP2PUrl" DefaultValue="https://bpminc.github.io/ReqsAgenda/ReqsP2P.html"/> -->
         <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/Settings/Settings.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Agenda Generator"/>
-        
+
         <bt:String id="createAgendaButtonLabel" DefaultValue="Create agenda"/>
-        <bt:String id="createAgendaTipTitle" DefaultValue="Create Agenda Tip Title"/>
-
-        <bt:String id="defaultButtonLabel" DefaultValue="Default agenda"/>
-        <bt:String id="defaultTipTitle" DefaultValue="Default Agenda Tip Title"/>
-        <bt:String id="defaultInsertLabel" DefaultValue="Insert"/>
-        <bt:String id="defaultSaveLabel" DefaultValue="Save"/>
-
-        <!-- <bt:String id="reqsButtonLabel" DefaultValue="Reqs agenda"/>
-        <bt:String id="reqsTipTitle" DefaultValue="Reqs Agenda Tip Title"/>
-        <bt:String id="reqsR2RLabel" DefaultValue="R2R Agenda"/>
-        <bt:String id="reqsP2PLabel" DefaultValue="P2P Agenda"/>
-        <bt:String id="reqsO2CLabel" DefaultValue="O2C Agenda"/> -->
-
+        <bt:String id="quickAgendaButtonLabel" DefaultValue="Quick agenda"/>
+        <bt:String id="quickAgendaInsertLabel" DefaultValue="Insert quick agenda"/>
+        <bt:String id="quickAgendaSaveLabel" DefaultValue="Save quick agenda"/>
         <bt:String id="settingsButtonLabel" DefaultValue="Settings"/>
-        <bt:String id="settingsTipTitle" DefaultValue="Settings Tip Title"/>
 
+        <bt:String id="createAgendaTipTitle" DefaultValue="Create Agenda Tip Title"/>
+        <bt:String id="quickAgendaTipTitle" DefaultValue="Quick Agenda Tip Title"/>
+        <bt:String id="quickAgendaInsertTipTitle" DefaultValue="Insert Quick Agenda Tip Title"/>
+        <bt:String id="quickAgendaSaveTipTitle" DefaultValue="Save Quick Agenda Tip Title"/>
+        <bt:String id="settingsTipTitle" DefaultValue="Settings Tip Title"/>
       </bt:ShortStrings>
 
-      <bt:LongStrings>
- 
+      <bt:LongStrings> 
         <bt:String id="createAgendaTipDesc" DefaultValue="Create Agenda Tip"/>
-
-        <bt:String id="defaultTipDesc" DefaultValue="Default Agenda Tip"/>
-        <bt:String id="defaultInsertTipDesc" DefaultValue="Insert Default Agenda Tip" />
-        <bt:String id="defaultSaveTipDesc" DefaultValue="Save Default Agenda Tip" />
-
-        <!-- <bt:String id="reqsTipDesc" DefaultValue="Reqs Agenda Tip"/>
-        <bt:String id="reqsR2RTipDesc" DefaultValue="Insert R2R Agenda Tip" />
-        <bt:String id="reqsP2PTipDesc" DefaultValue="Insert P2P Agenda Tip" />
-        <bt:String id="reqsO2CTipDesc" DefaultValue="Insert O2C Agenda Tip" /> -->
-
+        <bt:String id="quickAgendaTipDesc" DefaultValue="Quick Agenda Tip"/>
+        <bt:String id="quickAgendaInsertTipDesc" DefaultValue="Insert Quick Agenda Tip" />
+        <bt:String id="quickAgendaSaveTipDesc" DefaultValue="Save Quick Agenda Tip" />
         <bt:String id="settingsTipDesc" DefaultValue="Settings Tip"/>
-
       </bt:LongStrings>
 
     </Resources>
-
 
   </VersionOverrides>
 </OfficeApp>
