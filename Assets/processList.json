@@ -1,0 +1,8 @@
+{
+  "Processes": [
+    {
+      "Process": ["R2R", "P2P", "O2C"],
+      "Type": ["Reqs", "Design", "Config"]
+    }
+  ]
+}

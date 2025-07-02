@@ -17,18 +17,17 @@
     Office.initialize = function (reason) {
         $(document).ready(function () {
             getCustomersToList();
+            getProcessesToList();
         });
     };
 })();
 
 
-// Constructs the meetings table and calculated the total
-// billing amount for each item and for all meetings.
 function getCustomersToList() {
     return $.getJSON("../Assets/customerList.json", function (data) {
         var jsonData = data.Customers;
 
-        var dataTable = $("#app-Customers-dropdown");
+        var dataTable = $("#app-Customer-dropdown");
         dataTable.html("");
 
         for (var i in jsonData) {
@@ -43,16 +42,24 @@ function getCustomersToList() {
     });
 };
 
+function getProcessToList() {
+    return $.getJSON("../Assets/processList.json", function (data) {
+        var jsonData = data.Processes.Process;
 
-function makeDropdownItem(text) {
-    var cssClass = "ms-Dropdown-item ms-u-md4 ms-u-lg3" ;
+        var dataTable = $("#app-Process-dropdown");
+        dataTable.html("");
 
+        for (var i in jsonData) {
+            var dataRow = $("<option />", {
+                "class": "ms-Dropdown-item"
+            });
+            dataRow.append(jsonData[i].Type);
 
-	return $("<div />", {
-        "class" : cssClass,
-        "html"  : text
-    });    
-}
+            dataTable.append(dataRow);
+        }
+
+    });
+};
 
 
 // function completeEvent(event) {
