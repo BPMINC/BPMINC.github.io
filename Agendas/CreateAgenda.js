@@ -33,11 +33,9 @@ function getCustomersToList() {
 
         for (var i in jsonData) {
             var dataRow = $("<div />", {
-                "class": "ms-Grid-row app-Grid-row"
+                "class": "ms-Dropdown-item"
             });
-            dataRow.append(makeRowCell(jsonData[i].Name, "3"));
-            dataRow.append(makeRowCell(jsonData[i].RMID, "2"));
-            dataRow.append(makeRowCell(jsonData[i].SOW_Path, "5", "true"));
+            dataRow.append(jsonData[i].Name);
 
             dataTable.append(dataRow);
         }
@@ -46,12 +44,9 @@ function getCustomersToList() {
 };
 
 
-function makeRowCell(text, width, right) {
-    var cssClass = "ms-Grid-col ms-u-md4 ms-u-lg" + width;
+function makeDropdownItem(text) {
+    var cssClass = "ms-Dropdown-item ms-u-md4 ms-u-lg3" ;
 
-    if (right) {
-        cssClass += " app-Cell-right";
-    }
 
 	return $("<div />", {
         "class" : cssClass,
