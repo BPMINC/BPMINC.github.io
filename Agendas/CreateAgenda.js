@@ -145,7 +145,7 @@ function generateAgenda() {
 
 
                 //set the HTML body
-                var agendaBody = jsonData[i].body
+                var agendaBody = jsonData[i].bodyIntro + jsonData[i].bodyObjective + jsonData[i].bodyAgenda + jsonData[i].bodyClosing
 
                 setHTMLToBody(agendaBody);
 
