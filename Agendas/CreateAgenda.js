@@ -111,7 +111,23 @@ function getAgendasToList() {
 
 function setPhasesListener() {
     return $("#app-Phase-dropdown").on("change", getAgendasToList);
-};
+}
+
+
+function generateAgenda() {
+    var selectedCustomer = $("#app-Customer-dropdown").val();
+    var selectedPhase = $("#app-Phase-dropdown").val();
+    var selectedAgenda = $("#app-Agenda-dropdown").val();
+
+    _settings.set("customer", customerToAdd);
+
+    return new Promise((resolve, reject) => {  
+        // Fake success  
+        setTimeout(() => {  
+        resolve("success");  
+        }, 1000);
+    });    
+}
 
 
 
