@@ -61,7 +61,7 @@ function getProcessesToList() {
                     "class": "ms-Dropdown-item"
                 });
                 
-                dataOption.append(jsonData.type[i][j]);
+                dataOption.append(jsonData[i].type[j]);
 
                 dataGroup.append(dataOption);
                 
