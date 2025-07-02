@@ -132,23 +132,67 @@ function generateAgenda() {
 
         var agendaName = `${selectedPhase} - ${selectedAgenda}`;
 
-        console.log(agendaName);
-
         for (var i in jsonData) {
 
+            //check for matching agenda in agenda details
             if (agendaName == jsonData[i].name) {
 
-                console.log("match found");
-
+                //set the text subject
                 var agendaSubject = jsonData[1].subject
-                Office.context.mailbox.item.subject.setAsync(agendaSubject, function (asyncResult) { });
+
+                //Office.context.mailbox.item.subject.setAsync(`${selectedCustomer} - ${agendaSubject}`, function (asyncResult) { });
+                setTextToSubject(`${selectedCustomer} - ${agendaSubject}`)
+
+                //set the HTML body
+                setHTMLToBody(`${selectedCustomer} - ${agendaSubject}`)
+
 
             }
-
         }
-
-
     });
+}
+
+
+function setTextToSubject(text) {
+
+    return new Promise(function (resolve, reject) {
+        try {
+
+            //_mailbox.item.subject.setAsync(
+            Office.context.mailbox.item.subject.setAsync(
+                text,
+                function (asyncResult) {
+                    //statusUpdate(asyncResult,"Insert");
+                    resolve();
+                }
+            );
+        }
+        catch (error) {
+            reject();
+        }
+    })
+}
+
+
+function setHTMLToBody(html) {
+
+    return new Promise(function (resolve, reject) {
+        try {
+
+            //_mailbox.item.body.setSelectedDataAsync(
+            Office.context.mailbox.item.body.setSelectedDataAsync(
+                html,
+                { coercionType: Office.CoercionType.Html },
+                function (asyncResult) {
+                    //statusUpdate(asyncResult,"Insert");
+                    resolve();
+                }
+            );
+        }
+        catch (error) {
+            reject();
+        }
+    })
 }
 
 
