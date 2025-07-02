@@ -32,7 +32,7 @@ function getCustomersToList() {
         dataTable.html("");
 
         for (var i in jsonData) {
-            var dataRow = $("<div />", {
+            var dataRow = $("<option />", {
                 "class": "ms-Dropdown-item"
             });
             dataRow.append(jsonData[i].Name);
