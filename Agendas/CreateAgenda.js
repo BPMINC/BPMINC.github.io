@@ -131,21 +131,21 @@ function generateAgenda() {
         var selectedAgenda = $("#app-Agenda-dropdown").val();
 
         var agendaName = `${selectedPhase} - ${selectedAgenda}`;
-
+        
         for (var i in jsonData) {
-
+            
             //check for matching agenda in agenda details
             if (agendaName == jsonData[i].name) {
 
                 //set the text subject
-                var agendaSubject = jsonData[1].subject
+                var agendaSubject = jsonData[i].subject
 
                 //Office.context.mailbox.item.subject.setAsync(`${selectedCustomer} - ${agendaSubject}`, function (asyncResult) { });
                 setTextToSubject(`${selectedCustomer} - ${agendaSubject}`);
 
-                
+
                 //set the HTML body
-                var agendaBody = jsonData[1].body
+                var agendaBody = jsonData[i].body
 
                 setHTMLToBody(agendaBody);
 
