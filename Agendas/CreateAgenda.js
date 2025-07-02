@@ -132,6 +132,8 @@ function generateAgenda() {
 
         var agendaName = `${selectedPhase} - ${selectedAgenda}`;
 
+        console.log(agendaName);
+
         for (var i in jsonData) {
 
             if (agendaName == jsonData[i].name) {
