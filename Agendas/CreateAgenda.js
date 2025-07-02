@@ -44,24 +44,24 @@ function getCustomersToList() {
 
 function getProcessesToList() {
     return $.getJSON("../Assets/processList.json", function (data) {
-        var jsonData = data
+        var jsonData = data.processes;
 
         var dataTable = $("#app-Process-dropdown");
         dataTable.html("");
 
-        for (i in jsonData.processes) {
+        for (i in jsonData) {
             var dataGroup = $("<optgroup />", {
                 "class": "ms-Dropdown-items"
             });
 
-            dataGroup.append(jsonData.processes[i][1]);
+            dataGroup.append(jsonData[i].name);
             
-            for (j in jsonData.processes[i]){
+            for (j in jsonData[i].type){
                 var dataOption = $("<option />", {
                     "class": "ms-Dropdown-item"
                 });
                 
-                dataOption.append(jsonData.processes[i][j]);
+                dataOption.append(jsonData.type[i][j]);
 
                 dataGroup.append(dataOption);
                 
