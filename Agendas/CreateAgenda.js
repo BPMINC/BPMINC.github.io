@@ -89,16 +89,18 @@ function getAgendasToList() {
             if (jsonData[i].name == selectedPhase) {
 
 
-                for (var j in jsonData[i].type)
+                for (var j in jsonData[i].type){
 
-                var dataOption = $("<option />", {
-                    "class": "ms-Dropdown-item"                
-                });
-    
-                dataOption.append(jsonData[i].type[j]);
-    
-    
-                dataTable.append(dataOption);
+                    var dataOption = $("<option />", {
+                        "class": "ms-Dropdown-item"                
+                    });
+        
+                    dataOption.append(jsonData[i].type[j]);
+        
+        
+                    dataTable.append(dataOption);
+                }
+                
             }
 
         }
