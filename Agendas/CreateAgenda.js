@@ -42,24 +42,34 @@ function getCustomersToList() {
     });
 };
 
-function getProcessToList() {
+function getProcessesToList() {
     return $.getJSON("../Assets/processList.json", function (data) {
-        var jsonData = data.Processes.Process;
+        var jsonData = data.processes
 
         var dataTable = $("#app-Process-dropdown");
         dataTable.html("");
 
-        for (var i in jsonData) {
-            var dataRow = $("<option />", {
-                "class": "ms-Dropdown-item"
+        for (i in jsonData.process) {
+            var dataGroup = $("<optgroup />", {
+                "class": "ms-Dropdown-items"
             });
-            dataRow.append(jsonData[i].Type);
 
-            dataTable.append(dataRow);
+            dataGroup.append(jsonData.process[i]);
+
+
+            for (j in jsonData.type){
+                var dataOption = $("<option />", {
+                    "class": "ms-Dropdown-item"
+                });
+
+                dataGroup.append(jsonData.type[i]);
+            }
         }
+
 
     });
 };
+
 
 
 // function completeEvent(event) {
