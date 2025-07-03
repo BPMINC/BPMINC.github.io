@@ -143,6 +143,10 @@ function generateAgenda() {
                 //Office.context.mailbox.item.subject.setAsync(`${selectedCustomer} - ${agendaSubject}`, function (asyncResult) { });
                 setTextToSubject(`${selectedCustomer} - ${agendaSubject}`);
 
+                //replace agenda with SOW
+                var bodyAgenda = jsonData[i].bodyAgenda
+                
+                setSOWToBody(bodyAgenda)
 
                 //set the HTML body
                 var agendaBody = jsonData[i].bodyIntro + jsonData[i].bodyObjective + jsonData[i].bodyAgenda + jsonData[i].bodyClosing
@@ -174,6 +178,12 @@ function setTextToSubject(text) {
             reject();
         }
     })
+}
+
+
+function setSOWToBody(html) {
+
+    
 }
 
 
