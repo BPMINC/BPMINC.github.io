@@ -5,7 +5,7 @@
       "subject": "R2R Requirements Gathering",
       "bodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the R2R business requirements.</p> </div>",
       "bodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> </div>",
-      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b</p> </div>",
+      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> </div>",
       "bodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
     },
     {
@@ -13,7 +13,7 @@
       "subject": "R2R Design Session",
       "bodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for an R2R design session.</p> </div>",
       "bodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> </div>",
-      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b</p> </div>",
+      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> </div>",
       "bodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
     },
     {
@@ -21,7 +21,7 @@
       "subject": "R2R Configuration Review",
       "bodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the R2R configurations.</p> </div>",
       "bodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> </div>",
-      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b</p> </div>",
+      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> </div>",
       "bodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
     },
     {
@@ -29,7 +29,7 @@
       "subject": "P2P Requirements Gathering",
       "bodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the P2P business requirements.</p> </div>",
       "bodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> </div>",
-      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b</p> </div>",
+      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> </div>",
       "bodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
     }
   ]
