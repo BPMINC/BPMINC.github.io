@@ -13,18 +13,18 @@ async function insertQuickAgenda(event) {
 function setTextToSubject(text) {
 
   return new Promise(function (resolve, reject) {
-    try{
+    try {
 
       _mailbox.item.subject.setAsync(
-        text,         
-        function (asyncResult){
-          statusUpdate(asyncResult,"Insert");
+        text,
+        function (asyncResult) {
+          statusUpdate(asyncResult, "Insert");
           resolve();
         }
       );
     }
-    catch (error){
-          reject();
+    catch (error) {
+      reject();
     }
   })
 }
@@ -32,19 +32,19 @@ function setTextToSubject(text) {
 function setHTMLToBody(html) {
 
   return new Promise(function (resolve, reject) {
-    try{
+    try {
 
       _mailbox.item.body.setSelectedDataAsync(
-        html, 
-        { coercionType: Office.CoercionType.Html }, 
-        function (asyncResult){
-          statusUpdate(asyncResult,"Insert");
+        html,
+        { coercionType: Office.CoercionType.Html },
+        function (asyncResult) {
+          statusUpdate(asyncResult, "Insert");
           resolve();
         }
       );
     }
-    catch (error){
-          reject();
+    catch (error) {
+      reject();
     }
   })
 }

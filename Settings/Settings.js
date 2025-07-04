@@ -1,59 +1,36 @@
-// import { useFilePicker } from 'use-file-picker';
-// import React from 'react';
 
-// export default function App() {
-//   const { openFilePicker, filesContent, loading } = useFilePicker({
-//     accept: '.txt',
-//   });
+//grabs the customerList json and formats it into a css/ html grid for display
+function getCustomersToTable() {
+    return $.getJSON("../Assets/customerList.json", function (data) {
+        var jsonData = data.Customers;
 
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
-// }
+        var dataTable = $("#app-Customers-table");
+        dataTable.html("");
 
+        for (var i in jsonData) {
+            var dataRow = $("<div />", {
+                "class": "ms-Grid-row app-Grid-row"
+            });
+            dataRow.append(makeRowCell(jsonData[i].Name, "3"));
+            dataRow.append(makeRowCell(jsonData[i].RMID, "2"));
+            dataRow.append(makeRowCell(jsonData[i].SOW_Path, "5", "true"));
 
-// import docxTables from 'docx-tables';
+            dataTable.append(dataRow);
+        }
 
-// docxTables({ file: 'c:/temp/simple.docx' })
-//   .then((data) => {
-//     // 'data' will contain the extracted table data in JSON format
-//     console.log(data);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
+    });
+};
 
 
+function makeRowCell(text, width, right) {
+    var cssClass = "ms-Grid-col ms-u-md4 ms-u-lg" + width;
 
+    if (right) {
+        cssClass += " app-Cell-right";
+    }
 
-//import {fromEvent} from 'file-selector';
-
-// Open file picker
-//const handles = await window.showOpenFilePicker({multiple: true});
-// // Get the files
-// const files = await fromEvent(handles);
-// console.log(files);
-
-
-// import * as fs from 'node:fs';
-
-// let filePath = "/home/mysystem/dev/myproject/sayHello.txt";
-// let newFile = fs.readFileSync(filePath);
-
-// console.log(newFile);
-
-
-
-// async function openPicker() {
-
-//     // const { fromEvent } = 'file-selector';
-
-//     // document.addEventListener('drop', async evt => {
-
-//     //     const files = await fromEvent(evt);
-//     //     console.log("start");
-//     //     console.log(files);
-//     //     console.log("finish");
-        
-//     // });
-// }
+    return $("<div />", {
+        "class": cssClass,
+        "html": text
+    });
+}
