@@ -30,7 +30,7 @@ function setGenerateAgendaListener() {
 
 
 function getCustomersToList() {
-    return $.getJSON("../Assets/Json/customerList.json", function (data) {
+    return $.getJSON("../../Assets/Json/customerList.json", function (data) {
         var jsonData = data.Customers;
 
         var dataTable = $("#app-Customer-dropdown");
@@ -52,7 +52,7 @@ function getCustomersToList() {
 
 
 function getPhasesToList() {
-    return $.getJSON("../Assets/Json/phaseList.json", function (data) {
+    return $.getJSON("../../Assets/Json/phaseList.json", function (data) {
         var jsonData = data.Phases;
 
         var dataTable = $("#app-Phase-dropdown");
@@ -75,7 +75,7 @@ function getPhasesToList() {
 
 
 function getAgendasToList() {
-    return $.getJSON("../Assets/Json/agendaList.json", function (data) {
+    return $.getJSON("../../Assets/Json/agendaList.json", function (data) {
         var jsonData = data.Agendas;
 
         var selectedPhase = $("#app-Phase-dropdown").val();
@@ -110,7 +110,7 @@ function getAgendasToList() {
 
 
 function generateAgenda() {
-    return $.getJSON("../Assets/Json/agendaDetails.json", function (data) {
+    return $.getJSON("../../Assets/Json/agendaDetails.json", function (data) {
         var jsonData = data.Agendas;
 
         var selectedCustomer = $("#app-Customer-dropdown").val();
