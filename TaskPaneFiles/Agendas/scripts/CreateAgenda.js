@@ -1,17 +1,4 @@
-
-// Office.initialize = function () {
-
-//   "use strict"
-
-//   $(document).ready(function () {
-
-//     setBillingRates(127);
-//   });
-
-// }
-
-
-(function () {
+/* (function () {
     "use strict"
     // The initialze function is run each time the page is loaded.
     Office.initialize = function (reason) {
@@ -29,7 +16,7 @@
             getAgendasToList();
         });
     };
-})();
+})(); */
 
 
 function setPhasesListener() {

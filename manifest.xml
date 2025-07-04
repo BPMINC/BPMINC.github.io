@@ -11,8 +11,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Agenda Generator" />
   <Description DefaultValue="A simple Office Addin to quickly generate meeting agendas"/>
-  <IconUrl DefaultValue="https://bpminc.github.io/Assets/icon.jpg" />
-  <HighResolutionIconUrl DefaultValue="https://bpminc.github.io/Assets/icon.jpg" />
+  <IconUrl DefaultValue="https://bpminc.github.io/Assets/Icons/icon.jpg" />
+  <HighResolutionIconUrl DefaultValue="https://bpminc.github.io/Assets/Icons/icon.jpg" />
   <Hosts>
     <Host Name="Mailbox" />
   </Hosts>
@@ -148,15 +148,15 @@
 
     <Resources>
       <bt:Images>
-          <bt:Image id="icon-16" DefaultValue="https://bpminc.github.io/Assets/icon.jpg"/>
-          <bt:Image id="icon-32" DefaultValue="https://bpminc.github.io/Assets/icon.jpg"/>
-          <bt:Image id="icon-80" DefaultValue="https://bpminc.github.io/Assets/icon.jpg"/>
+          <bt:Image id="icon-16" DefaultValue="https://bpminc.github.io/Assets/Icons/icon.jpg"/>
+          <bt:Image id="icon-32" DefaultValue="https://bpminc.github.io/Assets/Icons/icon.jpg"/>
+          <bt:Image id="icon-80" DefaultValue="https://bpminc.github.io/Assets/Icons/icon.jpg"/>
       </bt:Images>
 
       <bt:Urls>
-        <bt:Url id="createAgendaUrl" DefaultValue="https://bpminc.github.io/Agendas/CreateAgenda.html"/>
         <bt:Url id="FunctionsUrl" DefaultValue="https://bpminc.github.io/FunctionFiles/Functions.html"/>
-        <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/Settings/Settings.html"/>
+        <bt:Url id="createAgendaUrl" DefaultValue="https://bpminc.github.io/TaskPaneFiles/Agendas/CreateAgenda.html"/>
+        <bt:Url id="SettingsPaneUrl" DefaultValue="https://bpminc.github.io/TaskPaneFiles/Settings/Settings.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
