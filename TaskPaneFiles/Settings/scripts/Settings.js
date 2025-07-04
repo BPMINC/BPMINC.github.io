@@ -1,7 +1,7 @@
 
 //grabs the customerList json and formats it into a css/ html grid for display
 function getCustomersToTable() {
-    return $.getJSON("../Assets/customerList.json", function (data) {
+    return $.getJSON("../Assets/Json/customerList.json", function (data) {
         var jsonData = data.Customers;
 
         var dataTable = $("#app-Customers-table");
