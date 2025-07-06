@@ -109,6 +109,7 @@ function createAgenda() {
     var selectedAgenda = $("#app-Agenda-dropdown").val();
     
     createCategory(selectedCustomer);
+    createAttendees();
     createSubject(selectedCustomer, selectedPhase, selectedAgenda);
     createBody(selectedCustomer, selectedPhase, selectedAgenda);
 
@@ -125,7 +126,7 @@ function createCategory(customer){
 
                 var category = `${customer} - ${jsonData[i].RMID}`
 
-                setCategoryToTag(category);
+                addTextToCategories(category);
 
             }
 
@@ -135,11 +136,49 @@ function createCategory(customer){
 }
 
 
-function addCategoryToTag(text){
+function addTextToCategories(text){
     return new Promise(function (resolve, reject) {
         try {
             Office.context.mailbox.item.categories.addAsync(
                 [text], //must be set inside an array for addAsync to work
+                function (asyncResult) {
+                    //statusUpdate(asyncResult,"Insert");
+                    resolve();
+                }
+            );
+        }
+        catch (error) {
+            reject();
+        }
+    })
+}
+
+
+function createAttendees(customer){
+    return $.getJSON("../../Assets/Json/customerList.json", function (data) {
+        var jsonData = data.Customers;
+
+        for (var i in jsonData){
+
+            if (customer == jsonData[i].name){
+
+                var category = `${customer} - ${jsonData[i].RMID}`
+
+                addTextToAttendees(category);
+
+            }
+
+        }
+
+    });        
+}
+
+
+function addTextToAttendees(text){
+    return new Promise(function (resolve, reject) {
+        try {
+            Office.context.mailbox.item.categories.addAsync(
+                ["josephsmith@bpmcpa.com"], //must be set inside an array for addAsync to work
                 function (asyncResult) {
                     //statusUpdate(asyncResult,"Insert");
                     resolve();
