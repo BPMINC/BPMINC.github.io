@@ -244,7 +244,7 @@ function createBody(customer, phase, agenda) {
 
 
                 //set the body HTML
-                var body = jsonData[i].bodyIntro + jsonData[i].bodyObjective + jsonData[i].bodyAgenda + jsonData[i].bodyClosing
+                var body = jsonData[i].BodyIntro + jsonData[i].BodyObjective + jsonData[i].BodyAgenda + jsonData[i].BodyClosing
 
                 setHTMLToBody(body);
             }
