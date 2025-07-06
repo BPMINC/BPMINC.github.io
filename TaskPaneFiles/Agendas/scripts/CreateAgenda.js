@@ -165,9 +165,7 @@ function createAttendees(customer) {
                 setTextToAttendees(attendeeList);
 
             }
-
         }
-
     });
 }
 
