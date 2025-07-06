@@ -160,7 +160,7 @@ function createAttendees(customer) {
 
             if (customer == jsonData[i].Name) {
 
-                var attendeeList = `josephSmith@bpmcpa.com`
+                var attendeeList = `OneWeb Team`
 
                 setTextToAttendees(attendeeList);
 
