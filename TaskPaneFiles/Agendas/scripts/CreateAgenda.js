@@ -128,7 +128,7 @@ function createCategory(customer){
                 var category = `${customer} - ${projectId}`
 
                 console.log(category);
-                
+
                 addTextToCategories(category);
 
             }
