@@ -117,12 +117,13 @@ function createAgenda() {
 
 function createCategory(customer){
     return $.getJSON("../../Assets/Json/customerList.json", function (data) {
+        var jsonData = data.Customers;
 
         for (var i in jsonData){
 
             if (customer == jsonData[i].name){
 
-                var category = `${customer} - ${jsonData[i]}.RMID`
+                var category = `${customer} - ${jsonData[i].RMID}`
 
                 setCategoryToTag(category);
 
