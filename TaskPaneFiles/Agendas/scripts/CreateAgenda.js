@@ -104,10 +104,10 @@ function getAgendasToList() {
 
 function createAgenda() {
 
-    var selectedCustomer = $("#app-Customer-dropdown").val();    
+    var selectedCustomer = $("#app-Customer-dropdown").val();
     var selectedPhase = $("#app-Phase-dropdown").val();
     var selectedAgenda = $("#app-Agenda-dropdown").val();
-    
+
     createCategory(selectedCustomer);
     createAttendees();
     createSubject(selectedCustomer, selectedPhase, selectedAgenda);
@@ -116,13 +116,13 @@ function createAgenda() {
 }
 
 
-function createCategory(customer){
+function createCategory(customer) {
     return $.getJSON("../../Assets/Json/customerList.json", function (data) {
         var jsonData = data.Customers;
 
-        for (var i in jsonData){
+        for (var i in jsonData) {
 
-            if (customer == jsonData[i].name){
+            if (customer == jsonData[i].name) {
 
                 var projectId = jsonData[i].RMID;
                 var category = `${customer} - ${projectId}`;
@@ -135,11 +135,11 @@ function createCategory(customer){
 
         }
 
-    });        
+    });
 }
 
 
-function addTextToCategories(text){
+function addTextToCategories(text) {
     return new Promise(function (resolve, reject) {
         try {
             Office.context.mailbox.item.categories.addAsync(
@@ -157,13 +157,13 @@ function addTextToCategories(text){
 }
 
 
-function createAttendees(customer){
+function createAttendees(customer) {
     return $.getJSON("../../Assets/Json/customerList.json", function (data) {
         var jsonData = data.Customers;
 
-        for (var i in jsonData){
+        for (var i in jsonData) {
 
-            if (customer == jsonData[i].name){
+            if (customer == jsonData[i].name) {
 
                 var category = `${customer} - ${jsonData[i].RMID}`
 
@@ -173,11 +173,11 @@ function createAttendees(customer){
 
         }
 
-    });        
+    });
 }
 
 
-function addTextToAttendees(text){
+function addTextToAttendees(text) {
     return new Promise(function (resolve, reject) {
         try {
             Office.context.mailbox.item.categories.addAsync(
@@ -195,15 +195,15 @@ function addTextToAttendees(text){
 }
 
 
-function createSubject(customer, phase, agenda){
+function createSubject(customer, phase, agenda) {
     return $.getJSON("../../Assets/Json/agendaDetails.json", function (data) {
         var jsonData = data.Agendas;
 
 
         var agendaName = `${phase} - ${agenda}`;
-        
+
         for (var i in jsonData) {
-            
+
             //check for matching agenda in agenda details json
             if (agendaName == jsonData[i].name) {
 
@@ -243,9 +243,9 @@ function createBody(customer, phase, agenda) {
 
 
         var agendaName = `${phase} - ${agenda}`;
-        
+
         for (var i in jsonData) {
-            
+
             //check for matching agenda in agenda details json
             if (agendaName == jsonData[i].name) {
 
@@ -253,14 +253,14 @@ function createBody(customer, phase, agenda) {
                 //set the body HTML
                 var body = jsonData[i].bodyIntro + jsonData[i].bodyObjective + jsonData[i].bodyAgenda + jsonData[i].bodyClosing
 
-                setHTMLToBody(body); 
+                setHTMLToBody(body);
             }
         }
-    });  
+    });
 }
 
 
-function setHTMLToBody(html){
+function setHTMLToBody(html) {
     return new Promise(function (resolve, reject) {
         try {
             Office.context.mailbox.item.body.setSelectedDataAsync(
