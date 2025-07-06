@@ -1,36 +1,40 @@
 {
   "Agendas": [
     {
-      "name": "Requirements - R2R",
-      "subject": "R2R Requirements Gathering",
-      "bodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the R2R business requirements.</p> </div>",
-      "bodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> <p>The objective of this session is for our team to gather a solid understanding of your financial reporting and segmentation requirements. We will review your company org structure, discuss options for segmentation, journal entries and associated approvals, allocations and amortizations and period close among other topics</p> </div>",
-      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p>{SOW_REPLACE}</p> </div>",
-      "bodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
+      "Name": "Requirements - R2R",
+      "Subject": "R2R Requirements Gathering",
+      "BodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the R2R business requirements.</p> </div>",
+      "BodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> <p>The objective of this session is for our team to gather a solid understanding of your financial reporting and segmentation requirements. We will review your company org structure, discuss options for segmentation, journal entries and associated approvals, allocations and amortizations and period close among other topics</p> </div>",
+      "BodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p>{SOW_REPLACE}</p> </div>",
+      "BodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
     },
+    
     {
-      "name": "Design - R2R",
-      "subject": "R2R Design Session",
-      "bodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for an R2R design session.</p> </div>",
-      "bodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> </div>",
-      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> </div>",
-      "bodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
+      "Name": "Design - R2R",
+      "Subject": "R2R Requirements Gathering",
+      "BodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for an R2R design session.</p> </div>",
+      "BodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> <p>The objective of this session is for our team to gather a solid understanding of your financial reporting and segmentation requirements. We will review your company org structure, discuss options for segmentation, journal entries and associated approvals, allocations and amortizations and period close among other topics</p> </div>",
+      "BodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p>{SOW_REPLACE}</p> </div>",
+      "BodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
     },
+    
     {
-      "name": "Configure - R2R",
-      "subject": "R2R Configuration Review",
-      "bodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the R2R configurations.</p> </div>",
-      "bodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> </div>",
-      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> </div>",
-      "bodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
+      "Name": "Configure - R2R",
+      "Subject": "R2R Requirements Gathering",
+      "BodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of R2R configurations.</p> </div>",
+      "BodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> <p>The objective of this session is for our team to gather a solid understanding of your financial reporting and segmentation requirements. We will review your company org structure, discuss options for segmentation, journal entries and associated approvals, allocations and amortizations and period close among other topics</p> </div>",
+      "BodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p>{SOW_REPLACE}</p> </div>",
+      "BodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
     },
+    
     {
-      "name": "Requirements - P2P",
-      "subject": "P2P Requirements Gathering",
-      "bodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the P2P business requirements.</p> </div>",
-      "bodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> </div>",
-      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> </div>",
-      "bodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
-    }
+      "Name": "Requirements - P2P",
+      "Subject": "R2R Requirements Gathering",
+      "BodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the P2P business requirements.</p> </div>",
+      "BodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> <p>The objective of this session is for our team to gather a solid understanding of your financial reporting and segmentation requirements. We will review your company org structure, discuss options for segmentation, journal entries and associated approvals, allocations and amortizations and period close among other topics</p> </div>",
+      "BodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p>{SOW_REPLACE}</p> </div>",
+      "BodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
+    },
+    
   ]
 }

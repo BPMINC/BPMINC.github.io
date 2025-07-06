@@ -84,15 +84,15 @@ function getAgendasToList() {
 
         for (var i in jsonData) {
 
-            if (jsonData[i].name == selectedPhase) {
+            if (jsonData[i].Name == selectedPhase) {
 
-                for (var j in jsonData[i].type) {
+                for (var j in jsonData[i].Type) {
 
                     var dataOption = $("<option />", {
                         "class": "ms-Dropdown-item"
                     });
 
-                    dataOption.append(jsonData[i].type[j]);
+                    dataOption.append(jsonData[i].Type[j]);
 
                     dataTable.append(dataOption);
                 }
@@ -109,7 +109,7 @@ function createAgenda() {
     var selectedAgenda = $("#app-Agenda-dropdown").val();
 
     createCategory(selectedCustomer);
-    createAttendees();
+    createAttendees(selectedCustomer);
     createSubject(selectedCustomer, selectedPhase, selectedAgenda);
     createBody(selectedCustomer, selectedPhase, selectedAgenda);
 
@@ -122,19 +122,14 @@ function createCategory(customer) {
 
         for (var i in jsonData) {
 
-            if (customer == jsonData[i].name) {
+            if (customer == jsonData[i].Name) {
 
-                var projectId = jsonData[i].RMID;
-                var category = `${customer} - ${projectId}`;
-
-                console.log(category);
+                var projectId = jsonData[i].RMID
+                var category = `${customer} - ${projectId}`
 
                 addTextToCategories(category);
-
             }
-
         }
-
     });
 }
 
@@ -163,7 +158,7 @@ function createAttendees(customer) {
 
         for (var i in jsonData) {
 
-            if (customer == jsonData[i].name) {
+            if (customer == jsonData[i].Name) {
 
                 var category = `${customer} - ${jsonData[i].RMID}`
 
@@ -205,10 +200,10 @@ function createSubject(customer, phase, agenda) {
         for (var i in jsonData) {
 
             //check for matching agenda in agenda details json
-            if (agendaName == jsonData[i].name) {
+            if (agendaName == jsonData[i].Name) {
 
 
-                var subject = jsonData[i].subject
+                var subject = jsonData[i].Subject
 
                 //Office.context.mailbox.item.subject.setAsync(`${selectedCustomer} - ${agendaSubject}`, function (asyncResult) { });
                 setTextToSubject(`${customer} - ${subject}`);
@@ -247,7 +242,7 @@ function createBody(customer, phase, agenda) {
         for (var i in jsonData) {
 
             //check for matching agenda in agenda details json
-            if (agendaName == jsonData[i].name) {
+            if (agendaName == jsonData[i].Name) {
 
 
                 //set the body HTML

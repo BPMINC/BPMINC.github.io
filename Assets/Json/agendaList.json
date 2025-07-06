@@ -1,40 +1,40 @@
 {
   "Agendas": [
     {
-      "name": "Requirements",
-      "type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Integrations", "Business Overview"]
+      "Name": "Requirements",
+      "Type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Integrations", "Business Overview"]
     },
     {
-      "name": "Design",
-      "type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Integrations","Roles"]
+      "Name": "Design",
+      "Type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Integrations","Roles"]
     },
     {
-      "name": "Configure",
-      "type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Integrations", "Generic Review"]
+      "Name": "Configure",
+      "Type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Integrations", "Generic Review"]
     },
     {
-      "name": "Train",
-      "type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Reports/Searches", "General Features", "Roles"]
+      "Name": "Train",
+      "Type": ["L2Q", "R2R", "P2P", "FAM", "D2B", "O2C", "P2C", "C2R", "Reports/Searches", "General Features", "Roles"]
     },
     {
-      "name": "Test Cycle 1",
-      "type": ["UAT Check In"]
+      "Name": "Test Cycle 1",
+      "Type": ["UAT Check In"]
     },
     {
-      "name": "Test Cycle 2",
-      "type": ["UAT Check In"]
+      "Name": "Test Cycle 2",
+      "Type": ["UAT Check In"]
     },
     {
-      "name": "Go Live Prep",
-      "type": ["GL Checklist Review"]
+      "Name": "Go Live Prep",
+      "Type": ["GL Checklist Review"]
     },
     {
-      "name": "Go Live",
-      "type": ["Go/NoGo Review"]
+      "Name": "Go Live",
+      "Type": ["Go/NoGo Review"]
     },
     {
-      "name": "Post Go Live",
-      "type": ["Post Live Check In"]
+      "Name": "Post Go Live",
+      "Type": ["Post Live Check In"]
     }
 
   ]
