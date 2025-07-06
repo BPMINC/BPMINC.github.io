@@ -5,7 +5,7 @@
       "subject": "R2R Requirements Gathering",
       "bodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the R2R business requirements.</p> </div>",
       "bodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> <p>The objective of this session is for our team to gather a solid understanding of your financial reporting and segmentation requirements. We will review your company org structure, discuss options for segmentation, journal entries and associated approvals, allocations and amortizations and period close among other topics</p> </div>",
-      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p><SOW_REPLACE></p> </div>",
+      "bodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p>{SOW_REPLACE}</p> </div>",
       "bodyClosing": "<div> <br/><br/> <p>Thanks,</p> <p>Joseph</p> </div>"
     },
     {

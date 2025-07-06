@@ -6,11 +6,11 @@ Office.initialize = function () {
 
     $(document).ready(function () {
 
-        //adds listener to Phases for any change
-        setPhasesListener();
+        //adds an onChange event to Phases html
+        setPhasesOnChange();
 
-        //adds listener to submit button for any change
-        setGenerateAgendaListener();
+        //adds an onClick event to submit button html
+        setCreateAgendaOnClick();
 
         //populates our default list values
         getCustomersToList();
