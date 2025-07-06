@@ -124,8 +124,8 @@ function createCategory(customer){
 
             if (customer == jsonData[i].name){
 
-                var projectId = jsonData[i].RMID
-                var category = `${customer} - ${projectId}`
+                var projectId = jsonData[i].RMID;
+                var category = `${customer} - ${projectId}`;
 
                 console.log(category);
 
