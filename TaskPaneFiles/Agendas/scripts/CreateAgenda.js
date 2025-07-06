@@ -124,7 +124,8 @@ function createCategory(customer){
 
             if (customer == jsonData[i].name){
 
-                var category = `${customer} - ${jsonData[i].RMID}`
+                var projectId = jsonData[i].RMID
+                var category = `${customer} - ${projectId}`
 
                 addTextToCategories(category);
 
