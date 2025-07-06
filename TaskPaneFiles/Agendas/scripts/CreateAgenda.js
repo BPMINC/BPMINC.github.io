@@ -127,6 +127,8 @@ function createCategory(customer){
                 var projectId = jsonData[i].RMID
                 var category = `${customer} - ${projectId}`
 
+                console.log(category);
+                
                 addTextToCategories(category);
 
             }
