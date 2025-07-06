@@ -160,9 +160,9 @@ function createAttendees(customer) {
 
             if (customer == jsonData[i].Name) {
 
-                var category = `${customer} - ${jsonData[i].RMID}`
+                var attendeeList = `josephSmith@bpmcpa.com`
 
-                addTextToAttendees(category);
+                setTextToAttendees(attendeeList);
 
             }
 
@@ -172,11 +172,11 @@ function createAttendees(customer) {
 }
 
 
-function addTextToAttendees(text) {
+function setTextToAttendees(text) {
     return new Promise(function (resolve, reject) {
         try {
-            Office.context.mailbox.item.categories.addAsync(
-                ["josephsmith@bpmcpa.com"], //must be set inside an array for addAsync to work
+            Office.context.mailbox.item.requiredAttendees.setAsync(
+                [text], //must be set inside an array for addAsync to work
                 function (asyncResult) {
                     //statusUpdate(asyncResult,"Insert");
                     resolve();
