@@ -137,13 +137,27 @@ function createCategory(customer) {
 function addTextToCategories(text) {
     return new Promise(function (resolve, reject) {
         try {
-            Office.context.mailbox.item.categories.addAsync(
-                [text], //must be set inside an array for addAsync to work
-                function (asyncResult) {
-                    //statusUpdate(asyncResult,"Insert");
-                    resolve();
+
+            Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
+                if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+                    const categories = asyncResult.value;
+
+                    for (var i in categories) {
+
+                        const category = categories[i].displayName;
+
+                        Office.context.mailbox.item.categories.removeAsync(category, function (asyncResult) {
+                            if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+
+                                Office.context.mailbox.item.categories.addAsync([text],function (asyncResult) {
+                                    //statusUpdate(asyncResult,"Insert");
+                                    resolve();
+                                });
+                            }
+                        });
+                    }
                 }
-            );
+            });
         }
         catch (error) {
             reject();
