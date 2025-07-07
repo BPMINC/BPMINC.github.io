@@ -62,11 +62,11 @@ function getAgendasToList() {
         var dataTable = $("#app-Agenda-dropdown");
         dataTable.html("");
 
-        var firstOption = $("<option />", {"class": "ms-Dropdown-item"});
+/*         var firstOption = $("<option />", {"class": "ms-Dropdown-item"});
 
         firstOption.append("Select Agenda");
 
-        dataTable.append(firstOption);
+        dataTable.append(firstOption); */
 
 
         for (var i in jsonData) {
@@ -85,6 +85,8 @@ function getAgendasToList() {
                 }
             }
         }
+
+        dataTable.val('R2R')
     });
 }
 
