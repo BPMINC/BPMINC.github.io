@@ -111,7 +111,7 @@ function createAgenda() {
     createCategory(selectedCustomer);
     createAttendees(selectedCustomer);
     createSubject(selectedCustomer, selectedPhase, selectedAgenda);
-    //createBody(selectedCustomer, selectedPhase, selectedAgenda);
+    createBody(selectedCustomer, selectedPhase, selectedAgenda);
 
 }
 
@@ -201,8 +201,7 @@ function createAttendees(customer) {
 
             if (customer == jsonData[i].Name) {
 
-                //var attendeeList = [{emailAddress: "JosephSmith@bpmcpa.com", displayName: 'Joseph Smith'}]
-                var attendeeList = "OneWeb Team";
+                var attendeeList = [{emailAddress: "JosephSmith@bpmcpa.com", displayName: 'Joseph Smith'}]
 
                 setTextToAttendees(attendeeList);
 
