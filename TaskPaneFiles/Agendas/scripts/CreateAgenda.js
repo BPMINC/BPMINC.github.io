@@ -326,7 +326,7 @@ function createBody(customer, phase, agenda) {
 function setHTMLToBody(html) {
     return new Promise(function (resolve, reject) {
         try {
-            Office.context.mailbox.item.body.setAsync(html, function (asyncResult) {
+            Office.context.mailbox.item.body.setAsync(html, { coercionType: Office.CoercionType.Html }, function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     //statusUpdate(asyncResult,"Insert");
