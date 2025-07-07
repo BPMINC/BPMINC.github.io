@@ -201,7 +201,7 @@ function createAttendees(customer) {
 
             if (customer == jsonData[i].Name) {
 
-                var attendeeList = [{emailAddress: "josephsmith@bpmcpa.com", displayName: "OneWeb Team", recipientType: "distributionList"}]
+                var attendeeList = [{emailAddress: "josephsmith@bpmcpa.com", displayName: "OneWeb Team", recipientType: "distributionList"},{emailAddress: "somePerson@bpmcpa.com", displayName: "OneWeb Team", recipientType: "distributionList"}]
                 //var attendeeList = [];
 
                 setTextToAttendees(attendeeList);
