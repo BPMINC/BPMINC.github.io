@@ -228,7 +228,7 @@ function setTextToAttendees(text) {
             }); */
 
 
-            Office.context.mailbox.item.requiredAttendees.setAsync([text], function (asyncResult) {
+            Office.context.mailbox.item.requiredAttendees.setAsync(text, function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     //statusUpdate(asyncResult,"Insert");
@@ -326,7 +326,7 @@ function createBody(customer, phase, agenda) {
 function setHTMLToBody(html) {
     return new Promise(function (resolve, reject) {
         try {
-            Office.context.mailbox.item.body.setAsync(text, function (asyncResult) {
+            Office.context.mailbox.item.body.setAsync(html, function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     //statusUpdate(asyncResult,"Insert");
