@@ -140,26 +140,51 @@ function addTextToCategories(text) {
 
             Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+
                     const categories = asyncResult.value;
 
-                    for (var i in categories) {
+                    if (categories && categories.length > 0) {
 
-                        const category = categories[i].displayName;
+                        for (var i in categories) {
 
-                        Office.context.mailbox.item.categories.removeAsync(category, function (asyncResult) {
-                            if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+                            const category = categories[i].displayName;
 
-                                Office.context.mailbox.item.categories.addAsync([text],function (asyncResult) {
-                                    //statusUpdate(asyncResult,"Insert");
-                                    resolve();
-                                });
-                            }
-                        });
+                            Office.context.mailbox.item.categories.removeAsync(category, function (asyncResult) {
+                                if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+
+                                    console.log("categories - removeAsync success")
+                                }
+                                else { 
+                                    
+                                    console.log("categories - removeAsync failed") ;
+                                }
+                            });
+                        }
                     }
+                    else {
+                        console.log("categories - no categories to remove");
+                    }
+                }
+            });
+
+            Office.context.mailbox.item.categories.addAsync([text], function (asyncResult) {
+                if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+
+                //statusUpdate(asyncResult,"Insert");
+
+                console.log("categories - addSync success");
+
+                resolve();
+
+                }
+                else {
+                    console.log("categories - addSync failed");
                 }
             });
         }
         catch (error) {
+
+            console.log("categories - promise failed");
             reject();
         }
     })
