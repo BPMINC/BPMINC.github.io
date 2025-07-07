@@ -154,9 +154,9 @@ function addTextToCategories(text) {
 
                                     console.log("categories - removeAsync success")
                                 }
-                                else { 
-                                    
-                                    console.log("categories - removeAsync failed") ;
+                                else {
+
+                                    console.log("categories - removeAsync failed");
                                 }
                             });
                         }
@@ -170,11 +170,11 @@ function addTextToCategories(text) {
             Office.context.mailbox.item.categories.addAsync([text], function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
-                //statusUpdate(asyncResult,"Insert");
+                    //statusUpdate(asyncResult,"Insert");
 
-                console.log("categories - addSync success");
+                    console.log("categories - addSync success");
 
-                resolve();
+                    resolve();
 
                 }
                 else {
@@ -249,13 +249,19 @@ function createSubject(customer, phase, agenda) {
 function setTextToSubject(text) {
     return new Promise(function (resolve, reject) {
         try {
-            Office.context.mailbox.item.subject.setAsync(
-                text,
-                function (asyncResult) {
+            Office.context.mailbox.item.subject.setAsync(text, function (asyncResult) {
+                if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+
                     //statusUpdate(asyncResult,"Insert");
+
+                    console.log("subject - setAsync success");
+
                     resolve();
+
+                } else {
+                    console.log("subject - setAsync failed");
                 }
-            );
+            });
         }
         catch (error) {
             reject();
