@@ -174,13 +174,13 @@ function addTextToCategories(text) {
 
                     //statusUpdate(asyncResult,"Insert");
 
-                    console.log("categories - addSync success");
+                    console.log("categories - addASync success");
 
                     resolve();
 
                 }
                 else {
-                    console.log("categories - addSync failed");
+                    console.log("categories - addASync failed");
                 }
             });
         }
@@ -265,13 +265,13 @@ function setTextToSubject(text) {
 
                     //statusUpdate(asyncResult,"Insert");
 
-                    console.log("subject - setSync success");
+                    console.log("subject - setASync success");
 
                     resolve();
 
                 }
                 else {
-                    console.log("subject - setSync failed");
+                    console.log("subject - setASync failed");
                 }
             });
         }
