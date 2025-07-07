@@ -201,7 +201,7 @@ function createAttendees(customer) {
 
             if (customer == jsonData[i].Name) {
 
-                var attendeeList = [{"emailAddress": "undefined", "displayName": "OneWeb Team", "recipientType": "distributionList"}]
+                var attendeeList = [{emailAddress: undefined, displayName: 'OneWeb Team', recipientType: 'distributionList'}]
 
                 setTextToAttendees(attendeeList);
 
