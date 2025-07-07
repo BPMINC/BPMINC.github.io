@@ -216,7 +216,7 @@ function setTextToAttendees(text) {
     return new Promise(function (resolve, reject) {
         try {
 
-            Office.context.mailbox.item.requiredAttendees.getAsync(function (asyncResult){
+/*             Office.context.mailbox.item.requiredAttendees.getAsync(function (asyncResult){
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     var attendees = asyncResult.value;
@@ -226,7 +226,7 @@ function setTextToAttendees(text) {
                 } else{
                     console.log("attendees - getAsync failed")
                 }
-            });
+            }); */
 
 
             Office.context.mailbox.item.requiredAttendees.setAsync(text, function (asyncResult) {
