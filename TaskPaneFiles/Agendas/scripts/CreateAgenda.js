@@ -86,7 +86,7 @@ function getAgendasToList() {
             }
         }
 
-        dataTable.val('R2R')
+        dataTable.first().attr('selected', true)
     });
 }
 
