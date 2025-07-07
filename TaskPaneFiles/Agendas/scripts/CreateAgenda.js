@@ -141,13 +141,13 @@ function addTextToCategories(text) {
             Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
-                    const categories = asyncResult.value;
+                    var categoryList = asyncResult.value;
 
-                    if (categories && categories.length > 0) {
+                    if (categoryList && categoryList.length > 0) {
 
-                        for (var i in categories) {
+                        for (var i in categoryList) {
 
-                            const category = categories[i].displayName;
+                            const category = categoryList[i].displayName;
 
                             Office.context.mailbox.item.categories.removeAsync(category, function (asyncResult) {
                                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
