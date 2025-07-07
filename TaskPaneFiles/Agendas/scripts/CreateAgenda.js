@@ -147,23 +147,25 @@ function addTextToCategories(text) {
 
                         for (var i in categoryList) {
 
-                            const category = categoryList[i].displayName;
+                            var category = categoryList[i].displayName;
 
                             Office.context.mailbox.item.categories.removeAsync(category, function (asyncResult) {
                                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                                     console.log("categories - removeAsync success")
-                                }
-                                else {
+
+                                } else {
 
                                     console.log("categories - removeAsync failed");
                                 }
                             });
                         }
-                    }
-                    else {
+                    } else {
                         console.log("categories - no categories to remove");
                     }
+                    
+                } else {
+                    console.error(asyncResult.error);
                 }
             });
 
