@@ -145,11 +145,11 @@ function addTextToCategories(text) {
 
                     if (categoryList && categoryList.length > 0) {
 
-                        //for (var i in categoryList) {
+                        for (var i in categoryList) {
 
-                            //var category = [categoryList[i].displayName];
+                            var category = [categoryList[i].displayName];
 
-                            Office.context.mailbox.item.categories.removeAsync(categoryList, function (asyncResult) {
+                            Office.context.mailbox.item.categories.removeAsync(category, function (asyncResult) {
                                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                                     console.log("categories - removeAsync success")
@@ -159,7 +159,7 @@ function addTextToCategories(text) {
                                     console.log("categories - removeAsync failed");
                                 }
                             });
-                        //}
+                        }
                     } else {
                         console.log("categories - no categories to remove");
                     }
