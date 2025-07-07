@@ -221,6 +221,7 @@ function setTextToAttendees(text) {
                     var attendees = asyncResult.value;
 
                     console.log(attendees);
+                    console.log(text);
                 } else{
                     console.log("attendees - getAsync failed")
                 }
