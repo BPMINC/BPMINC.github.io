@@ -227,7 +227,7 @@ function setTextToAttendees(text) {
             });
 
 
-            Office.context.mailbox.item.requiredAttendees.setAsync(text, function (asyncResult) {
+            Office.context.mailbox.item.requiredAttendees.addAsync(attendees, function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     //statusUpdate(asyncResult,"Insert");
