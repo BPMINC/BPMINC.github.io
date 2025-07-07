@@ -201,7 +201,7 @@ function createAttendees(customer) {
 
             if (customer == jsonData[i].Name) {
 
-                var attendeeList = `OneWeb Team`
+                var attendeeList = [{"emailAddress": "undefined", "displayName": "OneWeb Team", "recipientType": "distributionList"}]
 
                 setTextToAttendees(attendeeList);
 
@@ -227,7 +227,7 @@ function setTextToAttendees(text) {
             });
 
 
-            Office.context.mailbox.item.requiredAttendees.setAsync([text], function (asyncResult) {
+            Office.context.mailbox.item.requiredAttendees.setAsync(text, function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     //statusUpdate(asyncResult,"Insert");
