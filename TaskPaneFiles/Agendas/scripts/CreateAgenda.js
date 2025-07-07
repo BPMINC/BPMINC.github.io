@@ -251,7 +251,7 @@ function createSubject(customer, phase, agenda) {
 function setTextToSubject(text) {
     return new Promise(function (resolve, reject) {
         try {
-            Office.context.mailbox.item.subject.setAsync([text], function (asyncResult) {
+            Office.context.mailbox.item.subject.setAsync(text, function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     //statusUpdate(asyncResult,"Insert");
