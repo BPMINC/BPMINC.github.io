@@ -11,7 +11,7 @@
     
     {
       "Name": "Design - R2R",
-      "Subject": "R2R Requirements Gathering",
+      "Subject": "R2R Design Session",
       "BodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for an R2R design session.</p> </div>",
       "BodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> <p>The objective of this session is for our team to gather a solid understanding of your financial reporting and segmentation requirements. We will review your company org structure, discuss options for segmentation, journal entries and associated approvals, allocations and amortizations and period close among other topics</p> </div>",
       "BodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p>{SOW_REPLACE}</p> </div>",
@@ -20,7 +20,7 @@
     
     {
       "Name": "Configure - R2R",
-      "Subject": "R2R Requirements Gathering",
+      "Subject": "R2R Configuration Review",
       "BodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of R2R configurations.</p> </div>",
       "BodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> <p>The objective of this session is for our team to gather a solid understanding of your financial reporting and segmentation requirements. We will review your company org structure, discuss options for segmentation, journal entries and associated approvals, allocations and amortizations and period close among other topics</p> </div>",
       "BodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p>{SOW_REPLACE}</p> </div>",
