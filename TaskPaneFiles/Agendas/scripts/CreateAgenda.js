@@ -138,7 +138,7 @@ function addTextToCategories(text) {
     return new Promise(function (resolve, reject) {
         try {
 
-            Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
+/*             Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     var categoryList = asyncResult.value;
@@ -167,9 +167,9 @@ function addTextToCategories(text) {
                 } else {
                     console.log("categories - getAsync failed")
                 }
-            });
+            }); */
 
-            Office.context.mailbox.item.categories.addAsync([text], function (asyncResult) {
+            Office.context.mailbox.item.categories.setAsync([text], function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     //statusUpdate(asyncResult,"Insert");
