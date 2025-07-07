@@ -109,7 +109,7 @@ function createAgenda() {
     var selectedAgenda = $("#app-Agenda-dropdown").val();
 
     createCategory(selectedCustomer);
-    //createAttendees(selectedCustomer);
+    createAttendees(selectedCustomer);
     createSubject(selectedCustomer, selectedPhase, selectedAgenda);
     //createBody(selectedCustomer, selectedPhase, selectedAgenda);
 
@@ -163,7 +163,7 @@ function addTextToCategories(text) {
                     } else {
                         console.log("categories - no categories to remove");
                     }
-                    
+
                 } else {
                     console.log("categories - getAsync failed")
                 }
@@ -189,7 +189,7 @@ function addTextToCategories(text) {
             console.log("categories - promise failed");
             reject();
         }
-    })
+    });
 }
 
 
@@ -214,18 +214,27 @@ function createAttendees(customer) {
 function setTextToAttendees(text) {
     return new Promise(function (resolve, reject) {
         try {
-            Office.context.mailbox.item.requiredAttendees.setAsync(
-                [text], //must be set inside an array for addAsync to work
-                function (asyncResult) {
+            Office.context.mailbox.item.requiredAttendees.setAsync([text], function (asyncResult) {
+                if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+
                     //statusUpdate(asyncResult,"Insert");
+
+                    console.log("attendees - setASync success");
+
                     resolve();
+
                 }
-            );
+                else {
+                    console.log("attendees - setASync failed");
+                }
+            });
         }
         catch (error) {
+
+            console.log("attendees - promise failed");
             reject();
         }
-    })
+    });
 }
 
 
@@ -272,7 +281,7 @@ function setTextToSubject(text) {
 
             reject();
         }
-    })
+    });
 }
 
 
@@ -315,6 +324,6 @@ function setHTMLToBody(html) {
         catch (error) {
             reject();
         }
-    })
+    });
 
 }
