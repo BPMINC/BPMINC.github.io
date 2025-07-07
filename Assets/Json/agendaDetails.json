@@ -29,7 +29,7 @@
     
     {
       "Name": "Requirements - P2P",
-      "Subject": "R2R Requirements Gathering",
+      "Subject": "P2P Requirements Gathering",
       "BodyIntro": "<div> <p>Hi Team,</p> <br/> <p>Please join for a review of the P2P business requirements.</p> </div>",
       "BodyObjective": "<div> <br/><br/> <p><b>Meeting Objective</b></p> <p>The objective of this session is for our team to gather a solid understanding of your financial reporting and segmentation requirements. We will review your company org structure, discuss options for segmentation, journal entries and associated approvals, allocations and amortizations and period close among other topics</p> </div>",
       "BodyAgenda": "<div> <br/> <p><b>Meeting Agenda</b></p> <p>{SOW_REPLACE}</p> </div>",

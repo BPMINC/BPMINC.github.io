@@ -108,7 +108,7 @@ function createAgenda() {
     var selectedPhase = $("#app-Phase-dropdown").val();
     var selectedAgenda = $("#app-Agenda-dropdown").val();
 
-    //createCategory(selectedCustomer);
+    createCategory(selectedCustomer);
     //createAttendees(selectedCustomer);
     createSubject(selectedCustomer, selectedPhase, selectedAgenda);
     //createBody(selectedCustomer, selectedPhase, selectedAgenda);
@@ -199,10 +199,7 @@ function createSubject(customer, phase, agenda) {
             //check for matching agenda in agenda details json
             if (agendaName == jsonData[i].Name) {
 
-
                 var subject = jsonData[i].Subject
-
-                //Office.context.mailbox.item.subject.setAsync(`${selectedCustomer} - ${agendaSubject}`, function (asyncResult) { });
                 setTextToSubject(`${customer} - ${subject}`);
             }
         }
@@ -213,9 +210,6 @@ function createSubject(customer, phase, agenda) {
 function setTextToSubject(text) {
     return new Promise(function (resolve, reject) {
         try {
-
-            
-
             Office.context.mailbox.item.subject.setAsync(
                 text,
                 function (asyncResult) {
