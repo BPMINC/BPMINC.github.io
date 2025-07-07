@@ -1,22 +1,3 @@
-/* (function () {
-    "use strict"
-    // The initialze function is run each time the page is loaded.
-    Office.initialize = function (reason) {
-        $(document).ready(function () {
-
-            //adds listener to Phases for any change
-            setPhasesListener();
-
-            //adds listener to submit button for any change
-            setGenerateAgendaListener();
-
-            //populates our default list values
-            getCustomersToList();
-            getPhasesToList();
-            getAgendasToList();
-        });
-    };
-})(); */
 
 
 function setPhasesOnChange() {
@@ -80,6 +61,12 @@ function getAgendasToList() {
 
         var dataTable = $("#app-Agenda-dropdown");
         dataTable.html("");
+
+        var firstOption = $("<option />", {"class": "ms-Dropdown-item"});
+
+        firstOption.append("Select Agenda");
+
+        dataTable.append(firstOption);
 
 
         for (var i in jsonData) {
