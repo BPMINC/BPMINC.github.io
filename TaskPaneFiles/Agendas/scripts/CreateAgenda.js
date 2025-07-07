@@ -186,7 +186,7 @@ function addTextToCategories(text) {
         }
         catch (error) {
 
-            console.log("categories - promise failed");
+            console.log("categories - promise failed" - error);
             reject();
         }
     });
