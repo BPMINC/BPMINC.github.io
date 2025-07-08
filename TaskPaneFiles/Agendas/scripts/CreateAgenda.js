@@ -124,10 +124,10 @@ function createCategory(customer) {
 
 
 function addTextToCategories(text) {
-    return new Promise(function (resolve, reject) {
+    return new Promise(async function (resolve, reject) {
         try {
 
-            Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
+            await Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     var categoryList = asyncResult.value;
@@ -160,7 +160,7 @@ function addTextToCategories(text) {
 
             console.log("=================================")
 
-            Office.context.mailbox.item.categories.addAsync([text], function (asyncResult) {
+            await Office.context.mailbox.item.categories.addAsync([text], function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     //statusUpdate(asyncResult,"Insert");
