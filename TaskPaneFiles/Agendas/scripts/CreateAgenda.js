@@ -127,7 +127,7 @@ function addTextToCategories(text) {
     return new Promise(function (resolve, reject) {
         try {
 
-            Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
+            Office.context.mailbox.item.categories.getAsync(async function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                     var categoryList = asyncResult.value;
@@ -138,7 +138,7 @@ function addTextToCategories(text) {
 
                             var category = [categoryList[i].displayName];
 
-                            Office.context.mailbox.item.categories.removeAsync(category, function (asyncResult) {
+                            await Office.context.mailbox.item.categories.removeAsync(category, function (asyncResult) {
                                 if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
 
                                     console.log("categories - removeAsync success")
