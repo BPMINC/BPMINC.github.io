@@ -62,11 +62,11 @@ function getAgendasToList() {
         var dataTable = $("#app-Agenda-dropdown");
         dataTable.html("");
 
-/*         var firstOption = $("<option />", {"class": "ms-Dropdown-item"});
-
-        firstOption.append("Select Agenda");
-
-        dataTable.append(firstOption); */
+        /*         var firstOption = $("<option />", {"class": "ms-Dropdown-item"});
+        
+                firstOption.append("Select Agenda");
+        
+                dataTable.append(firstOption); */
 
 
         for (var i in jsonData) {
@@ -190,7 +190,7 @@ function createAttendees(customer) {
 
             if (customer == jsonData[i].Name) {
 
-                var attendeeList = [{emailAddress: "JosephSmith@bpmcpa.com", displayName: "Joseph Smith"}]
+                var attendeeList = [{ emailAddress: "JosephSmith@bpmcpa.com", displayName: "Joseph Smith" }]
 
                 setTextToAttendees(attendeeList);
 
@@ -204,17 +204,17 @@ function setTextToAttendees(text) {
     return new Promise(function (resolve, reject) {
         try {
 
-/*             Office.context.mailbox.item.requiredAttendees.getAsync(function (asyncResult){
-                if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
-
-                    var attendees = asyncResult.value;
-
-                    console.log(attendees);
-                    console.log(text);
-                } else{
-                    console.log("attendees - getAsync failed")
-                }
-            }); */
+            /*             Office.context.mailbox.item.requiredAttendees.getAsync(function (asyncResult){
+                            if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+            
+                                var attendees = asyncResult.value;
+            
+                                console.log(attendees);
+                                console.log(text);
+                            } else{
+                                console.log("attendees - getAsync failed")
+                            }
+                        }); */
 
 
             Office.context.mailbox.item.requiredAttendees.setAsync(text, function (asyncResult) {
